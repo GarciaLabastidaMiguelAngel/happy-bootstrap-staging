@@ -1,213 +1,154 @@
 # Banking Integration Evolution Roadmap
 
 Status: ACTIVE_STRATEGIC_ROADMAP
-Direction revision: DIRECTION-0008
+Direction revision: DIRECTION-0009
 
 ## Purpose
 
-Define how Architecture AI should integrate with the existing bank first, learn the real terrain from evidence, and then improve it incrementally through measurable technical objectives.
-
-This roadmap separates immediate proof, reusable banking knowledge, channel-specific composition and longer-term incremental synchronization.
+Define how Architecture AI integrates with the existing bank first, learns the real terrain from evidence, and then improves it incrementally through measurable technical objectives across reads, channels, identity/access, risk and operational workloads.
 
 ## Governing strategy
 
 INTEGRATE FIRST
 -> UNDERSTAND CURRENT REALITY
 -> MEASURE
--> MODEL SEMANTICS / AUTHORITY / FRESHNESS
+-> MODEL SEMANTICS / AUTHORITY / FRESHNESS / IDENTITY
 -> IMPROVE LOCALLY
 -> PROVE WITH LAB/POC
 -> GOVERNED PROMOTION
 -> EXPAND BY REUSABLE CAPABILITY
--> EVOLVE CHANNEL EXPERIENCE.
+-> EVOLVE CUSTOMER EXPERIENCE.
 
 Do not redesign the bank from theory.
 
 ## Horizon 0 — Context acquisition
 
-Architecture AI learns:
-- infrastructure/platform constraints;
-- API Connect/API catalog;
-- Gravity Plus contracts;
-- current service implementations;
-- Santander Framework conventions;
-- Glo/institutional delivery archetypes when evidenced;
-- Exadata schema/query patterns;
-- Redis/platform availability;
-- core/transactional connectors;
-- security/classification/governance;
-- deployment and operational constraints;
-- current web/mobile channel behavior;
-- process knowledge and human ownership.
+Learn infrastructure/platform constraints, API Connect/API catalog, Gravity Plus contracts, current implementations, Santander Framework, Glo/archetypes, Exadata, Redis, core connectors, security/classification/governance, current customer login/risk/binding mechanisms, Control-M workloads, delivery/operations and channel behavior.
 
 Unknowns remain explicit.
 
-## Horizon 1 — Customer Position proof
+## Horizon 1 — Customer Position proof / BI-0001
 
-Use BI-0001 to demonstrate a full architecture loop on one difficult composition API.
+Prove code/contract/integration discovery, field/source lineage, semantic-element classification, freshness/security, Redis/read projections, optimized Exadata/satellite retrieval, shadow/canary comparison and measurable correctness/performance.
 
-Prove that the platform can:
-- inspect code and contract;
-- discover all integrations;
-- construct field/source lineage;
-- classify freshness and sensitivity;
-- compare whole-response cache versus semantic-element cache;
-- optimize Exadata and satellite reads;
-- preserve current rules/framework;
-- run shadow/canary evidence;
-- produce performance and correctness results.
+## Horizon 2 — Reusable Gravity Plus semantic read capability
 
-## Horizon 2 — Reusable Gravity Plus read capability
-
-Expand semantic elements and source mappings across additional APIs.
-
-Target outcome:
-- shared canonical semantic data registry;
-- reusable Redis projections;
-- catalog-cache policy;
-- versioned retrieval/query plans;
-- API-to-semantic mappings;
-- freshness/invalidation policy;
-- performance telemetry;
-- source authority/lineage graph.
+Expand toward shared semantic data registry, reusable Redis projections, catalog policy, versioned retrieval/query plans, API mappings, freshness/invalidation policy, performance telemetry and source-authority graph.
 
 Avoid one custom cache design per API.
 
-## Horizon 3 — Web BFF proof
-
-Use BI-0003 as the first concrete channel-specific implementation slice.
-
-Target:
+## Horizon 3 — Web BFF proof / BI-0003
 
 Browser / Angular
 -> Web BFF
--> Gravity Plus APIs
+-> Gravity Plus
 -> optimized semantic/read capabilities
--> authoritative bank sources.
+-> bank authority.
 
-Goals:
-- replicate the current web Customer Position experience;
-- model browser/BFF session state safely;
-- keep authentication authority server-side;
-- expose channel-specific OpenAPI contracts rather than mirror every Gravity Plus endpoint;
-- reduce coarse/repeated backend retrieval;
-- measure time-to-useful-content;
-- preserve the Gravity Plus compatibility layer;
-- structure Angular for safe parallel development without forcing microfrontends prematurely.
+Prove channel-specific OpenAPI, secure server-authoritative session, reduced coarse calls, progressive rendering/time-to-useful-content and maintainable modular Angular boundaries.
 
-BI-0003 should become a direct feeder into BI-0002 rather than waiting for the full mobile/channel horizon.
+## Horizon 4 — Application edge / BI-0004
 
-## Horizon 4 — Application-edge / Spring Cloud Gateway proof
+Compare IBM API Connect with Spring Cloud Gateway/application-edge responsibilities using real PKM/security/tracing/governance evidence.
 
-Use BI-0004 to compare the existing IBM API Connect control/API-management plane with a programmable Spring Cloud Gateway/application-edge layer.
+Retain Spring Cloud Gateway only for measurable application-level programmability such as bounded routing/canary/fallback/correlation/token enforcement that should not live in API Connect or the BFF.
 
-Goals:
-- inspect/reuse any existing bank Spring Cloud Gateway baseline;
-- preserve PKM/security/tracing conventions;
-- determine which runtime responsibilities belong in Spring Cloud Gateway;
-- determine which lifecycle/governance responsibilities remain in API Connect;
-- avoid duplicated policy;
-- test BFF routing/canary/fallback/correlation with measured overhead;
-- retain the gateway only if its programmability/control value exceeds complexity/latency cost.
+## Horizon 5 — Customer IAM and adaptive access / BI-0005
 
-## Horizon 5 — Change-aware server synchronization
+Prove a dedicated customer identity/access plane using synthetic LAB customers first.
 
-Improve from TTL-only behavior toward authoritative change-aware refresh where evidence allows:
-- mutation impact mappings;
-- source events;
-- CDC;
-- source version/change tokens;
-- durable work/saga for multi-step synchronization.
+Target:
+- Java-first mature IdP candidate;
+- web BFF opaque session;
+- OAuth/OIDC resource access;
+- scoped API authorization;
+- measured JWT/reference-token behavior;
+- asynchronous risk decisions;
+- deterministic gateway/BFF ALLOW/DENY/STEP_UP enforcement;
+- WebAuthn/passkey/step-up evaluation;
+- future migration away from normal core password-validation transactions.
 
-Do not assume writes are observable from one gateway.
+Real credential migration remains gated by Issue #8 evidence/security approval.
 
-## Horizon 6 — Channel-specific incremental synchronization
+## Horizon 6 — Explicit CQRS projection consistency
 
-Evaluate BI-0002 across web and later native/mobile channels.
+Apply `work/BANKING_CQRS_PROJECTION_CONSISTENCY_MODEL.md` across BI-0001/BI-0003 rather than creating a parallel infrastructure program.
 
-Goal:
-- secure device/channel projections;
-- only refresh changed/stale elements;
-- reduce repeated coarse API retrieval;
-- preserve bank source authority;
-- improve time-to-useful-content and user experience.
+Target hierarchy:
+core authority
+-> Exadata/read model where evidenced
+-> Redis hot semantic projection
+-> BFF/session projection
+-> web/native projection.
 
-The Web BFF may provide an early synchronization facade for the browser before native/mobile transport decisions exist.
+Each element has freshness/version/reconciliation semantics. Highly volatile data such as balances remains live-source unless an evidenced propagation contract makes caching safe.
 
-## Horizon 7 — Protocol/channel optimization
+## Horizon 7 — Change-aware server synchronization
 
-Research and POC protocol options according to actual channel and infrastructure support.
+Improve TTL-only behavior through source events/CDC/version markers/reconciliation where available. Build idempotent projectors, checkpoints, replay and drift detection.
 
-Candidates may include:
-- REST/HTTP evolution;
-- gRPC for suitable native/service communication;
-- browser-compatible gRPC-Web where justified;
-- server/bidirectional streaming mechanisms;
-- HTTP/3 and other supported transports.
+Do not assume all writes are observable from one gateway.
 
-Protocol selection is an evidence-backed decision, not a strategic objective by itself.
+## Horizon 8 — Channel-specific incremental synchronization / BI-0002
 
-## Horizon 8 — Data-informed experience optimization
+Refresh only changed/stale semantic elements across web and later native/mobile clients. Preserve banking source authority and recoverability after missed events or local-state loss.
 
-Use governed UX/telemetry evidence to decide:
-- preload vs on-demand;
-- which customer components deserve proactive refresh;
-- which data can remain local longer;
-- what backend work is unnecessary;
-- when BFF-side state adds value;
-- whether microfrontend independence is justified;
-- which protocol or event mechanisms improve user-visible outcomes.
+## Horizon 9 — Protocol/channel optimization
 
-## Architecture AI role
+Evaluate REST/HTTP evolution, gRPC/gRPC-Web, SSE/WebSocket, HTTP/3 or other supported transports only by measured channel/security/platform evidence.
 
-Architecture AI must continuously maintain the relationships among:
+Reactive UX is not a mandate for one protocol.
+
+## Horizon 10 — Data-informed experience optimization
+
+Use governed UX/telemetry/risk evidence to tune preload vs on-demand, local retention, refresh priority, component independence and protocol choices.
+
+## Parallel operational modernization — Control-M / jobs
+
+In parallel, inventory Control-M mallas and classify them as KEEP_CONTROL_M, OPENSHIFT_JOB_OR_CRONJOB, SPRING_BATCH_JOB, SPRING_CLOUD_TASK_DATA_FLOW, EVENT_DRIVEN_REPLACEMENT, WORKFLOW_SCHEDULER_POC or UNKNOWN.
+
+Do not block customer-facing POCs on the full Control-M modernization program.
+
+## Architecture AI knowledge graph
+
+Maintain relationships among:
 
 Customer objective
 <-> channel task
-<-> web/mobile component
-<-> BFF/channel contract
-<-> Gravity Plus API/contract
+<-> component
+<-> BFF contract
+<-> OAuth client/scope/session/risk state
+<-> Gravity Plus contract
 <-> semantic data element
 <-> source/integration
-<-> freshness
-<-> security/classification
-<-> browser/BFF/backend cache/read projection
-<-> query/transaction
+<-> freshness/version
+<-> Redis/BFF/channel projection
+<-> query/transaction/event
 <-> runtime metric
 <-> architecture decision
 <-> backlog/change
-<-> Arc42/auditable deliverable when externally required.
+<-> Arc42/auditable projection when required.
 
-This graph is how the Director can answer complex questions without repeatedly rereading every raw source.
+## Auditability
 
-## Auditability distinction
+Internal evolution remains traceable through Git, evidence, decisions, tests, telemetry and releases.
 
-Architecture AI internal evolution must remain fully traceable through Git, evidence, decisions, work, telemetry and release history.
+Arc42/PDF and other formal technical-design deliverables remain external/institutional audit projections and do not artificially block safe LAB work unless an applicable gate requires approval.
 
-Arc42/PDF and other formal technical-design deliverables are external auditable projections required for human/institutional processes. Their release lifecycle must not artificially block independent LAB discovery or safe platform development unless an applicable gate requires approval before execution.
+## Customer-first evaluation
 
-## Customer-first direction
+Evaluate latency/time-to-useful-content, correctness/freshness, availability/resilience, core/DB transaction reduction, network/payload cost, operational complexity, security/compliance, risk-control effectiveness and implementation/rework cost.
 
-Bank integration choices should ultimately be evaluated against measurable customer and enterprise outcomes, including:
-- latency/time-to-useful-content;
-- correctness/freshness;
-- availability/resilience;
-- infrastructure/DB load;
-- network/payload cost;
-- operational complexity;
-- security/compliance;
-- implementation/rework cost.
-
-The system should progressively move work to the most appropriate layer rather than making every customer action pay the full cost of all backend concerns synchronously.
+The target is not simply faster APIs. The target is to execute only the necessary work, in the correct layer, at the correct time.
 
 ## No-invention rule
 
-Whenever Architecture AI cannot determine a source, rule, freshness requirement, security constraint, session/binding behavior or platform capability:
+Whenever source, credential mechanism, risk rule, freshness requirement, security constraint, session/binding behavior, scheduler dependency or platform capability cannot be determined:
 
-`UNKNOWN`
+UNKNOWN
 -> explain missing evidence
--> create ResearchRequest/Blocker
+-> ResearchRequest/Blocker
 -> continue unaffected work
 -> reconcile when evidence arrives.
 
-The platform must prefer an incomplete but truthful model over a complete invented model.
+Prefer an incomplete truthful model over a complete invented model.
