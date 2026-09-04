@@ -1,7 +1,7 @@
 # Devin Prompt Index
 
 Status: ACTIVE
-Direction revision: `DIRECTION-0003`
+Direction revision: `DIRECTION-0004`
 
 This index tracks prompts prepared by Happy Work for delegated Devin sessions.
 
@@ -62,20 +62,27 @@ All future handoffs must include these governing principles where relevant:
 - Knowledge autonomy is a medium-term target; repeated manual package handoff is transitional.
 - Agent-facing MCP capability is separate from backend integration implementation; direct official APIs may sit behind MCP tools when justified.
 - Architecture planning is top-down from organizational/enterprise objectives rather than isolated areas.
+- Canonical document term is `Arc42`, not `R42`.
+- Arc42 is a governed human-facing projection; released Arc42 PDFs are versioned/auditable and never overwritten in place.
+- Arc42 changes are classified as contextual, architecture increment, material solution change or infrastructure/organizational-impact release.
+- Infrastructure/licensing/network/platform deltas that trigger external human processes are explicit release-impact signals.
+- Diagram generation is audience-aware: C4/Mermaid/PlantUML for technical/canonical views; draw.io-style/iconographic projections for conceptual/executive views.
+- One governed conceptual model may have multiple consistent visual projections.
 
-Latest impact assessment: `work/changes/DIRECTION-0003_IMPACT.md`.
+Latest impact assessment: `work/changes/DIRECTION-0004_IMPACT.md`.
+Post-rc2 Seed overlay: `work/seed-evolution/POST_RC2_DIRECTION_0004_ARC42_AND_VISUAL_GOVERNANCE.md`.
 
 ## Control table
 
-| Prompt ID | Domain | Status | Parallelism | DIRECTION-0003 impact | Handoff note |
+| Prompt ID | Domain | Status | Parallelism | DIRECTION-0004 impact | Handoff note |
 |---|---|---|---|---|---|
-| `P-ARCHITECTURE-AI-REPOSITORY-ARCHETYPES-01` | Repository / runtime modes / artifact lifecycle | READY | SERIAL_REQUIRED | REVIEW_REQUIRED | Refresh for planning-first, branch/issue/parallelism, knowledge authority and cost/autonomy rules before handoff |
-| `P-EVENT-PLATFORM-SAGA-01` | Event platform / sagas | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Reuse shared Work/Research/Issue/Gate lifecycle; do not create competing orchestration |
-| `P-OBSERVABILITY-AUDIT-01` | Observability / audit | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Quality findings, issue trends and AI-usage signals must consume the same telemetry/audit plane |
-| `P-LOCAL-TELEMETRY-DATA-ROAD-01` | Local OTel Collector / analytical observation road | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Observation road can later carry quality, cost and deterministic-vs-AI work features |
-| `P-NOTIFICATION-PLATFORM-01` | Human attention / notification / decisions | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Critical quality, blocked research and gate failures use AttentionItems rather than direct popup logic |
-| `P-SIMULATION-EVALUATION-FOUNDATION-01` | LAB / simulation / replay / Monte Carlo | DRAFT | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Reconcile AI-cost, work parallelism/backlog, quality/refactor workload and knowledge-autonomy scenarios before handoff |
-| `P-AGENT-RUNTIME-COMMUNICATION-PLANE-01` | Sessions / work / Devin API / MCP / A2A | READY | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Preserve protocol model; refresh for planning/research delegation, cost-aware execution and integration-adapter separation |
+| `P-ARCHITECTURE-AI-REPOSITORY-ARCHETYPES-01` | Repository / runtime modes / artifact lifecycle | READY | SERIAL_REQUIRED | REVIEW_REQUIRED | Refresh for Arc42 release artifacts, diagram-source authority, planning-first, branch/issue/parallelism and cost/autonomy rules before handoff |
+| `P-EVENT-PLATFORM-SAGA-01` | Event platform / sagas | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Reuse shared Work/Research/Issue/Gate lifecycle; future Arc42 release workflows must not create competing orchestration |
+| `P-OBSERVABILITY-AUDIT-01` | Observability / audit | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Quality findings, AI usage and Arc42 release/audit evidence consume the same telemetry/audit plane |
+| `P-LOCAL-TELEMETRY-DATA-ROAD-01` | Local OTel Collector / analytical observation road | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED | Observation road remains unchanged |
+| `P-NOTIFICATION-PLATFORM-01` | Human attention / notification / decisions | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Critical quality, blocked research, gates and Arc42 review/approval attention use shared AttentionItems |
+| `P-SIMULATION-EVALUATION-FOUNDATION-01` | LAB / simulation / replay / Monte Carlo | DRAFT | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED | Reconcile separately for cost/work/quality scenarios before handoff |
+| `P-AGENT-RUNTIME-COMMUNICATION-PLANE-01` | Sessions / work / Devin API / MCP / A2A | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Preserve protocol model; Director/documentation work should expose Arc42 state/deltas without changing provider control architecture |
 | `P-DEVIN-API-ACCESS-DISCOVERY-01` | Devin API discovery / RBAC | SUPERSEDED | DISCOVERY_ONLY | SUPERSEDED | User explicitly said it was not sent; later real PowerShell/API evidence made a separate discovery session unnecessary |
 | `P-OBSERVABILITY-AUDIT-PLATFORM-01` | Earlier observability draft | SUPERSEDED | PARALLEL_SAFE_WITH_BOUNDARIES | SUPERSEDED | Interrupted earlier draft; replaced by `P-OBSERVABILITY-AUDIT-01` |
 
@@ -105,7 +112,7 @@ Latest impact assessment: `work/changes/DIRECTION-0003_IMPACT.md`.
 - `P-DEVIN-AGENT-RUNTIME-FOUNDATION-01` evolved into `P-AGENT-RUNTIME-COMMUNICATION-PLANE-01`.
 - `P-DEVIN-OBSERVABILITY-INTEGRATION-DISCOVERY-01` is covered by provider telemetry/discovery in the agent-runtime prompt and historical Devin API discovery.
 - Telemetry ETL / simulation-data-road refinements were incorporated into `P-LOCAL-TELEMETRY-DATA-ROAD-01`.
-- Director Chat, governance gates, deterministic-first, specification-first, planning-first, continuous quality/refactor, Git issue/parallelism and AI-cost/knowledge-autonomy are now direction-level requirements and should be consumed by subsequent prompts rather than recreated as chat-only assumptions.
+- Director Chat, governance gates, deterministic-first, specification-first, planning-first, continuous quality/refactor, Git issue/parallelism, AI-cost/knowledge-autonomy, Arc42 lifecycle and audience-aware diagramming are direction-level requirements and should be consumed by subsequent prompts rather than recreated as chat-only assumptions.
 
 ## Required metadata for new prompt files
 
@@ -145,5 +152,6 @@ Before Happy Work hands a `READY` prompt to a new Devin session it must:
 4. apply the latest material-change impact assessment;
 5. produce/refresh the Session Context Pack;
 6. include the implementation plan / blocker classification for material engineering work;
-7. decide whether the prompt is still `READY`, needs boundaries, must wait, or is superseded;
-8. include a Context Refresh when a long-lived session is continuing after a material change.
+7. include Arc42/diagram/release implications when documentation or solution-design surfaces are affected;
+8. decide whether the prompt is still `READY`, needs boundaries, must wait, or is superseded;
+9. include a Context Refresh when a long-lived session is continuing after a material change.
