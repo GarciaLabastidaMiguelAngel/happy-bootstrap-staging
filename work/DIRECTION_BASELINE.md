@@ -5,7 +5,7 @@ Direction revision: DIRECTION-0006
 Previous direction: DIRECTION-0005
 Previous accepted baseline commit: `acfd96565ba6c91ac0ba6ca1f4fcd49579e2ad8e`
 Repository role: Happy Work staging / prompt-governance control plane
-Current operating emphasis: LAB / fastest safe construction through governed parallel Devin execution, resilient development profiles, knowledge specialization, independent QA and visible Director/Copilot evolution
+Current operating emphasis: LAB / fastest safe construction through governed parallel Devin execution, resilient development profiles, knowledge specialization, information governance, independent QA and visible Director/Copilot evolution
 
 ## Continuity rule
 
@@ -23,6 +23,33 @@ During the current first construction phase:
 4. long-term SOLUTION/SERVICE remains cost-aware and should migrate stable repeatable reasoning to deterministic Spring/Gradle/local capabilities.
 
 This override applies to LAB/PLATFORM_DEV construction, not automatically to future production operation.
+
+## Capability-first organization rule
+
+Architecture AI is currently discovering and defining many logical areas. These AREAS are responsibility/capability groupings, not a final agent count.
+
+Use:
+
+OBJECTIVE
+-> REQUIRED CAPABILITY
+-> RESPONSIBILITIES / POLICIES / GOVERNANCE
+-> DETERMINISTIC CONTROLS
+-> TOOLS
+-> SKILLS / PROCEDURES
+-> EXECUTION WORKSTREAMS
+-> AGENT / SESSION TOPOLOGY IF JUSTIFIED
+-> MEASURE
+-> REBALANCE.
+
+Governed by:
+
+`work/CAPABILITY_RESPONSIBILITY_TO_EXECUTION_TOPOLOGY.md`
+
+Do not use AREA, WORKSTREAM, SESSION, TOOL, SKILL and AGENT as synonyms.
+
+LAB may temporarily use more Devin sessions than the future platform agent topology. First guarantee capability coverage; then optimize how those responsibilities are executed.
+
+No capability/responsibility may disappear when an area/session/agent is reduced or retired. A named successor Tool/Skill/Agent/service/owner and state/work transfer are mandatory.
 
 ## First organizational objective
 
@@ -48,7 +75,7 @@ UNKNOWN
 -> reconciliation
 -> continue
 
-Do not fabricate standards, APIs, infrastructure availability, security authorization, project state or implementation evidence.
+Do not fabricate standards, APIs, infrastructure availability, security authorization, information classification, project state or implementation evidence.
 
 ## Governing construction order
 
@@ -56,7 +83,7 @@ The architectural construction rule remains:
 
 DETERMINISTIC -> TOOL -> SKILL -> AGENT
 
-However, DIRECTION-0006 distinguishes **LAB execution topology** from **future product/runtime topology**.
+However, DIRECTION-0006 distinguishes LAB execution topology from future product/runtime topology.
 
 LAB may intentionally use many Devin specialist sessions to accelerate construction. After repeated work stabilizes, the platform must evaluate whether that responsibility should become deterministic logic, a Tool, a Skill or remain an Agent.
 
@@ -129,7 +156,49 @@ Use explicit LOCAL_DEV_IDENTITY behavior and preserve an abstraction for the fut
 
 No development fallback may silently masquerade as enterprise authentication.
 
+LDAP/directory, authentication, MFA/step-up and authorization are separate concerns and must not be conflated.
+
 Capabilities requiring unavailable enterprise controls are degraded/disabled explicitly.
+
+## Information classification / sensitive-data governance
+
+Information sensitivity is a first-class governed concern defined in:
+
+`work/INFORMATION_CLASSIFICATION_ACCESS_AND_PCI_MODEL.md`
+
+Classification must separate:
+- business sensitivity;
+- data category;
+- regulatory/control scope;
+- handling attributes;
+- environment/mode;
+- allowed actions/projections.
+
+Classification does not automatically mean deny. It determines controls.
+
+Access decisions should consider:
+
+identity
++ role/entitlement
++ environment
++ information class
++ requested action
++ purpose/context
++ policy/gate state
++ step-up/approval requirement
+-> ALLOW / DENY / REQUIRE_STEP_UP / REQUIRE_APPROVAL / MASK / REDACT.
+
+LAB may expose sensitive information only when the user is authorized and the purpose is explicit. PLATFORM_DEV should prefer synthetic/masked data. SERVICE/preproduction/production uses the approved enterprise identity/authorization controls and may require step-up/MFA for sensitive actions according to policy.
+
+Do not send sensitive data to Devin, logs, traces, vectors, graph projections, Arc42 or human exports by default. Run a deterministic handling-policy decision first.
+
+PCI scope is evidence-based. Architecture AI being used by a bank does not automatically place the entire product in PCI scope. If it stores/processes/transmits payment account data or can impact the CDE, perform the appropriate scope/control analysis.
+
+Default platform policy minimizes PCI scope: prefer masked/tokenized/CardID references; do not persist PAN/PIN/SAD for search/knowledge convenience; do not leak payment data to provider context or telemetry.
+
+Institutional information-classification policy is authoritative when available. Microsoft Purview sensitivity labels may be mapped/integrated where institutionally used; Architecture AI must not invent a conflicting label taxonomy.
+
+Sensitive-data backup/recovery, retention, restore access and secure expiry must be modeled explicitly.
 
 ## Knowledge specialization
 
@@ -187,6 +256,8 @@ Research is incremental and registry/trigger driven, not periodic full internet 
 
 Multiple ResearchRequests may run concurrently for independent objectives.
 
+Information governance currently has an explicit parallel ResearchRequest to reconcile institutional classification, Purview compatibility, PCI scope and identity/step-up policy evidence.
+
 ## UX / architect experience
 
 The dashboard is a web channel for architecture work, not merely a chat or metrics screen.
@@ -236,19 +307,35 @@ Objective
 
 Missing links are findings/gaps, not inferred facts.
 
-## Structured coordination cycles
+## Structured coordination cycles / councils
 
-Agent/session coordination uses evidence-backed cycles:
-- Planning Council;
-- Integration Sync;
-- Research Review;
-- QA/Gate Review;
+Cross-area virtual meetings are governed reconciliation mechanisms, not generic status meetings.
+
+Governed by:
+
+`work/GOVERNANCE_COUNCILS_AND_COORDINATION_CYCLES.md`
+
+Initial councils/reviews include:
+- Direction / Executive Council;
+- Architecture / Planning Council;
+- Research Coordination Review;
+- Data / Information Governance Council;
+- Engineering Integration Sync;
+- QA / Gate Review;
 - Architecture Consistency Review;
-- Retrospective/Organization Review.
+- UX / Architect Experience Review;
+- Deployment / Environment Readiness Review;
+- Retrospective / Organization Optimization Review.
 
-The purpose is to collide/reconcile information across areas and detect drift.
+Every meeting/review requires:
+- a trigger/governance purpose;
+- referenced inputs;
+- defined reconciliation/decision scope;
+- durable outputs, owners and evidence.
 
-Meetings are structured work artifacts with inputs/outputs; they are not unbounded conversational theater.
+Do not run every council on a fixed cadence when no material input exists. Triggers may include source conflicts, security/data-classification escalation, shared-contract change, failed gate, release candidate, environment change or excessive merge/rework/drift.
+
+The transcript is not the primary artifact; decisions, unresolved items, backlog changes and evidence links are.
 
 ## Organization evolution
 
@@ -273,7 +360,7 @@ No agent/workstream responsibility disappears without an explicit successor Tool
 
 DIRECTION-0005 Standards Intelligence remains active.
 
-New development areas (frontend analytics, multi-agent coordination, knowledge modeling, deployment, security, QA) must first identify applicable standards/framework-native patterns and record evidence/adoption status.
+New development areas (frontend analytics, multi-agent coordination, knowledge modeling, information classification/access, deployment, security, QA) must first identify applicable standards/framework-native patterns and record evidence/adoption status.
 
 Do not create custom frameworks where an approved standard or mature framework already solves the problem.
 
@@ -302,18 +389,19 @@ The next development phase should proceed in this order:
 ### Phase 0 — Git and coordination readiness
 Verify `GIT_PARALLEL_DEVELOPMENT_READY` and current repository/module ownership.
 
-### Phase 1 — LAB organization bootstrap
-Create/assign the initial specialist Devin sessions/workstreams with bounded responsibilities and shared context.
+### Phase 1 — capability coverage and LAB organization bootstrap
+Create the capability/responsibility coverage matrix first, then assign the minimum useful set of specialist Devin sessions/workstreams with bounded responsibilities and shared context.
 
 ### Phase 2 — common context and work plane
-Ensure all sessions consume the same direction, backlog, work/blocker/research model, standards/gates and context refresh mechanism.
+Ensure all sessions consume the same direction, backlog, work/blocker/research model, standards/gates, information-handling policy and context refresh mechanism.
 
-### Phase 3 — parallel implementation lanes
-Run at least these lanes concurrently where current code permits:
+### Phase 3 — parallel implementation/research lanes
+Run lanes concurrently where current code permits:
 - Director Chat / dashboard read model;
 - backend/work/gates;
 - Agent Runtime/Devin integration;
 - data/knowledge/projections;
+- information governance/security research;
 - frontend/UX;
 - observability/analytics;
 - QA/architecture conformance;
@@ -324,7 +412,7 @@ Run at least these lanes concurrently where current code permits:
 Merge in planned order with deterministic checks, independent QA and consistency review.
 
 ### Phase 5 — tangible LAB delivery
-User can run local Architecture AI, see current changes quickly, chat with Director, inspect work/standards/blockers/knowledge/readiness and receive evidence-backed status.
+User can run local Architecture AI, see current changes quickly, chat with Director, inspect work/standards/blockers/knowledge/information classification/readiness and receive evidence-backed status.
 
 ### Phase 6 — OpenShift development survival
 Deploy the same product with explicit environment capability profile even under worst-case missing central DB/enterprise identity, preserving recoverable Git-derived projections and truthful degradation.
@@ -333,31 +421,34 @@ Deploy the same product with explicit environment capability profile even under 
 
 Increment direction again if accepted policy materially changes:
 - LAB speed vs AI-cost priority;
-- agent/session organization model;
+- capability-to-agent/session organization model;
 - Git parallelism gate;
 - dev storage/degraded-mode strategy;
-- identity fallback strategy;
+- identity fallback/step-up strategy;
+- information classification/handling authority;
 - provider knowledge projection authority;
 - QA/consistency/deployment organization;
+- governance council/coordination model;
 - UX analytics/feedback model.
 
 ## Working loop
 
 Direction
+-> capability/responsibility coverage
 -> Planning Council
--> specifications/standards
--> bounded parallel work
+-> specifications/standards/policies
+-> bounded parallel work/research
 -> ResearchRequests where needed
 -> implementation branches
 -> deterministic checks
 -> independent QA
--> consistency reconciliation
+-> consistency/data-governance reconciliation
 -> integration/main
 -> hot/local LAB validation
--> telemetry/UX/quality evidence
+-> telemetry/UX/quality/security evidence
 -> organization/process retrospective
 -> backlog/reprioritization
 -> Arc42/document/read-model projections
 -> next cycle.
 
-The target is increasingly autonomous, highly parallel development that remains governed, recoverable, explainable and fast.
+The target is increasingly autonomous, highly parallel development that remains governed, recoverable, explainable, security-aware and fast.
