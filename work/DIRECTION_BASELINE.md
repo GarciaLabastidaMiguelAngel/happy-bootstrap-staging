@@ -1,512 +1,363 @@
 # Project Direction Baseline
 
 Status: ACTIVE
-Direction revision: DIRECTION-0005
-Previous direction: DIRECTION-0004
-Previous accepted baseline commit: `52b8e899b94524165a6da04eea6d00dafb633d3e`
+Direction revision: DIRECTION-0006
+Previous direction: DIRECTION-0005
+Previous accepted baseline commit: `acfd96565ba6c91ac0ba6ca1f4fcd49579e2ad8e`
 Repository role: Happy Work staging / prompt-governance control plane
-Current operating emphasis: LAB / local-first Director Copilot, standards-first governance, evidence/analytics, knowledge projections, planning-first engineering, AI-cost optimization and measured OpenShift evolution
+Current operating emphasis: LAB / fastest safe construction through governed parallel Devin execution, resilient development profiles, knowledge specialization, independent QA and visible Director/Copilot evolution
 
 ## Continuity rule
 
-DIRECTION-0005 incorporates DIRECTION-0004 and all earlier direction unless explicitly overridden.
+DIRECTION-0006 incorporates DIRECTION-0005 and all earlier accepted direction unless explicitly overridden below.
 
-Historical accepted direction remains preserved in Git history. The immutable rc2 seed snapshot is not rewritten in place.
+The immutable rc2 Seed snapshot remains historical and MUST NOT be rewritten in place. Post-rc2 direction continues under `work/` and future candidate/reconciliation waves.
 
-Supporting active direction documents include:
+## Material LAB priority override
 
-- `work/WORK_OPERATING_MODEL.md`
-- `work/ENGINEERING_EXECUTION_MODEL.md`
-- `work/CONTINUOUS_QUALITY_REFACTOR_MODEL.md`
-- `work/GIT_ISSUE_BRANCH_PARALLELISM_MODEL.md`
-- `work/KNOWLEDGE_COST_AND_INTEGRATION_GOVERNANCE.md`
-- `work/DIRECTOR_COPILOT_OPERATING_MODEL.md`
-- `work/GOVERNANCE_GATES.md`
-- `work/CHAT_MVP_AND_PLATFORM_EVOLUTION.md`
-- `work/FIRST_WAVE_TANGIBLE_PLAN.md`
-- `work/ARC42_LIFECYCLE_AND_AUDIT_GOVERNANCE.md`
-- `work/DIAGRAMMING_AND_VISUAL_COMMUNICATION_STRATEGY.md`
-- `work/ANALYTICS_AUDIT_AND_EVIDENCE_PLANE.md`
-- `work/STANDARDS_INTELLIGENCE_AND_CONFORMANCE_MODEL.md`
-- `work/KNOWLEDGE_GRAPH_AND_CQRS_PROJECTION_MODEL.md`
-- `work/PORTFOLIO_BACKLOG_AND_AUTONOMOUS_EVOLUTION_MODEL.md`
-- `work/OPENSHIFT_AND_DISTRIBUTED_SCALE_READINESS.md`
+During the current first construction phase:
 
-## Primary mission
+1. delivery speed and useful parallelism take precedence over token/ACU minimization;
+2. Devin may use more sessions/specialist agents when that accelerates safe implementation and learning;
+3. token/ACU usage must still be observed so later optimization has evidence, but it is not currently a blocking budget;
+4. long-term SOLUTION/SERVICE remains cost-aware and should migrate stable repeatable reasoning to deterministic Spring/Gradle/local capabilities.
 
-Evolve Architecture AI as one governed product with a modular Spring Boot core, Angular dashboard, MCP capability plane, durable work/session/event/saga state, local-first observability/simulation, governed knowledge acquisition, standards/conformance intelligence, explicit engineering quality and a clean path to future OpenShift SERVICE mode.
+This override applies to LAB/PLATFORM_DEV construction, not automatically to future production operation.
 
-Architecture AI progressively operates as a Director/Copilot for architecture work. It maintains a governed view of objectives, standards, blockers, ownership, backlog, evidence, quality, documentation, compliance, knowledge, AI consumption, analysis and platform state, and exposes that view through dashboard/chat.
+## First organizational objective
 
-## First tangible user objective
+Before broad feature parallelism, establish a governed LAB execution organization that can cover the platform direction without losing context or inventing missing facts.
 
-Local LAB must become visibly useful through:
+Initial execution roles are defined in:
 
-Angular Dashboard
-→ Director Chat
-→ Spring Boot Architecture AI
-→ governed read models/work/context
-→ supported Devin API
+`work/LAB_AGENT_ORGANIZATION_AND_EXECUTION_MODEL.md`
 
-The Director must explain:
+The organization includes Director/Integration, Architecture/Planning, Backend, Frontend/UX, Agent Runtime/Integration, Data/Knowledge, Research/Standards, QA, Security/Compliance, Continuous Quality/Refactor, Git/Integration, Documentation/Arc42, UX Research, Deployment/Platform and Reconciliation/Consistency.
 
-- current direction and objectives
-- plan/backlog and current work
-- blockers and ownership
-- what can continue in parallel
-- standards/gates/evidence state
-- quality/issues/refactor candidates
-- current Arc42 state
-- knowledge freshness/coverage
-- provider/AI usage and cost signals
-- what must happen next and why
+These are LAB execution roles/sessions first. They are NOT automatically the permanent runtime agent architecture.
 
-Chat is a projection over governed state, not the source of truth.
+## No-invention rule
+
+Every session/agent receives a bounded context pack containing direction, repository baseline, objective, owned/shared/protected surfaces, dependencies, standards/gates, acceptance evidence and stop/escalation conditions.
+
+When required evidence/context is missing:
+
+UNKNOWN
+-> ResearchRequest / Blocker
+-> evidence
+-> reconciliation
+-> continue
+
+Do not fabricate standards, APIs, infrastructure availability, security authorization, project state or implementation evidence.
 
 ## Governing construction order
 
-Evaluate capabilities in this order:
+The architectural construction rule remains:
 
-DETERMINISTIC
-→ TOOL
-→ SKILL
-→ AGENT
+DETERMINISTIC -> TOOL -> SKILL -> AGENT
 
-Do not create agents where framework-native deterministic logic, a bounded Tool or a reusable Skill is sufficient.
+However, DIRECTION-0006 distinguishes **LAB execution topology** from **future product/runtime topology**.
 
-## Planning-before-execution
+LAB may intentionally use many Devin specialist sessions to accelerate construction. After repeated work stabilizes, the platform must evaluate whether that responsibility should become deterministic logic, a Tool, a Skill or remain an Agent.
 
-For material work:
+## Planning before execution
 
-Objective
-→ current context
-→ specification
-→ architecture/impact plan
-→ dependency/blocker/research classification
-→ parallelization decision
-→ execution plan
-→ implementation
-→ deterministic validation
-→ evidence
-→ continuous quality/refactor review
-→ reconciliation
-→ documentation
-
-Only affected surfaces stop when research is blocking. Safe reversible framework-aligned work may continue when the unresolved question is non-blocking.
-
-## Specification-first
-
-Material behavior starts from specification.
-
-Preferred flow:
-
-Specification
-→ formal contract/schema where applicable
-→ implementation boundary
-→ implementation
-→ deterministic validation
-→ evidence
-→ documentation/reconciliation
-
-For HTTP APIs, prefer governed OpenAPI/Swagger contracts. Markdown explains architecture/rationale but is not the only executable contract when a formal specification exists.
-
-## Standards-first and standards intelligence
-
-The rc2 standards adoption map is the historical baseline. DIRECTION-0005 adds a living standards registry and conformance model.
-
-For every relevant standard/framework track:
-
-- official source and evaluated version
-- adoption action/status
-- applicable layer/vector/mode
-- specification/implementation references
-- verification/operational evidence
-- license/use constraints
-- last verification / next review / trigger
-- conformance maturity
-
-Conformance maturity:
-
-L0 UNKNOWN
-L1 MAPPED
-L2 SPECIFIED
-L3 IMPLEMENTED
-L4 VERIFIED
-L5 OPERATED
-
-Do not publish an opaque single standards percentage. The Director must decompose status by standard, layer, vector and evidence.
-
-Use primary official standards sources first. Version/source conflicts become explicit research issues and do not silently rewrite historical evidence.
-
-## Standards research cadence
-
-Research is incremental, not repeated broad web research.
-
-Each standard/product has a cadence/trigger based on:
-
-- release frequency
-- draft/final status
-- security sensitivity
-- EOL/support milestone
-- dependency on active decisions
-- known pending revision
-
-Fast-moving protocols may need monthly/event-driven checks. Stable standards use less frequent metadata checks unless an active revision or decision requires attention.
-
-## Analysis / Audit / Evidence plane
-
-Keep distinct but correlatable:
-
-- Git history
-- specifications/contracts
-- gates/decisions
-- Arc42 releases
-- Work/Event/Saga state
-- audit events
-- logs
-- traces
-- metrics
-- build/test/static-analysis evidence
-- security/compliance findings
-- standards evidence
-- knowledge provenance
-- AI usage/cost
-- LAB results
-
-Analysis is downstream from evidence.
-
-Preferred flow:
-
-STATE + EVIDENCE + TELEMETRY + LINEAGE
-→ normalized observations
-→ deterministic read models
-→ analytics
-→ graph projection
-→ Director answers / LAB simulation
-
-OpenTelemetry/OTLP remains the telemetry standards boundary. Use standard semantic conventions before custom `aai.*` semantics and record the convention version used.
-
-## Deterministic analytics first
-
-Use deterministic queries/calculations for counts, rates, distributions, backlog aging, cycle time, blocked ratio, quality trends, standards coverage, evidence freshness, AI cost, delivery indicators and other computable facts.
-
-Use Devin for synthesis, ambiguity and trade-off reasoning after deterministic evidence exists.
-
-## Knowledge graph / CQRS projection
-
-Knowledge must progressively represent cross-layer concepts instead of only document chunks:
-
-- organizational objectives/outcomes
-- capabilities
-- current/target processes
-- actors/areas
-- systems/applications
-- APIs/contracts
-- data/datasets
-- infrastructure/environments
-- security controls/risks
-- standards
-- specifications/decisions
-- backlog/work/issues
-- evidence/provenance
-- observations/metrics
-- Arc42 releases/sections
-- diagrams/views
-
-Use a governed relationship vocabulary and preserve provenance/confidence/state.
-
-CQRS is a logical separation of mutation and query models. Local-first CQRS may use the same physical local infrastructure. Do not add databases/repositories merely for pattern purity.
-
-Read models should exist where they reduce repeated expensive extraction/reasoning or improve explainability.
-
-## ETL / lineage
-
-Do not create ETL for every source.
-
-Create a deterministic incremental transformation when a stable reusable read model justifies it:
-
-source delta
-→ extraction
-→ normalization
-→ validation
-→ projection
-→ lineage/evidence receipt
-
-Use OpenLineage concepts for analytical Job/Run/Dataset lineage where useful; do not deploy a separate lineage platform until justified.
-
-## Vector-search rule
-
-Vectors support semantic discovery/reranking/drift/clustering. They are not authority.
-
-Similarity does not prove architecture correctness, conformance or approval.
-
-## Process knowledge
-
-The platform should progressively represent current and target processes, owners, systems/APIs/data, controls, pain points and evidence.
-
-Evaluate BPMN where formal process semantics add value; do not force BPMN for every workflow.
-
-## Portfolio / backlog
-
-Use a provider-neutral planning hierarchy such as:
+Material work still requires:
 
 Objective
-→ Initiative
-→ Epic
-→ Feature
-→ governed WorkPackage/EngineeringWorkItem
-→ Issue/Defect/ResearchRequest/Risk/DecisionRequest
+-> current context
+-> specification
+-> architecture/impact plan
+-> dependencies/blockers/research
+-> parallelization plan
+-> owned/shared/protected surfaces
+-> implementation
+-> deterministic validation
+-> independent QA
+-> consistency/reconciliation
+-> documentation/Arc42 impact
+-> integration/release evidence.
 
-Future Jira integration maps these semantics to institutional Jira configuration rather than making Jira the initial domain model.
+Good planning is the mechanism that makes high parallelism safe.
 
-Every backlog item preserves origin/evidence.
+## Git parallel-development gate
 
-## Prioritization vectors
+Aggressive parallel coding must not begin without verified Git coordination.
 
-Use explicit factors such as:
+Gate:
 
-- objective alignment
-- blocker/security/compliance criticality
-- dependency unlock value
-- user/manual-effort reduction
-- engineering/quality/reliability value
-- AI/cost reduction
-- effort/reversibility
-- coordination risk
-- evidence confidence
-- time/support milestone
-- OpenShift readiness value
+`GIT_PARALLEL_DEVELOPMENT_READY`
 
-AI may explain trade-offs, but prioritization inputs must be visible.
+Defined in:
 
-## Engineering coordination cycles
+`work/GIT_PARALLEL_AGENT_DEVELOPMENT_GATE.md`
 
-Do not create expensive agent-to-agent meetings merely to imitate Scrum.
+It requires repository baseline traceability, work/branch linkage, surface ownership, merge discipline, deterministic checks, context refresh and integration metrics.
 
-Use governed cycles:
+`main` remains the accepted integration baseline.
 
-- Planning Cycle
-- Continuous/Daily Reconciliation
-- Review
-- Retrospective/Improvement
+Parallelism must increase useful throughput without unacceptable merge conflicts, duplicated work, rework or context drift.
 
-State/metrics gathering is deterministic; AI participates only where synthesis/decision support adds value.
+## Development resilience / missing infrastructure
 
-## Autonomous evolution
+Architecture AI must remain useful when OpenShift development lacks central database, enterprise identity or other future infrastructure.
 
-Self-evolving means governed optimization toward explicit objectives, not unrestricted self-modification.
+Use explicit profiles defined in:
 
-Architecture AI may autonomously detect and propose:
+`work/DEV_RESILIENCE_STORAGE_AND_IDENTITY_PROFILES.md`
 
-- deterministic migration candidates
-- new read models/tools/skills
-- stale standards/sources
-- quality/cost regressions
-- improvement backlog items
-- approved LAB experiments
+Storage profiles include:
+- LOCAL_EMBEDDED;
+- OPENSHIFT_DEV_GIT_PROJECTION;
+- OPENSHIFT_DEV_EMBEDDED_PERSISTENT where technically supported;
+- CENTRAL_PERSISTENCE future state.
 
-It may not autonomously change governing objectives, bypass gates, approve material architecture, exploit vulnerabilities, or merge material changes solely because an AI proposed them.
+If no durable development DB exists:
+- rebuild declarative/read projections from Git where valid;
+- keep the service available where feasible;
+- degrade/disable durability-dependent capabilities explicitly;
+- never use Git as a fake high-frequency transactional database;
+- expose `DEGRADED_NO_DURABLE_RUNTIME_STORE` or equivalent truthfully.
 
-## AI cost objective
+When central persistence becomes available, classify/migrate data by authority, mutability, retention, sensitivity, query needs and rebuildability rather than moving everything automatically.
 
-Reducing unnecessary Devin consumption is an explicit measurable objective.
+## Identity resilience
 
-Measure where available:
+Development must work without enterprise LDAP/SSO when it is unavailable.
 
-- work/provider/session type
-- ACUs/tokens/usage units
-- context/evidence size
-- tool calls
-- retries/rework
-- duration
-- outcome/value proxy
+Use explicit LOCAL_DEV_IDENTITY behavior and preserve an abstraction for the future approved enterprise identity mechanism.
 
-Repeated stable AI-heavy operations are candidates for migration to deterministic Spring/Gradle/local capabilities after cost/quality/effort evaluation.
+No development fallback may silently masquerade as enterprise authentication.
 
-Devin remains the reasoning provider where reasoning adds value.
+Capabilities requiring unavailable enterprise controls are degraded/disabled explicitly.
 
-## Security research boundary
+## Knowledge specialization
 
-Discovery of vulnerabilities does not authorize exploitation.
+Knowledge is now an explicit specialized platform area governed by:
 
-PLATFORM_DEV/LAB may run safe explicitly authorized controlled POCs.
+`work/KNOWLEDGE_GOVERNANCE_AND_DEVIN_PROJECTION_MODEL.md`
 
-SOLUTION/SERVICE default to passive analysis, evidence/risk/work creation and escalation unless a specific authorized security-testing policy permits active testing.
+Knowledge classes include direction/objectives, specifications, decisions, standards/policies, process knowledge, application/API/data/infrastructure, security/compliance, engineering practices, evidence, operational knowledge, UX feedback, research results and assumptions/unknowns.
 
-Never infer authorization from technical capability.
+Lifecycle:
 
-## Arc42 lifecycle
+DISCOVERED
+-> IDENTIFIED
+-> CLASSIFIED
+-> EVIDENCED
+-> VALIDATED
+-> APPROVED where required
+-> PROJECTED
+-> REFRESHED / SUPERSEDED / DEPRECATED.
 
-Canonical term: `Arc42`.
+## Devin knowledge projection
 
-Arc42 is the principal human-facing auditable architecture/design document projection for governed solutions.
+Provider knowledge is a controlled projection/cache, never the canonical authority.
 
-Distinguish:
+Use supported Devin knowledge APIs/capabilities only after verifying current schema/permissions/limits.
 
-WORKING_ARC42 — continuously evolving, may contain explicit DRAFT/PLANNED/UNKNOWN/ASSUMED content.
+Project compact stable validated knowledge when repeated reuse improves reasoning efficiency, such as:
+- platform principles;
+- glossary;
+- capability/module map;
+- approved development standards;
+- common patterns/constraints;
+- compact stable banking context;
+- tool/MCP usage guidance.
 
-RELEASED_ARC42 — frozen versioned PDF tied to a source baseline, review/gate state and checksum where practical; never overwritten.
+Do not upload raw telemetry, high-churn state, complete libraries, sensitive information without policy, or unvalidated research by default.
 
-Change classes:
+Every provider projection should be traceable to canonical source IDs/commits and freshness metadata.
 
-- CONTEXTUAL_INCREMENT
-- ARCHITECTURE_INCREMENT
-- MATERIAL_SOLUTION_CHANGE
-- INFRASTRUCTURE_OR_ORGANIZATIONAL_IMPACT_RELEASE
+## Research fabric
 
-Infrastructure/licensing/network/platform changes that trigger external human processes are explicit release-impact signals.
+Research is a permanent high-parallelism support capability defined in:
 
-## Diagramming
+`work/RESEARCH_FABRIC_AND_EVIDENCE_PRIORITY_MODEL.md`
 
-Use:
+Evidence priority:
+1. official standards/specifications/RFCs;
+2. official framework/product docs and release notes;
+3. institutional banking/security/infrastructure guidance;
+4. official regulatory/industry sources;
+5. recognized technical research/references;
+6. secondary/community sources only when needed and classified.
 
-ONE GOVERNED CONCEPTUAL MODEL
-→ MULTIPLE VIEW PROJECTIONS
-→ AUDIENCE-APPROPRIATE RENDERING
+Research is incremental and registry/trigger driven, not periodic full internet rediscovery.
 
-Technical backbone:
+Multiple ResearchRequests may run concurrently for independent objectives.
 
-- C4
-- Mermaid
-- PlantUML/C4-PlantUML
+## UX / architect experience
 
-Conceptual/executive:
+The dashboard is a web channel for architecture work, not merely a chat or metrics screen.
 
-- draw.io/diagrams.net
-- governed SVG/PNG
-- iconography
-- logos when useful/permitted
+Governed by:
 
-When useful provide conceptual overview first and technical drill-down second.
+`work/UX_ANALYTICS_AND_ARCHITECT_EXPERIENCE_MODEL.md`
 
-## Data and storage authority
+The platform must identify real architect tasks and choose the best interaction:
+- chat for synthesis/reasoning/explanation;
+- deterministic UI for structured state/actions.
 
-Git governs source, specifications, OpenAPI/contracts/schemas, ADRs/decisions, policies/gates, architecture/infrastructure definitions, prompt/governance history, canonical diagram sources, Arc42 source/release metadata, manifests and analytical/model definitions.
+Collect bounded usability feedback as evidence/backlog input, not automatic self-training data.
 
-Operational DB governs mutable work/session/event/saga/blocker/gate/runtime state.
+Do not invent frontend analytics frameworks. Research and configure supported tooling based on evidence, banking privacy/security and future observability integration.
 
-Lucene/vector indexes govern rebuildable retrieval/search projections unless explicitly promoted.
+The Angular frontend requires explicit feature/module/contract boundaries so multiple frontend sessions can develop safely in parallel.
 
-Graph/read models optimize relationships/queries and preserve provenance to governed authority.
+Backend-for-Frontend remains a future pattern candidate only when channel-specific needs justify it; do not add it for pattern purity while web is the only channel.
 
-OneDrive/FileShare provide source material and human document workspace/distribution; not active transactional runtime storage.
+## Independent QA / consistency / deployment
 
-Nexus governs immutable distributable artifacts.
+Autonomous longer construction cycles require independent verification as defined in:
 
-LAB analytical storage governs observation/replay/simulation datasets and experimental outputs.
+`work/QA_RELEASE_DEPLOYMENT_AND_CONSISTENCY_MODEL.md`
 
-Confluence/SharePoint are governed publication destinations where appropriate; they do not silently replace Git/runtime authority.
+Distinct responsibilities include:
+- QA/Validation;
+- Architecture Conformance;
+- Security/Compliance Validation;
+- Documentation/Arc42 Validation;
+- Reconciliation/Consistency;
+- Deployment/Platform Engineering.
 
-## Parallel development / Git
+Traceability should progressively connect:
 
-`main` is the accepted integration baseline.
+Objective
+<-> Epic/Feature/Work
+<-> Specification
+<-> Standard/Policy/Gate
+<-> Code/Contract
+<-> Test/Evidence
+<-> Decision/ADR
+<-> Diagram/Arc42
+<-> Release/Deployment
+<-> Runtime observation.
 
-Parallel work requires owned/shared/protected surfaces, dependency edges, merge order and context refresh.
+Missing links are findings/gaps, not inferred facts.
 
-High-risk shared foundations have one primary owner at a time.
+## Structured coordination cycles
 
-Issues/defects/research/quality findings become durable governed work linked to Git/evidence rather than chat-only observations.
+Agent/session coordination uses evidence-backed cycles:
+- Planning Council;
+- Integration Sync;
+- Research Review;
+- QA/Gate Review;
+- Architecture Consistency Review;
+- Retrospective/Organization Review.
 
-## Governance gates
+The purpose is to collide/reconcile information across areas and detect drift.
 
-Initial gates remain:
+Meetings are structured work artifacts with inputs/outputs; they are not unbounded conversational theater.
 
-G0 Intent/Scope
-G1 Specification
-G2 Standards/Evidence
-G3 Architecture
-G4 Security/Compliance
-G5 Contract/Compatibility
-G6 Engineering Quality
-G7 Operability/Observability
-G8 Documentation
-G9 Reconciliation/Acceptance
+## Organization evolution
 
-Gates should be deterministic/machine-verifiable where practical.
+The LAB organization itself is continuously evaluated using:
+- throughput;
+- cycle time;
+- blocked time;
+- merge conflicts;
+- rework;
+- defects;
+- duplicated implementation;
+- context drift;
+- QA/gate failures;
+- AI usage;
+- user/UX outcomes.
 
-## Current modes
+The Director may recommend adding, splitting, merging or reducing workstreams/sessions.
 
-- PLATFORM_DEV — Architecture AI product development
-- SOLUTION — stable local architect runtime
-- LAB — isolated experimentation/replay/simulation/ML/POCs
-- SERVICE — future central OpenShift runtime
+No agent/workstream responsibility disappears without an explicit successor Tool/Skill/Agent/service/owner and validated state/work transfer.
 
-Current emphasis remains LAB/local development.
+## Standards-first remains mandatory
 
-## OpenShift / distributed scale rule
+DIRECTION-0005 Standards Intelligence remains active.
 
-Scale because evidence requires it.
+New development areas (frontend analytics, multi-agent coordination, knowledge modeling, deployment, security, QA) must first identify applicable standards/framework-native patterns and record evidence/adoption status.
 
-Before adding workstations/providers or promoting to OpenShift SERVICE evaluate:
+Do not create custom frameworks where an approved standard or mature framework already solves the problem.
 
-- parallelizable backlog and queue depth
-- local provider/workstation utilization
-- cycle time and backlog age
-- merge collision/rework
-- coordination overhead
-- persistence/concurrency
-- identity/security/networking
-- telemetry and storage migration
+## Existing cross-cutting direction retained
 
-Additional workstations are justified only when expected throughput gain exceeds coordination cost and shared-state/context governance is mature.
+DIRECTION-0006 retains:
+- Director/Copilot operating model;
+- specification-first/OpenAPI-first where appropriate;
+- standards intelligence/conformance maturity;
+- Analytics/Audit/Evidence plane;
+- CQRS/read models/graph/vector projections;
+- event/saga/notification/session/agent runtime planes;
+- OpenTelemetry/OTLP/Collector road;
+- Arc42 lifecycle/auditable PDF releases;
+- C4/Mermaid/PlantUML technical diagramming;
+- draw.io/iconographic conceptual projections;
+- portfolio/backlog/Jira-ready semantics;
+- LAB simulation/evaluation;
+- OpenShift/service readiness;
+- local-first one-product modular monolith direction.
 
-OpenShift readiness must cover build/release, configuration/secrets, persistence, observability, work/event/saga concurrency, knowledge/data classification and authenticated multi-user dashboard behavior.
+## First next execution sequence
 
-OpenTelemetry application instrumentation is independent from the final backend. Evaluate Collector/Operator deployment in the target cluster before replacing instrumentation because of platform constraints.
+The next development phase should proceed in this order:
 
-## Dashboard / Director visibility
+### Phase 0 — Git and coordination readiness
+Verify `GIT_PARALLEL_DEVELOPMENT_READY` and current repository/module ownership.
 
-Progressively expose:
+### Phase 1 — LAB organization bootstrap
+Create/assign the initial specialist Devin sessions/workstreams with bounded responsibilities and shared context.
 
-- direction/repository baseline
-- objectives/initiatives/epics/features/work
-- blockers/research/ownership
-- parallelism/collision risk
-- standards version/status/conformance maturity
-- gates/evidence freshness
-- issues/quality/refactor
-- Work/Event/Saga/provider state
-- AI usage/cost and deterministic-vs-AI ratio
-- knowledge/source freshness
-- graph/read-model/index/vector growth
-- current/target process knowledge
-- LAB simulation/evaluation
-- Arc42 working/released/delta state
-- OpenShift/service-readiness gates
-- local capacity/scale-out indicators
+### Phase 2 — common context and work plane
+Ensure all sessions consume the same direction, backlog, work/blocker/research model, standards/gates and context refresh mechanism.
 
-## Seed continuity
+### Phase 3 — parallel implementation lanes
+Run at least these lanes concurrently where current code permits:
+- Director Chat / dashboard read model;
+- backend/work/gates;
+- Agent Runtime/Devin integration;
+- data/knowledge/projections;
+- frontend/UX;
+- observability/analytics;
+- QA/architecture conformance;
+- deployment/OpenShift degraded profiles;
+- research/standards.
 
-The rc2 Seed snapshot remains immutable and hash-governed.
+### Phase 4 — independent integration/QA
+Merge in planned order with deterministic checks, independent QA and consistency review.
 
-Post-rc2 direction additions are captured under `work/seed-evolution/` and must be absorbed by a future candidate/reconciliation wave without rewriting historical rc2 evidence.
+### Phase 5 — tangible LAB delivery
+User can run local Architecture AI, see current changes quickly, chat with Director, inspect work/standards/blockers/knowledge/readiness and receive evidence-backed status.
 
-Current delta:
+### Phase 6 — OpenShift development survival
+Deploy the same product with explicit environment capability profile even under worst-case missing central DB/enterprise identity, preserving recoverable Git-derived projections and truthful degradation.
 
-`work/seed-evolution/POST_RC2_DIRECTION_0005_ANALYTICS_STANDARDS_AUTONOMY.md`
+## Material-change triggers added by DIRECTION-0006
 
-## Material-change triggers
-
-Increment direction revision when accepted direction materially changes product shape, modes/deployment, storage authority, protocol/agent/work model, event/saga/security boundary, build/runtime baseline, specification/gates, Director interaction, planning/execution, standards/conformance model, analytics/evidence model, knowledge graph/read-model strategy, AI-cost/autonomy strategy, Arc42 lifecycle, diagram strategy or scale/OpenShift strategy.
+Increment direction again if accepted policy materially changes:
+- LAB speed vs AI-cost priority;
+- agent/session organization model;
+- Git parallelism gate;
+- dev storage/degraded-mode strategy;
+- identity fallback strategy;
+- provider knowledge projection authority;
+- QA/consistency/deployment organization;
+- UX analytics/feedback model.
 
 ## Working loop
 
 Direction
-→ objectives/backlog
-→ planning
-→ specification
-→ standards/evidence
-→ governed work
-→ blocker/research classification
-→ parallel execution where safe
-→ implementation
-→ deterministic validation
-→ quality/refactor
-→ telemetry/evidence
-→ analytics/read models/graph
-→ LAB evaluation
-→ Arc42/document projections
-→ reconciliation/reprioritization/release decision
-→ updated direction
+-> Planning Council
+-> specifications/standards
+-> bounded parallel work
+-> ResearchRequests where needed
+-> implementation branches
+-> deterministic checks
+-> independent QA
+-> consistency reconciliation
+-> integration/main
+-> hot/local LAB validation
+-> telemetry/UX/quality evidence
+-> organization/process retrospective
+-> backlog/reprioritization
+-> Arc42/document/read-model projections
+-> next cycle.
 
-Do not reduce this operating model to chat → code → more chat.
+The target is increasingly autonomous, highly parallel development that remains governed, recoverable, explainable and fast.
