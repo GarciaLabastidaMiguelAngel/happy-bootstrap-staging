@@ -1,264 +1,333 @@
 # Project Direction Baseline
 
 Status: ACTIVE
-Direction revision: DIRECTION-0010
-Previous direction: DIRECTION-0009
-Previous accepted baseline commit: `bd8330d816eab75bf483fb3e1ca6e0f11ee64641`
+Direction revision: DIRECTION-0011
+Previous direction: DIRECTION-0010
+Previous accepted baseline commit: `5d3b2788d48003a5d1a71a73d082010b082a4da9`
 Repository role: Happy Work staging / prompt-governance control plane
-Current operating emphasis: fastest safe LAB construction, bank integration/adoption, process learning, institutional-platform reuse, banking POCs, customer IAM/CQRS, performance/PCR evidence, logical planes and governed Copilot evolution
+Current operating emphasis: fastest safe LAB construction, bank integration/adoption, process learning, governance-to-runtime traceability, event-topology efficiency, customer-channel optimization, DevOps operability and governed Copilot evolution
 
 ## Continuity rule
 
-DIRECTION-0010 incorporates DIRECTION-0009 and all earlier accepted direction unless explicitly overridden below.
+DIRECTION-0011 incorporates DIRECTION-0010 and all earlier accepted direction unless explicitly overridden below.
 
-The exact DIRECTION-0009 baseline remains recoverable from Git history. The immutable rc2 snapshot remains historical and MUST NOT be rewritten in place.
+The exact DIRECTION-0010 baseline remains recoverable from Git history. Frozen historical releases and immutable snapshots remain historical and MUST NOT be rewritten in place.
 
-DIRECTION-0010 is additive, not a reset.
+DIRECTION-0011 is additive, not a reset.
 
-## 1. Integration/adoption/process learning is now an explicit architecture strategy
-
-Governed by:
-`work/INTEGRATION_ADOPTION_AND_PROCESS_LEARNING_STRATEGY.md`
-
-Core lifecycle:
-
-LEARN CURRENT REALITY
--> MAP PURPOSE / AUTHORITY / CONTROLS / PROCESS
--> REUSE EXISTING CAPABILITY
--> INTEGRATE
--> MEASURE
--> OPTIMIZE LOCALLY
--> PROVE
--> STANDARDIZE REUSABLE PATTERN
--> AUTOMATE MECHANICAL WORK
--> REASSESS OWNERSHIP / PLATFORM BOUNDARY
--> REPLACE ONLY WITH EVIDENCE.
-
-Architecture AI is not a greenfield rewrite of the bank.
-
-For every important existing process/platform it should learn purpose, trigger, data, owners, controls, approvals, gates, evidence, SLA, recovery, operational pain, runtime behavior and automation surfaces.
-
-Conflicts between documents, code/configuration and runtime behavior become reconciliation work; they are not silently resolved by invention.
-
-## 2. Existing bank roads remain anchors until evidence says otherwise
-
-User-provided current anchors include Gravity Plus/core-access APIs, core banking systems, API Connect, Glo/OpenShift delivery, Kafka where available, Kibana/OpenShift logging, Smart Notification and Control-M.
-
-These are current integration targets, not automatic replacement targets.
-
-The governing rule remains:
-
-REUSE_AS_IS
--> CONFIGURE / EXTEND / WRAP_ADAPT
--> MEASURE
--> REPLACE ONLY WITH EVIDENCE.
-
-A working capability may be improved; it is not replaced merely because a newer pattern exists.
-
-## 3. Smart Notification is an existing delivery rail to integrate first
+## 1. Governance intent and runtime realization are separate but linked
 
 Governed by:
-`work/SMART_NOTIFICATION_ADOPTION_AND_INTELLIGENCE_MODEL.md`
+`work/GOVERNANCE_TO_RUNTIME_REALIZATION_AND_CONFORMANCE_MODEL.md`
 
-User-provided context states that Smart Notification already carries push, email and SMS and that customer-facing templates can require Legal approval.
+Architecture AI must distinguish:
 
-Architecture AI must first discover actual capabilities, APIs, template lifecycle, delivery guarantees, preferences/fallback behavior, observability, ownership and approval rules.
+GOVERNANCE INTENT
+-> REALIZATION CONTRACT
+-> TECHNICAL IMPLEMENTATION
+-> RUNTIME EVIDENCE
+-> CONFORMANCE RESULT.
 
-Do not infer that `Smart` means prioritization/personalization/intelligence already exists.
+Governance defines meaning, direction, standards, policy, limits, ownership, approvals and required evidence.
 
-Candidate target decomposition:
+Engineering chooses the smallest runtime topology that satisfies those requirements given actual security, workload, operability and environment constraints.
+
+A governed conceptual object does not automatically require a separate physical runtime resource.
+
+Use explicit RealizationBindings:
+
+GovernedConcept
+<-> RealizationBinding
+<-> RuntimeArtifact
+<-> Evidence.
+
+One-to-many and many-to-one mappings are valid when justified.
+
+## 2. Event governance is logical; Kafka topology is physical
+
+Governed by:
+`work/EVENT_GOVERNANCE_LOGICAL_CHANNEL_AND_KAFKA_BINDING_MODEL.md`
+
+Canonical chain:
 
 Business/Domain Event
--> Notification Intent
--> deterministic policy
--> approved template/version
--> channel plan
--> Smart Notification adapter/delivery rail
--> delivery evidence
--> analysis/improvement.
+-> Event Contract
+-> Logical Event Channel
+-> Transport Binding
+-> Physical Topic/Platform Resource
+-> Runtime Evidence.
 
-Legal/institutional approvals remain authoritative. Architecture AI may prepare/validate/package/route but does not self-approve governed customer communications.
+A logical event/channel and a physical Kafka topic are not the same thing.
 
-Intelligence/ML is added only when a measurable need and governed data/evaluation model exist.
+Event governance may preserve institutional/BIAN or future taxonomy/naming requirements while the technical event platform uses a deliberately smaller physical topic set when security, retention, ordering, partitioning, throughput, lifecycle, failure and ownership characteristics are compatible.
 
-## 4. PCR/performance/capacity becomes a progressive engineering gate
+Do not create one physical topic merely because one conceptual event/category exists.
 
-Governed by:
-`work/PCR_PERFORMANCE_CAPACITY_AND_SCALABILITY_GATE_MODEL.md`
+Do not consolidate topics when runtime isolation requirements materially differ.
 
-Performance must be designed and evidenced progressively, not discovered only at late PCR handoff.
+The institutional Schema Registry should be discovered and reused for schema/compatibility governance where its actual configuration supports the need. Do not assume subject naming/compatibility behavior before evidence.
 
-Test ladder:
-- PCR-0 workload/acceptance model;
-- PCR-1 component/pod saturation;
-- PCR-2 service scaling/autoscaling;
-- PCR-3 dependency-aware service testing;
-- PCR-4 end-to-end customer journey;
-- PCR-5 bounded resilience/degradation in approved non-production conditions;
-- PCR-6 preproduction promotion evidence.
+## 3. Conformance/adoption percentages must explain `percent of what`
 
-Each test must state exactly what it proves.
+Opaque metrics such as `BIAN adoption = 50%`, `AIOps adoption = 50%` or `standards alignment = 80%` are prohibited as standalone governance evidence.
 
-A passing single-pod test does not prove end-to-end production capacity.
+Every adoption/conformance result must expose:
+- scope/denominator;
+- applicability;
+- requirements/controls evaluated;
+- compliant/partial/non-compliant/unknown counts;
+- evidence coverage;
+- runtime enforcement coverage where applicable;
+- exceptions/deviations;
+- weighting method if used.
 
-## 5. Performance tests are governed test-as-code assets
+Recommended dimensions:
+1. semantic/model alignment;
+2. policy/rule coverage;
+3. design realization coverage;
+4. runtime enforcement coverage;
+5. evidence/verification coverage;
+6. process/automation coverage;
+7. lifecycle/version/deprecation coverage.
 
-A PCR run should be reconstructable from:
+A dashboard score must always drill down to these facts.
 
-Scenario/workload
-+ assertions/thresholds
-+ environment manifest
-+ test-data profile
-+ application/container version
-+ dependency topology
-+ load-generator topology
-+ tool version
--> evidence package.
-
-Where available, reuse the bank's current performance/load platform.
-
-Java-first LAB candidates include Apache JMeter and Gatling Java DSL, but tool adoption is evidence-driven and must not duplicate a sufficient institutional platform.
-
-Performance evidence should preserve p50/p95/p99, throughput, errors, CPU/memory/JVM behavior, connection/dependency pressure, cache hit/miss, backend/core/DB amplification and comparison with previous baseline.
-
-## 6. Standards alignment for test/quality is explicit
-
-Use standards for the concern they actually cover:
-- TOGAF: architecture baseline/target/transition, governance and implementation governance;
-- ISO/IEC/IEEE 29119 series: test processes/documentation/techniques;
-- ISO/IEC 25010:2023: product quality model and measurable quality objectives;
-- institutional bank PCR/test gates: authoritative where evidenced.
-
-Do not claim standards compliance merely because a reference appears in documentation.
-
-## 7. Architecture AI has six logical planes
+## 4. Spring First is subordinate to existing-capability reuse
 
 Governed by:
-`work/ARCHITECTURE_AI_LOGICAL_PLANES_MODEL.md`
+`work/SPRING_FIRST_TECHNOLOGY_ADOPTION_ORDER.md`
 
-Planes are logical responsibility boundaries, NOT automatic microservices, pods, repositories or agents.
+Decision order:
 
-### Experience / Interaction Plane
-Copilot, dashboard, views, decisions and human interactions.
+0. EXISTING GOVERNED INSTITUTIONAL CAPABILITY;
+1. SPRING ECOSYSTEM for application/runtime gaps we own;
+2. MATURE JAVA/JVM OPEN SOURCE;
+3. MATURE NON-JAVA CAPABILITY when evidence shows better fit;
+4. CUSTOM IMPLEMENTATION LAST.
 
-### Governance / Control Plane
-Intent, direction, standards, policies, specifications, work/backlog, dependencies, gates, environment capability, authorization of Architecture AI actions, dispatch and promotion decisions.
+Java/Spring First is a coherence preference, not permission to duplicate Glo, API Connect, Kafka/Schema Registry, Kibana, Smart Notification, Control-M or another adequate institutional capability.
 
-### Knowledge / Evidence Plane
-Git-governed state, provenance, process knowledge, standards intelligence, graph/read models, research, evolution audit, Arc42/diagram references and test/PCR evidence.
+Within application-owned gaps, inspect Spring first before adding another framework/product.
 
-### Execution / Automation Plane
-Deterministic services, Tools, Skills, Agents/Devin where needed, build/test, Git operations, deployments, jobs, platform adapters, publication and POC/simulation runners.
+## 5. Customer/channel flows remain deterministic optimization roads
 
-### Bank Integration Plane
-Gravity Plus/core access, API Connect, Glo/OpenShift, Exadata, Redis, Kafka, Smart Notification, Control-M, Kibana, identity/PKM and other institutional systems.
+The direction from BI-0001/BI-0002/BI-0003/BI-0004/BI-0005 remains active.
 
-### Observation / Analysis / Learning Plane
-Metrics, traces, logs, audit, builds/deployments, PCR, UX, safe risk outcomes, backlog/throughput, standards conformance, deterministic analytics, simulation and improvement candidates.
+Customer interaction paths should be treated as measurable, mostly deterministic sequences whose work can be minimized, parallelized or moved to the correct layer while preserving security, freshness and authority.
 
-## 8. Plane separation does not override the one-product/modular-monolith direction
+The target is not architectural novelty. It is a governed road where:
+- each channel component requests only necessary semantic data;
+- BFF/channel composition hides unnecessary source complexity;
+- caches/read projections have explicit freshness/reconciliation;
+- event propagation is governed and efficient;
+- authentication/risk/step-up uses the minimum synchronous work policy allows;
+- gateways enforce deterministic authorization;
+- core banking receives only work that truly belongs at the core.
 
-Default:
+Patterns/carriles should emerge from measured repeated needs and become reusable platform capabilities.
 
-ONE GOVERNED PRODUCT
--> modular plane boundaries
--> physical separation only when justified by scale, security boundary, availability, data isolation, lifecycle or operational ownership.
+## 6. Copilot/dashboard becomes the architect's governed working surface
 
-Do not create a microservice per plane.
+Governed by:
+`work/COPILOT_DASHBOARD_HUMAN_WORK_AND_EXPLANATION_MODEL.md`
 
-## 9. The Control Plane coordinates; it does not reimplement every bank platform
+The dashboard must emphasize human-required work rather than every internal task.
 
-Typical flow:
+Primary concepts:
+- My Work;
+- Blockers/Research Requests;
+- Decisions Required;
+- Approval/Evidence Requests;
+- Solution/Initiative Health;
+- Adoption/Conformance drill-down;
+- environment/runtime health where relevant;
+- persistent Copilot chat.
 
-User/Architect
--> Experience Plane
--> Control Plane
--> Knowledge/Evidence context
--> plan/gates
--> Execution/Automation
--> Bank Integration capability
--> runtime/result
--> Observation/Analysis
--> Knowledge/Evidence update
--> Control Plane reconciliation
--> Copilot explanation.
+Architecture AI should continue deterministic/expandable work without asking the architect to do work the platform can safely perform itself.
 
-The Copilot remains the long-term governed entry point while institutional platforms retain their own authority until an explicit migration changes it.
+Human work is for missing evidence, authority, ambiguity, approvals, risk acceptance and genuinely architectural decisions.
 
-## 10. Customer-first POCs remain the proving ground
+The Copilot chat is not a generic chatbot. It is backed by governed state and should answer questions such as:
+- what needs my attention now?;
+- why is this blocked?;
+- what can continue without me?;
+- what evidence supports this?;
+- what does this adoption percentage actually measure?;
+- if governance changes, what runtime artifacts are really impacted?;
+- what should I resolve to unblock the highest-value initiative?
 
-BI-0001 Customer Position, BI-0003 Web BFF, BI-0004 Spring Cloud Gateway and BI-0005 customer IAM continue under DIRECTION-0010.
+Chat may prepare actions, but deterministic UI/gates remain authoritative for approvals, assignments, policy changes, deployments and other material actions.
 
-They should increasingly prove:
-- reuse of current bank roads;
-- semantic/data minimization toward the core;
-- measurable time-to-useful-content;
-- explicit security/risk controls;
-- real PCR/capacity evidence;
-- deployability through Glo/OpenShift where available;
-- traceability from requirement/standard through runtime evidence.
+## 7. DevOps is responsible for progressive operability
 
-The technical objective remains to make each customer journey perform only the bank work that is actually required, at the most appropriate governed layer.
+Governed by:
+`work/DEVOPS_OPERABILITY_AND_AIOPS_ADOPTION_MODEL.md`
 
-## 11. DIRECTION-0009 retained
+DevOps bridges development and operations by learning and governing what is required to make each capability operational in real environments.
 
-All DIRECTION-0009 rules remain active, including:
-- separate customer IAM vs workforce identity;
-- Java-first reuse of mature IAM;
-- no plaintext credential migration;
-- OAuth/OIDC first-party compatibility;
-- JWT/reference-token decision by evidence;
-- explicit revocation/risk-state semantics;
-- adaptive risk/step-up;
-- WebAuthn/DPoP/FAPI standards research;
-- governed CQRS projection consistency;
-- volatile data cached only with valid freshness/reconciliation evidence;
-- Control-M workload inventory/classification before migration;
-- Glo/API Connect/Kafka/Kibana/OpenShift/Santander Framework reuse;
-- Arc42/institutional artifact continuity;
-- DETERMINISTIC -> TOOL -> SKILL -> AGENT;
-- PLAN BEFORE EXECUTION;
-- information classification/PCI;
-- observability/audit/evidence;
-- event/saga/notification/session/agent runtime;
-- knowledge graph/read models;
+For the development cluster, do not assume exact namespace/project count until discovered. Maintain an Environment Capability Matrix for actual namespaces, access, compute, persistence, Kafka/Schema Registry, API Connect, identity/PKM, Redis/Exadata, notification, logging/OTel/Kibana, PCR permissions, network and deployment capabilities.
+
+A deployed pod is not automatically an operational service.
+
+Operability includes, where applicable:
+- health/readiness/liveness;
+- configuration/secrets provenance;
+- logs/metrics/traces;
+- capacity/PCR baseline;
+- recovery/rollback;
+- dependency failure behavior;
+- ownership/escalation;
+- runbook/automation;
+- deployment/version traceability.
+
+DevOps should convert discovered manual/repeatable steps into deterministic automation and feed reusable knowledge back into archetypes, configuration models, gates and standards.
+
+## 8. AIOps is an evidence-driven adoption vector
+
+AIOps is not an automatic autonomous-operations authority.
+
+Start from governed topology, telemetry, runtime/change history, incidents, PCR/capacity evidence and deterministic runbooks.
+
+Then evaluate AI for:
+- triage/correlation;
+- probable-cause ranking;
+- evidence summarization;
+- capacity forecasting;
+- runbook recommendation;
+- change-risk analysis;
+- improvement proposals.
+
+Any remediation execution remains constrained by authorization, policy, deterministic validation, gates and rollback.
+
+Adoption must be measured by explicit dimensions such as telemetry coverage, topology coverage, diagnostic automation, remediation automation, evidence quality, environment/service/incident coverage.
+
+## 9. Six logical planes remain active
+
+DIRECTION-0010 logical planes remain:
+1. Experience / Interaction;
+2. Governance / Control;
+3. Knowledge / Evidence;
+4. Execution / Automation;
+5. Bank Integration;
+6. Observation / Analysis / Learning.
+
+A plane is a logical boundary, not automatically a microservice, repository, pod or agent.
+
+The Governance/Control Plane sets direction/rules/gates and coordinates work. It does not reimplement the bank platforms it governs or integrates.
+
+Knowledge/Evidence preserves the conceptual models and their RealizationBindings to runtime.
+
+Execution/Automation performs bounded work.
+
+Bank Integration adapts to actual institutional systems.
+
+Observation/Analysis/Learning proves what actually happened and feeds improvement/governance reconciliation.
+
+## 10. Existing bank anchors remain integration targets
+
+DIRECTION-0010 and earlier reuse rules remain mandatory for current user-provided anchors including:
+- Gravity Plus/core access;
+- core banking;
+- API Connect;
+- Glo/OpenShift delivery;
+- Kafka/Schema Registry where available;
+- Kibana/OpenShift logging;
+- Smart Notification;
+- Control-M;
+- customer IAM/identity candidates;
+- Redis/Exadata/read projections.
+
+Rule:
+
+LEARN CURRENT REALITY
+-> MAP PURPOSE/AUTHORITY/CONTROLS
+-> REUSE/INTEGRATE
+-> MEASURE
+-> OPTIMIZE
+-> PROVE
+-> STANDARDIZE/AUTOMATE
+-> REPLACE ONLY WITH EVIDENCE.
+
+## 11. Smart Notification / PCR / IAM / CQRS / jobs direction retained
+
+Still active:
+- Smart Notification is reused as the current push/email/SMS delivery rail while actual capability/template/legal/delivery behavior is discovered;
+- PCR/performance/capacity is progressive test-as-code evidence from local/component through OpenShift/service/end-to-end/preproduction;
+- TOGAF, ISO/IEC/IEEE 29119 and ISO/IEC 25010 are used for their appropriate concerns alongside authoritative institutional gates;
+- customer IAM is separate from workforce identity and follows mature Java/Spring reuse, standards-based OAuth/OIDC, adaptive risk/step-up and safe credential migration rules;
+- CQRS/read projections preserve authority/freshness/version/reconciliation semantics;
+- Control-M evolution begins with real workload/malla classification rather than ideological replacement.
+
+## 12. Earlier cross-cutting principles retained
+
+Still mandatory:
+- current audit/regulatory/institutional artifacts remain producible while generation becomes deterministic;
+- exact Banxico/other authority requirements require official/institutional evidence;
+- Copilot remains the long-term governed entry/control point, not source of truth;
+- UNKNOWN -> ResearchRequest/Blocker -> evidence -> reconciliation;
+- DETERMINISTIC -> TOOL -> SKILL -> AGENT for mature capabilities;
+- PLAN BEFORE EXECUTION / specification-first;
+- Git parallel-development gate and explicit ownership boundaries;
+- information classification/PCI/security/fraud/availability as cross-cutting vectors;
+- knowledge governance and provider projections;
+- independent QA/reconciliation;
+- observability/audit/evidence distinction;
+- event/saga/notification/session/agent-runtime separation;
+- local-first modular-monolith / one-product direction until physical split is evidenced;
+- no unnecessary architectural complexity;
 - bounded governed self-evolution.
 
 ## Immediate execution priority
 
 1. Preserve current institutional/audit deliverables.
-2. Complete LAB/Git/agent-organization bootstrap against DIRECTION-0010.
-3. Continue BI-0001 and collect actual banking evidence.
-4. Discover Smart Notification and current PCR/load-test process in parallel.
-5. Prepare BI-0003/BI-0004/BI-0005 only from sufficient real evidence.
-6. Make performance scenarios/test evidence part of POC completion rather than a late separate handoff.
-7. Keep process-learning/adoption records for every major bank platform we integrate.
-8. Feed runtime/PCR/process evidence back into Director prioritization and Architecture/Arc42 projections when required.
+2. Refresh LAB/Git/agent-organization bootstrap against DIRECTION-0011.
+3. Continue BI-0001 source/semantic/freshness evidence and BI-0003/BI-0004/BI-0005 discovery.
+4. Discover actual event governance, Kafka physical topology and Schema Registry configuration before redesigning event roads.
+5. Build the governance-to-runtime RealizationBinding/read-model foundation needed for standards/event/API/data conformance.
+6. Make Copilot Dashboard/My Work/Blocker/Decision/Conformance drill-down a primary UX target.
+7. Discover development OpenShift namespaces/environment capabilities and make DevOps operability evidence explicit.
+8. Continue Smart Notification, PCR, Control-M and customer IAM evidence acquisition in parallel.
+9. Use measured POCs to decide which repeated technical roads become standardized platform patterns.
 
-## Material-change triggers added by DIRECTION-0010
+## Research dependencies
+
+Existing:
+- Issue #4: Glo archetype/OpenShift delivery contracts;
+- Issue #5: institutional/regulatory artifact obligations;
+- Issue #6: web Customer Position/binding/frontend evidence;
+- Issue #7: Spring Cloud Gateway vs API Connect;
+- Issue #8: customer credential/login/binding/risk architecture;
+- Issue #9: Control-M malla inventory;
+- Issue #10: Smart Notification;
+- Issue #11: PCR/load/performance process.
+
+DIRECTION-0011 additionally requires:
+- event governance/Kafka/Schema Registry physical-realization discovery;
+- development environment/namespaces/DevOps operability discovery;
+- current standards/adoption scoring evidence where available.
+
+## Material-change triggers added by DIRECTION-0011
 
 Increment direction again if accepted policy materially changes:
-- logical-plane boundaries or physical separation policy;
-- Smart Notification delivery/governance authority;
-- institutional PCR/performance gate authority/tooling;
-- process-learning/adoption lifecycle;
-- current bank anchor/replacement strategy;
-- Copilot execution authority across those platforms.
+- governance-to-runtime realization model;
+- event logical-channel/physical-topic binding policy;
+- conformance/adoption scoring semantics;
+- Spring-first technology adoption order;
+- Copilot human-work/action authority;
+- DevOps/AIOps operational authority;
+- logical-plane responsibilities/physical separation.
 
 ## Working loop
 
-Current bank capability/process
--> discover/map authority/controls
--> reuse/integrate
--> specification/plan
--> bounded implementation/POC
--> deterministic tests/PCR
--> institutional deployment/gates
--> runtime evidence
--> analysis/learning
--> optimization candidate
--> backlog/direction decision
--> Arc42/audit projection where required
+Governance/standard/process intent
+-> governed conceptual model
+-> RealizationBinding
+-> minimal technical implementation
+-> deterministic validation/PCR
+-> runtime/operability evidence
+-> conformance/adoption analysis
+-> Copilot explanation/human decision where needed
+-> improvement/governance reconciliation
 -> next cycle.
 
-The target is a bank-integrated Architecture AI platform that learns existing processes, reuses what already works, proves improvements quantitatively, and progressively turns the Copilot into the governed control surface without creating unnecessary architectural complexity.
+The target is a technically efficient banking platform in which governance stays semantically rich and auditable, runtime stays deliberately simple, and Architecture AI can always explain exactly how one realizes the other.
