@@ -1,233 +1,314 @@
 # Project Direction Baseline
 
 Status: ACTIVE
-Direction revision: DIRECTION-0012
-Previous direction: DIRECTION-0011
-Previous accepted baseline commit: `f07fd3d06589b496320b6fb38fcdf773fa258ebc`
+Direction revision: DIRECTION-0013
+Previous direction: DIRECTION-0012
+Previous accepted baseline commit: `abc0d0fbc00afab5338ab4542b6aea396ab38801`
 Repository role: Happy Work staging / prompt-governance control plane
-Current operating emphasis: governed cognitive Copilot, deterministic customer/channel optimization, stable modularity, process modernization, banking request/reference traceability, standards/compliance radar, DevOps operability and evidence-driven platform evolution
+Current operating emphasis: governed cognitive Copilot, consumer-first technical capabilities, arborescent modularity, knowledge direction, deterministic customer/channel optimization, evidence-driven physical extraction and infrastructure placement
 
 ## Continuity rule
 
-DIRECTION-0012 incorporates DIRECTION-0011 and all earlier accepted direction unless explicitly overridden below.
+DIRECTION-0013 incorporates DIRECTION-0012 and all earlier accepted direction unless explicitly overridden below.
 
-The exact DIRECTION-0011 baseline remains recoverable from Git history. Frozen historical releases and immutable snapshots remain historical and MUST NOT be rewritten in place.
+The exact DIRECTION-0012 baseline remains recoverable from Git history. Frozen historical releases and immutable snapshots remain historical and MUST NOT be rewritten in place.
 
-DIRECTION-0012 is additive, not a reset.
+DIRECTION-0013 is additive and a material clarification of the modular-boundary/physical-split strategy, not a reset.
 
-## 1. The architect's primary cognitive surface is the Dashboard + Copilot
-
-Governed by:
-`work/COGNITIVE_COPILOT_CHAT_AND_CONTEXT_MODEL.md`
-
-Architecture AI must provide a persistent governed Copilot interaction inside the dashboard.
-
-The chat is not a generic chatbot and is not canonical project state.
-
-Core path:
-
-Architect / active dashboard context
--> intent
--> identity/role/environment/information-classification resolution
--> governed Context/Evidence Pack
--> deterministic read models / graph / standards / runtime evidence
--> bounded Tools/Skills/Devin execution when authorized
--> grounded explanation / plan / research request / prepared action
--> deterministic gate/action for material changes.
-
-Do not inject the entire knowledge base into every prompt. Context must be bounded, relevant, provenance-backed and authorization-aware.
-
-The same platform capabilities/skills may be shared by multiple architects while context, authorized scope, assigned work, decisions and evidence requests differ.
-
-The Copilot should answer questions such as:
-- what needs my attention?;
-- why is this blocked?;
-- what can continue without me?;
-- what evidence supports this decision?;
-- what standard applies and what is the exact denominator of the adoption score?;
-- how is a governed concept realized technically?;
-- why is a capability a module or service?;
-- what runtime/PCR evidence justifies the topology?;
-- what should I resolve next for maximum unblock value?
-
-Material approvals, deployments, policy changes and other actions remain deterministic/auditable even when initiated conversationally.
-
-## 2. Modularity is designed from stable capabilities/change reasons, not framework labels
+## 1. Start from consumers and capabilities, not microservice count
 
 Governed by:
-`work/MODULARITY_BOUNDARIES_AND_EVOLUTION_GUARDRAILS.md`
+`work/CONSUMER_TECHNOLOGY_CAPABILITY_OFFERING_MODEL.md`
 
-Spring Modulith is a technical realization aid for a modular Spring Boot application; it is not the architecture definition itself.
+Architecture AI and the banking technical platform should identify:
 
-Module boundaries should be based on stable capability ownership, authoritative state, provided/required interfaces and expected independent change.
+ConsumerType
+-> ConsumerJourney/UseCase
+-> RequiredTechnicalCapability
+-> Quality/Security/Freshness/Capacity profile
+-> existing institutional capability/reuse anchor
+-> smallest justified technical realization
+-> runtime/PCR evidence.
 
-Do not create modules mechanically from:
-- TOGAF layers/concepts;
-- one API each;
-- one table each;
-- one logical plane each;
-- one agent each;
-- one current team each;
-- one imagined future microservice each.
+Initial logical consumer classes may include web, native mobile, branch, ATM, internal/BFF/API, event, batch/job, read-projection, identity/security/risk, DevOps/operations and architect/Copilot consumers. These are consumer types, not deployment units.
 
-Where Spring Modulith is used, enforce architecture rules/tests for cycles, module API/internal access, explicit dependencies and module-level verification/documentation.
+The primary objective is not `more APIs` or `fewer APIs`; it is:
 
-Internal events are used where real temporal/ownership decoupling exists. External Kafka publication is a separate TransportBinding decision.
+`MINIMUM NECESSARY WORK PER CUSTOMER/CONSUMER OUTCOME`
 
-The objective is not zero refactoring. It is to avoid foundational rewrites caused by accidental coupling and premature physical decomposition.
+while preserving correctness, authority, security, availability, operability and evidence.
 
-## 3. Existing API/microservice topology is measured before being redesigned
+Repeated measured needs may become reusable platform roads/patterns; a single theoretical use case is not enough to standardize a platform capability.
 
-User-provided context indicates a current API platform that may have roughly one microservice per API and a large API count.
+## 2. Arborescence is now an explicit modular-growth model
 
-This is not automatically wrong and must not be consolidated from ideology.
+Governed by:
+`work/ARBORESCENT_CAPABILITY_MODULARITY_AND_DEPLOYMENT_EVOLUTION_MODEL.md`
 
-Evaluate actual topology using:
-- independent scaling;
-- failure/availability isolation;
-- security boundaries;
-- data authority;
-- ownership/release independence;
-- dependency/call amplification;
-- OpenShift namespace/resource/operational overhead;
+Core growth law:
+
+ROOT PRODUCT / PLATFORM
+-> stable capability trunks
+-> bounded branches / nested capabilities
+-> explicit module interfaces
+-> runtime evidence
+-> selective branch extraction only when justified
+-> measure again.
+
+Architecture AI remains one governed product / modular Spring Boot application by default.
+
+Spring Modulith is a logical modularity/verification mechanism, not the physical architecture by itself.
+
+Do not derive one module from each TOGAF concept, API, table, plane, agent, team or imagined future microservice.
+
+Module boundaries should follow stable capability ownership, authoritative state, change reason, provided/required interfaces and dependency direction.
+
+## 3. Tree for decomposition; graph for truth
+
+Arborescent/tree views are useful for:
+- capability decomposition;
+- planning;
+- work navigation;
+- impact drill-down;
+- module ancestry;
+- deciding where a branch could eventually separate.
+
+But standards, events, APIs, data, gates, processes and runtime dependencies cross branches.
+
+Therefore:
+
+`TREE FOR DECOMPOSITION / NAVIGATION`
++
+`GRAPH FOR CROSS-CUTTING RELATIONSHIPS / CANONICAL KNOWLEDGE`.
+
+Do not duplicate canonical concepts merely to preserve a strict tree.
+
+## 4. Knowledge itself has a governed direction
+
+Governed by:
+`work/KNOWLEDGE_DIRECTION_AND_ARBORESCENT_PROJECTION_MODEL.md`
+
+Knowledge direction:
+
+RAW SOURCE/INFORMATION
+-> EVIDENCE UNIT
+-> NORMALIZED/CANDIDATE FACT
+-> SOURCE-VERIFIED KNOWLEDGE
+-> GOVERNED SEMANTIC RELATIONSHIPS
+-> decision/standard/process/specification linkage
+-> technical RealizationBinding
+-> runtime evidence
+-> learned pattern/reusable capability
+-> authorized contextual projection to human/agent.
+
+Knowledge is not accumulated without purpose. It should progressively reduce rediscovery, support decisions/gates, explain technical realization and enable deterministic execution.
+
+Use conceptual layers such as evidence, semantics/domain, architecture/governance, technical realization, runtime/operations, analytics/learning and projections.
+
+Use cross-cutting vectors such as security, fraud/risk, availability, data/privacy, standards/compliance, performance/capacity, cost/FinOps, process and ownership/authority.
+
+## 5. Module extraction is an evidence-driven lifecycle
+
+Candidate module lifecycle:
+
+`IN_PROCESS_INTERNAL`
+-> `IN_PROCESS_EXTRACTABLE`
+-> `EXTRACTION_CANDIDATE`
+-> `INDEPENDENT_DEPLOYABLE`
+-> `DEDICATED_RUNTIME_POOL_OR_CLUSTER_CANDIDATE` only when separately justified.
+
+A module does not have to progress through all states.
+
+Material extraction triggers include:
+- asymmetric scaling;
+- incompatible resource profile;
+- blast-radius/failure isolation;
+- independent SLO/availability;
+- security/compliance/trust boundary;
+- data authority/isolation;
+- independent lifecycle/release cadence;
+- network/locality/latency;
+- operational ownership;
+- materially different dependency topology;
+- measured cost/capacity benefit;
+- hard platform constraint.
+
+The default is to keep the capability in-process until evidence creates extraction pressure.
+
+## 6. Cheap extraction is a design goal, not a configuration-only promise
+
+To keep a branch extractable, prefer:
+- explicit provided/required interfaces;
+- no access to module internals;
+- no dependency cycles;
+- clear data/state ownership;
+- no uncontrolled cross-module shared writes;
+- explicit transaction boundaries;
+- semantic identifiers;
+- idempotency where future remote/async execution is plausible;
+- stable events/contracts where real temporal decoupling exists;
+- adapters around bank/external systems;
+- externalized configuration/secrets;
+- observability/correlation;
 - PCR/capacity evidence;
-- observability/support burden;
-- change coupling and deployment frequency.
+- versioned contract evolution.
 
-Classify actual services as KEEP / CONSOLIDATE_CANDIDATE / SPLIT_CANDIDATE / WRAP_ADAPT / UNKNOWN.
+However, extraction cannot always be `only configuration`.
 
-Primary technical objective remains performant customer/API roads with minimal unnecessary requests/work, not maximizing or minimizing microservice count as a goal by itself.
+If a branch shares in-memory transactions, direct database writes, object graphs or hidden coupling, physical separation requires real refactoring/data/operational change.
 
-## 4. Banking interactions distinguish query, transaction, request and long-running operation
+Target:
 
-Governed by:
-`work/BANKING_REQUEST_TRANSACTION_AND_REFERENCE_TRACEABILITY_MODEL.md`
+`LOW-COST EXTRACTION WHEN JUSTIFIED`
 
-Architecture AI must distinguish:
-- QUERY;
-- COMMAND / authoritative TRANSACTION;
-- accepted asynchronous REQUEST;
-- LONG_RUNNING_OPERATION.
+not:
 
-An accepted request is not the same as a completed banking transaction.
+`EVERY MODULE BECOMES A MICROSERVICE WITHOUT REFACTORING`.
 
-For eligible operations, after required synchronous authentication/risk/business acceptance controls pass, the platform may acknowledge durable responsibility quickly and complete authoritative processing asynchronously.
+## 7. Spring Modulith role is explicit
 
-This is never assumed from performance preference. Legal/regulatory/business/customer-expectation eligibility must be evidenced per operation.
+Use Spring Modulith for logical application modules, named/provided interfaces, explicit allowed dependencies, structural verification, module integration testing, documentation and module-level observation where useful.
 
-Candidate state model:
-RECEIVED -> VALIDATING -> ACCEPTED -> PROCESSING -> CORE_ACCEPTED -> COMPLETED, with explicit rejected/failure/retry/compensation paths where applicable.
+Application events are preferred when real ownership/temporal decoupling exists; do not make every method call asynchronous.
 
-Beneficiary registration is a research candidate example, not an approved async flow.
+Externalization to Kafka or another broker remains a separate EventContract/LogicalChannel/TransportBinding decision.
 
-## 5. Reference/folio correlation is a cross-channel traceability capability
+Nested modules may model stable internal branches, but nesting depth must remain purposeful rather than decorative.
 
-Do not assume every operation should create a new platform folio.
-
-Preserve a stable internal OperationId and typed links among references such as:
-- customer-facing reference;
-- channel/BFF/request reference;
-- correlation/trace identifiers;
-- Gravity Plus reference;
-- core banking reference;
-- external payment/network references where applicable.
-
-A customer-friendly reference is justified only when it improves an actual asynchronous/support/cross-channel problem and never replaces/destroys authoritative references.
-
-When an authoritative core reference is timely, usable and appropriate, return/reuse it rather than create duplication.
-
-Authorized support should be able to resolve a permitted reference to operation state, linked references, authoritative outcome and audit/recovery evidence.
-
-Digital web/mobile are first scope; the model should not prevent later branch/ATM adoption.
-
-## 6. Process governance is a first-class modernization capability
+## 8. Application modularity and infrastructure placement are separate decisions
 
 Governed by:
-`work/PROCESS_GOVERNANCE_AND_DETERMINISTIC_EXECUTION_MODEL.md`
+`work/INFRASTRUCTURE_PLACEMENT_CAPACITY_AND_CLUSTER_STRATEGY.md`
 
-Separate:
+Maintain explicit mapping:
 
-PROCESS GOVERNANCE
--> purpose / owner / policy / controls / states / gates / evidence / SLA
+Capability
+<-> ApplicationModule
+<-> DeployableUnit
+<-> OpenShift Namespace/Project
+<-> Cluster
+<-> Environment
+<-> Runtime/PCR evidence.
 
-PROCESS DESIGN
--> steps / decisions / dependencies / sync-vs-async / retries / events / human work
+Mappings can be many-to-one or one-to-many where justified.
 
-PROCESS REALIZATION
--> Spring flow/state/batch/event/job/external platform/human workflow
+A domain, initiative or module does not automatically require a dedicated namespace, cluster or physical site.
 
-PROCESS RUNTIME
--> instances / states / timings / correlation / evidence.
+Consider the smallest placement scope that satisfies requirements:
+1. same process/module;
+2. separate pod/deployment;
+3. separate service;
+4. separate namespace/project;
+5. separate node pool/runtime class where available;
+6. separate cluster;
+7. separate physical-site/region architecture where required.
 
-The modernization objective is to learn current processes and progressively make repeatable mechanical steps deterministic where permitted, while preserving human/regulatory authority where required.
+## 9. Current multi-cluster estate must be measured before redesign
 
-A Process Governance/Direction capability may exist in Architecture AI but does not automatically require a dedicated permanent agent or separate service.
+User-provided context indicates approximately six OpenShift clusters, each highly available across two physical data centers, historically associated with initiatives/domains and potentially budget/accountability separation.
 
-## 7. Gates are justified decision points, not ceremony
+Do not assume this is optimal; do not assume two clusters would be enough either.
 
-Every gate must capture:
-- purpose;
-- authority/owner;
-- applicability;
-- required inputs/evidence;
-- pass/fail/conditional criteria;
-- exceptions or compensating/customized treatment only where valid;
-- environment/stage;
-- automation level;
-- evidence retention;
-- downstream work unlocked.
+`Fewer clusters could satisfy the same needs` is a research hypothesis only.
 
-Do not create gates simply because a framework diagram contains a gate.
+Before any consolidation/placement decision collect actual:
+- allocated vs used CPU/memory;
+- peak/average capacity;
+- service/pod counts;
+- HPA behavior;
+- quotas/reservations;
+- network/dependency topology;
+- security/trust boundaries;
+- availability/failure history;
+- upgrade/maintenance constraints;
+- physical-site failover behavior;
+- PCR/capacity headroom;
+- platform support cost;
+- chargeback requirements;
+- blast-radius tolerance.
 
-Performance/PCR, security, architecture, API, deployment, regulatory and process gates must be traceable to actual requirements and evidence.
+Dedicated cluster is justified only by evidence such as hard isolation, independent availability/fault domain, specialized capacity/platform lifecycle, locality or another constraint that namespaces/quotas/network policy/node pools cannot adequately cover.
 
-## 8. Compliance/standards becomes an explainable radar
+## 10. Chargeback is not the same as isolation
 
-Governed by:
-`work/COMPLIANCE_RADAR_AND_GATE_TRACEABILITY_MODEL.md`
+If historical domain-specific clusters primarily made cost allocation easier, evaluate logical cost attribution before preserving physical fragmentation.
 
-Architecture AI must maintain an explicit chain:
+Candidate cost dimensions:
+- initiative/solution;
+- capability;
+- deployment/service;
+- namespace/project;
+- environment;
+- resource request/actual use;
+- shared-platform allocation.
 
-Authority/Standard/Policy
--> ApplicabilityDecision
--> Requirement/Objective/Control
--> ControlRealization
--> Gate/Test
--> Evidence
--> Conformance status
--> Exception/Risk/Remediation
--> review/version lifecycle.
+Do not force a dedicated cluster merely because humans need to know what a domain costs when governed FinOps/resource attribution can answer it with shared infrastructure.
 
-Distinguish legal/regulatory, contractual/industry mandatory, institutional policy, architecture standard, engineering best practice and research/candidate practice.
+## 11. Existing API/microservice estate remains evidence-first
 
-A recommendation must never be presented as a regulatory obligation.
+The current tendency toward one microservice per API and a large API count is not automatically wrong.
 
-Adoption/conformance scores must always answer `percent of what` with denominator, applicability, method, evidence/runtime-enforcement coverage and exceptions.
+Evaluate each representative topology with:
+- scaling/failure/security independence;
+- data authority;
+- release/ownership independence;
+- downstream call amplification;
+- OpenShift overhead;
+- PCR/capacity;
+- support/observability burden;
+- change coupling/deployment frequency.
 
-PCI DSS scope/requirements must be derived from current official PCI SSC material plus actual data flows/institutional assessment. Preserve the distinction among Defined Approach, compensating controls and Customized Approach where the standard permits them.
+Classify KEEP / CONSOLIDATE_CANDIDATE / SPLIT_CANDIDATE / WRAP_ADAPT / UNKNOWN.
 
-Other banking obligations (financial regulator, privacy, cryptography, fraud/authentication, operational resilience, secure development, retention, accessibility, institutional policy) require official/institutional evidence before being marked mandatory.
+Do not optimize service count as a vanity metric.
 
-## 9. DIRECTION-0011 governance-to-runtime separation remains mandatory
+## 12. DIRECTION-0012 cognitive Copilot remains active
 
-Governance intent and physical implementation remain separate but explicitly linked:
+Dashboard + governed Copilot remains the primary architect cognitive surface.
+
+Context path remains:
+
+identity/role/environment/classification/solution/work context
+-> bounded Context/Evidence Pack
+-> deterministic read models/graph/standards/runtime evidence
+-> bounded Tools/Skills/Devin where authorized
+-> grounded explanation/plan/research/prepared action
+-> deterministic gate/action for material change.
+
+The Copilot should now also explain:
+- which consumer requires a capability;
+- where a capability sits in the arborescent decomposition;
+- why it remains in-process or was extracted;
+- which module/service/cluster realizes it;
+- what PCR/runtime evidence supports the placement;
+- what changes if one branch is separated;
+- how a tree view relates to cross-cutting graph knowledge.
+
+Chat/session state is not canonical project state.
+
+## 13. DIRECTION-0012 process/request/compliance direction remains active
+
+Still mandatory:
+- banking interactions distinguish QUERY / TRANSACTION / REQUEST / LONG_RUNNING_OPERATION;
+- accepted request is not completed transaction;
+- OperationId + typed reference/folio correlation preserves authority/auditability;
+- process governance separates governance/design/realization/runtime;
+- gates require explicit authority, applicability, evidence and pass criteria;
+- standards/compliance radar explains denominator/applicability/evidence/exceptions;
+- PCI/financial-regulator/institutional requirements require current official/institutional evidence;
+- customer/channel paths are mostly deterministic measurable optimization roads.
+
+## 14. DIRECTION-0011 governance-to-runtime and event separation remains active
+
+Governance intent and technical realization remain separate but explicitly linked:
 
 GOVERNANCE INTENT
--> REALIZATION CONTRACT / BINDING
+-> REALIZATION BINDING
 -> TECHNICAL IMPLEMENTATION
 -> RUNTIME EVIDENCE
 -> CONFORMANCE.
 
-Rich conceptual/governance structure must not cause equally rich runtime resource count automatically.
-
-The target remains:
-
-RICH GOVERNANCE
-+ SIMPLE JUSTIFIED RUNTIME
-+ EXPLICIT BINDINGS
-+ MEASURABLE PROOF.
-
-## 10. Event governance logical/physical separation remains mandatory
+Event chain remains:
 
 Business/Domain Event
 -> Event Contract
@@ -236,104 +317,20 @@ Business/Domain Event
 -> Physical Kafka/platform resource
 -> Runtime Evidence.
 
-BIAN/institutional semantic taxonomy may remain rich even when a smaller physical Kafka topic set is technically sufficient.
+Rich semantic governance must not create unnecessary runtime resource count.
 
-Physical separation/consolidation must be justified by security, retention/compaction, ordering/keying, throughput, lifecycle, failure isolation, ownership and platform constraints.
-
-Reuse the actual institutional Schema Registry when evidenced; do not infer its subject naming or compatibility policy.
-
-## 11. Customer/channel roads remain mostly deterministic optimization problems
-
-For web/mobile and future channels, represent flows as explicit measurable steps with:
-- input/output;
-- precondition;
-- authority;
-- semantic data required;
-- sync/async classification;
-- timeout/retry;
-- freshness/cache policy;
-- risk/security requirement;
-- emitted events;
-- next states;
-- latency budget.
-
-Architecture AI may optimize by removing unnecessary calls, parallelizing independent work, caching/projecting safe data, moving work to appropriate layers and reducing core amplification.
-
-Design/reasoning may use AI; normal runtime request processing should remain deterministic unless an evidenced use case requires otherwise.
-
-## 12. Patterns are standardized after repeated measured need
-
-Do not create a platform pattern solely from one theoretical solution.
-
-Sequence:
-POC/solution evidence
--> repeated similar need
--> common semantics/constraints
--> pattern candidate
--> deterministic specification/implementation
--> adoption/gates/evidence
--> reusable platform capability.
-
-This applies to semantic projections, BFFs, request processing, references, event bindings, notification intents, IAM/risk, PCR, jobs and future patterns.
-
-## 13. Spring First technology order remains
+## 15. Existing-platform-first / Spring-first order remains active
 
 Decision order:
 0. existing governed institutional capability;
-1. Spring ecosystem for application/runtime gaps we own;
+1. Spring ecosystem for gaps we own;
 2. mature Java/JVM open source;
-3. mature non-Java technology when evidence shows better fit;
+3. mature other technology when evidence shows better fit;
 4. custom implementation last.
 
-Spring/Java coherence does not justify duplicating Glo, API Connect, Kafka/Schema Registry, Kibana, Smart Notification, Control-M or another sufficient bank capability.
+Spring/Java coherence is not permission to duplicate Glo, API Connect, Kafka/Schema Registry, Kibana, Smart Notification, Control-M or another sufficient institutional capability.
 
-## 14. Dashboard human-work model remains central
-
-Primary dashboard concepts:
-- My Work;
-- Blockers / Research Requests;
-- Decisions Required;
-- Approval / Evidence Requests;
-- active solution/POC health;
-- standards/compliance/adoption drill-down;
-- environment/operability/runtime health;
-- persistent governed Copilot chat.
-
-Humans should be assigned missing evidence, genuine decisions, approvals, ambiguity and risk acceptance—not deterministic work the platform can continue safely.
-
-## 15. DevOps owns progressive operability; development cluster is proving ground
-
-Continue discovery through the Environment Capability Matrix.
-
-DevOps must bridge implementation and real operation by learning/configuring:
-- namespaces/access/resources;
-- Glo/pipelines;
-- config/secrets;
-- routes/network;
-- API Connect/gateways;
-- Kafka/Schema Registry;
-- Redis/Exadata;
-- identity/PKM;
-- Smart Notification;
-- logging/Kibana/OTel;
-- PCR/load permissions/topology;
-- health/readiness/liveness;
-- recovery/rollback;
-- ownership/runbooks.
-
-The development OpenShift environment should support realistic end-to-end demonstrations and progressive PCR evidence without pretending DEV equals PRE/PROD where capabilities differ.
-
-Gradle/build orchestration remains governed by the current build direction and should evolve only when actual deployment/pipeline evidence justifies structural change.
-
-## 16. AIOps remains evidence-driven assistance
-
-Start from topology + metrics/logs/traces + deployments/changes + incidents + PCR/capacity + runbooks.
-
-Use AI first for triage, correlation, probable cause, evidence summaries, capacity forecasting, runbook recommendation and change-risk analysis.
-
-Remediation authority remains deterministic, permissioned, gated and rollback-capable.
-
-## 17. Six logical planes remain active
+## 16. Six logical planes remain active
 
 1. Experience / Interaction;
 2. Governance / Control;
@@ -342,13 +339,27 @@ Remediation authority remains deterministic, permissioned, gated and rollback-ca
 5. Bank Integration;
 6. Observation / Analysis / Learning.
 
-A plane is not automatically a module, agent, repository, pod or microservice.
+A plane is not automatically a module, service, agent, repository, pod or cluster.
 
-The new cognitive, process, compliance and banking-reference models map across these planes rather than adding new planes by default.
+The arborescent capability model may be projected across planes without turning plane boundaries into physical deployment boundaries.
 
-## 18. Existing bank anchors and adoption strategy remain active
+## 17. DevOps/PCR/AIOps role becomes even more important
 
-Current user-provided integration anchors include Gravity Plus/core access, core banking, API Connect, Glo/OpenShift delivery, Kafka/Schema Registry, Kibana, Smart Notification, Control-M, customer IAM candidates, Redis/Exadata/read projections and current API/service implementations.
+DevOps owns progressive operability and environment capability discovery.
+
+PCR/capacity/runtime evidence is a direct input to:
+- module extraction;
+- scaling policy;
+- service topology;
+- namespace placement;
+- cluster placement/consolidation;
+- cost/capacity decisions.
+
+AIOps remains evidence-driven assistance over topology, telemetry, deployments, incidents, PCR and runbooks. Remediation remains governed/deterministic.
+
+## 18. Existing bank anchors/adoption strategy remain active
+
+Current user-provided integration anchors include Gravity Plus/core access, core banking, API Connect, Glo/OpenShift delivery, Kafka/Schema Registry, Kibana, Smart Notification, Control-M, customer IAM candidates, Redis/Exadata/read projections and current APIs/services.
 
 Rule:
 
@@ -359,82 +370,52 @@ LEARN CURRENT REALITY
 -> OPTIMIZE
 -> PROVE
 -> STANDARDIZE/AUTOMATE
--> REPLACE ONLY WITH EVIDENCE.
-
-## 19. Earlier cross-cutting principles retained
-
-Still mandatory:
-- current audit/regulatory/institutional artifacts remain producible while generation becomes deterministic;
-- exact Banxico/CNBV/other authority requirements require official/institutional evidence;
-- customer IAM remains separate from workforce identity;
-- no plaintext credential migration;
-- OAuth/OIDC/JWT/reference-token/adaptive-risk/step-up decisions remain evidence-driven;
-- CQRS/read projections preserve authority/freshness/version/reconciliation;
-- Smart Notification is reused before parallel delivery infrastructure;
-- Control-M modernization starts from real workload classification;
-- PCR/performance/capacity is progressive test-as-code evidence;
-- UNKNOWN -> ResearchRequest/Blocker -> evidence -> reconciliation;
-- DETERMINISTIC -> TOOL -> SKILL -> AGENT for mature capabilities;
-- PLAN BEFORE EXECUTION / specification-first;
-- Git parallel-development gate and explicit ownership boundaries;
-- information classification/PCI/security/fraud/availability as cross-cutting vectors;
-- knowledge governance/provider projections;
-- independent QA/reconciliation;
-- observability/audit/evidence distinction;
-- event/saga/notification/session/agent-runtime separation;
-- local-first one-product modular-monolith direction until physical split is evidenced;
-- bounded governed self-evolution;
-- no unnecessary architectural complexity.
+-> EXTRACT/REPLACE/RELOCATE ONLY WITH EVIDENCE.
 
 ## Immediate execution priority
 
-1. Refresh LAB/Git/bootstrap against DIRECTION-0012 before first actual handoff.
-2. Make Dashboard/Copilot cognitive ContextResolver + My Work/Blocker/Decision/Conformance read model a primary implementation target.
-3. Define/verify module boundaries before scaling Spring Modulith implementation; enforce architecture verification in build.
-4. Continue BI-0001/BI-0003/BI-0004/BI-0005 evidence and customer-channel optimization.
-5. Discover current API/microservice/OpenShift topology before proposing consolidation.
-6. Select one representative banking operation for request-vs-transaction/reference discovery only after current semantics/regulatory/process evidence is available.
-7. Build process-governance/gate models from real engineering/bank processes, not abstract ceremony.
-8. Build standards/compliance radar with precise applicability/denominator/evidence semantics.
-9. Continue event/Kafka/Schema Registry, DEV OpenShift, Smart Notification, PCR, Control-M and IAM evidence acquisition in parallel.
-10. Use measured repeated needs to decide which patterns become platform roads.
+1. Refresh LAB/bootstrap/handoff context against DIRECTION-0013 before first actual Devin handoff.
+2. Make consumer->capability->module/service/runtime mapping explicit in the architecture model/read models.
+3. Verify Spring Modulith boundaries/allowed dependencies and extraction-readiness rules before scaling implementation.
+4. Add arborescent tree projections while keeping canonical cross-cutting knowledge graph-capable.
+5. Continue BI-0001/BI-0003/BI-0004/BI-0005 and deterministic customer-channel optimization.
+6. Discover actual API/service/namespace/cluster topology, utilization and PCR evidence before consolidation/extraction decisions.
+7. Continue process/compliance/event/Smart Notification/Control-M/IAM/DEV-environment research in parallel.
+8. Use repeated measured needs to promote reusable technical roads, not speculative platform complexity.
 
 ## Research dependencies
 
-Existing Issues #4-#13 remain active as applicable.
+Issues #4-#16 remain active as applicable.
 
-DIRECTION-0012 additionally requires evidence for:
-- actual API/microservice/namespace topology and operational cost/coupling;
-- current customer-facing/core folio/reference semantics for representative operations;
-- asynchronous eligibility/process rules for any request-style banking operation;
-- current process/gate ownership and evidence;
-- exact regulatory/compliance applicability beyond already evidenced frameworks.
+DIRECTION-0013 additionally requires:
+- authoritative cluster/namespace/platform-capacity inventory;
+- real utilization/cost/availability/security/chargeback evidence;
+- consumer/capability mapping for representative channel/platform journeys;
+- extraction-pressure evidence for representative modules/services.
 
-## Material-change triggers added by DIRECTION-0012
+## Material-change triggers added by DIRECTION-0013
 
 Increment direction again if accepted policy materially changes:
-- Copilot canonical-state/action authority;
-- modular boundary/physical-split strategy;
-- one-microservice-per-API architecture policy;
-- banking asynchronous request eligibility model;
-- enterprise customer/reference/folio authority;
-- process-governance authority/model;
-- compliance-radar authority/scoring model;
-- gate authority/exception model.
+- arborescent decomposition model;
+- tree-vs-graph canonical knowledge rule;
+- module extraction lifecycle/criteria;
+- Spring Modulith verification/extraction strategy;
+- infrastructure placement or cluster-consolidation strategy;
+- consumer capability taxonomy;
+- chargeback/isolation policy.
 
 ## Working loop
 
-Human/solution intent
--> governed cognitive context
--> standards/process/current-bank evidence
--> architecture/modular realization
--> deterministic work/gates
--> institutional deployment/runtime
--> operation/reference/event correlation
--> PCR/telemetry/audit evidence
--> conformance/learning
--> Copilot explanation/decision
+Consumer/journey
+-> required capability and quality profile
+-> existing-platform reuse
+-> arborescent module realization
+-> deterministic tests/gates
+-> runtime/PCR/cost/operability evidence
+-> extraction/placement decision if pressure exists
+-> knowledge graph/read-model update
+-> Copilot explanation
 -> governed improvement
--> next cycle.
+-> next branch/cycle.
 
-The target is an architecture platform where the architect can ask high-level conceptual questions and receive a precise, evidence-backed explanation of both governance and technical implementation; customer journeys become increasingly efficient and deterministic; operational complexity stays justified; and every important process, reference, standard and runtime decision remains explainable.
+The target is a platform that grows like a governed tree rather than a pile of microservices: a stable trunk, explicit low-coupling branches, graph-connected knowledge and selective physical extraction/placement only where measurable technical need justifies it.
