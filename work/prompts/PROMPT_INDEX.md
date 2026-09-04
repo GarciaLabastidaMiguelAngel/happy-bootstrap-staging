@@ -1,7 +1,7 @@
 # Devin Prompt Index
 
 Status: ACTIVE
-Direction revision: `DIRECTION-0007`
+Direction revision: `DIRECTION-0008`
 
 This index tracks prompts prepared by Happy Work for delegated Devin sessions.
 
@@ -14,7 +14,7 @@ This index tracks prompts prepared by Happy Work for delegated Devin sessions.
 - Material direction changes trigger impact review/context refresh.
 - Missing context/evidence becomes UNKNOWN/ResearchRequest/Blocker, never invention.
 
-Parallelism classes include:
+Parallelism classes:
 - PARALLEL_SAFE
 - PARALLEL_SAFE_WITH_BOUNDARIES
 - SERIAL_REQUIRED
@@ -26,35 +26,35 @@ Parallelism classes include:
 Prompt lifecycle:
 DRAFT -> READY -> SENT -> EXECUTING -> EXECUTED -> RECONCILING -> RECONCILED, with BLOCKED / SUPERSEDED / CANCELLED where applicable.
 
-## DIRECTION-0007 cross-cutting refresh
+## DIRECTION-0008 cross-cutting refresh
 
-All future handoffs must preserve DIRECTION-0006 and add:
+All future handoffs preserve DIRECTION-0007 and add:
 
-- Copilot evolves from explain/guide into bounded governed execution, but Git/evidence remain authority.
-- Platform transformation must be reconstructable from Direction -> Specification/Work -> Git -> Validation -> Release/Deployment -> Runtime evidence -> Improvement.
-- Avoid duplicate document/image truth; reuse governed rendered assets across Arc42/Confluence/SharePoint/web where supported.
-- DevOps/Platform Engineering is first-class and integrates existing Git/build/OpenShift/API Connect/Kafka/Kibana/identity/config/infrastructure processes before replacing them.
-- Standards have lifecycle/version/source/deprecation/successor/conformance evidence, not static references.
-- Existing bank API/Data/AI/Security/Platform/Operations governance is mapped and routed through the Copilot; institutional decision rights are not replaced silently.
-- OpenShift/Kibana technical logs become governed evidence input; logs remain distinct from audit/metrics/traces/events.
-- Kafka/stream-processing capabilities remain evidence-based; do not assume ksqlDB/KSQL availability.
-- Customer Position and digital-channel initiatives remain practical banking transformation proofs.
+- Current institutional/regulatory artifacts remain a near-term delivery priority while their production is progressively automated from governed state.
+- Exact Banxico/other authority obligations are evidence-required; never infer them from generic banking practice.
+- Existing institutional platforms, frameworks, archetypes and pipelines are reused/integrated before replacement.
+- `Glo` is user-provided institutional context for archetypes/OpenShift pipeline and must be discovered/evidenced before implementation assumptions.
+- `do not reinvent the wheel` means REUSE -> CONFIGURE/EXTEND/ADAPT -> MEASURE -> REPLACE ONLY WITH EVIDENCE.
+- Copilot remains the long-term governed entry/control point and should invoke existing platform capabilities rather than duplicate them.
+- Risk/fraud/security is cross-cutting; controls must explicitly classify synchronous vs asynchronous/post-event behavior based on policy/evidence.
+- Customer experience/performance is optimized across device, channel/backend, cache/read projection, event synchronization, source systems and infrastructure, not endpoint latency alone.
+- Banking POCs should be capable of entering the real institutional delivery path instead of remaining isolated LAB code.
 
-Latest impact assessment: `work/changes/DIRECTION-0007_IMPACT.md`.
+Latest impact assessment: `work/changes/DIRECTION-0008_IMPACT.md`.
 
 ## Control table
 
-| Prompt ID | Domain | Status | Parallelism | DIRECTION-0007 impact | Handoff note |
+| Prompt ID | Domain | Status | Parallelism | DIRECTION-0008 impact | Handoff note |
 |---|---|---|---|---|---|
-| `P-LAB-AGENT-ORGANIZATION-BOOTSTRAP-01` | LAB capability coverage / organization / Git / parallel execution | READY | SERIAL_REQUIRED_FOR_BOOTSTRAP_THEN_PARALLEL | REVIEW_REQUIRED | Refresh capability matrix with DevOps/platform integration, standards lifecycle, transformation traceability and existing-bank governance mapping |
-| `P-GRAVITY-PLUS-CUSTOMER-POSITION-READ-ACCELERATION-POC-01` | Banking integration / Customer Position / Redis / Exadata / performance | READY | PARALLEL_SAFE_WITH_BOUNDARIES_AFTER_BOOTSTRAP | UNAFFECTED_WITH_CONTEXT_REFRESH | Early proof of Copilot-governed banking transformation and runtime evidence integration; inspect current implementation/all integrations first |
-| `P-ARCHITECTURE-AI-REPOSITORY-ARCHETYPES-01` | Repository / runtime modes / artifact lifecycle | READY | SERIAL_REQUIRED | REVIEW_REQUIRED | Preserve D0006 storage/classification/Git rules and add canonical document/image projection authority |
-| `P-EVENT-PLATFORM-SAGA-01` | Event platform / sagas | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Keep event transport distinct from logs; Kafka/stream-processing availability remains evidence-based |
-| `P-OBSERVABILITY-AUDIT-01` | Observability / audit | READY | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Add integration with existing OpenShift/Kibana logging pipeline and structured-log quality gates |
-| `P-LOCAL-TELEMETRY-DATA-ROAD-01` | Local OTel Collector / analytical observation road | READY | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | OTel road remains; Kibana/logs are an additional existing evidence source, not automatically replaced |
-| `P-NOTIFICATION-PLATFORM-01` | Human attention / notification / decisions | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Preserve information-display classification and governed decision routing |
-| `P-SIMULATION-EVALUATION-FOUNDATION-01` | LAB / simulation / replay / Monte Carlo | DRAFT | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Add transformation/DevOps/standards scenarios only after current telemetry model reconciles |
-| `P-AGENT-RUNTIME-COMMUNICATION-PLANE-01` | Sessions / work / Devin API / MCP / A2A | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Copilot bounded execution increases importance of authorization/audit; provider/MCP/work boundaries remain valid |
+| `P-LAB-AGENT-ORGANIZATION-BOOTSTRAP-01` | LAB capability coverage / organization / Git / parallel execution | READY | SERIAL_REQUIRED_FOR_BOOTSTRAP_THEN_PARALLEL | REVIEW_REQUIRED | Refresh capability coverage with regulatory-artifact continuity, institutional platform reuse/Glo discovery, risk/customer-experience governance |
+| `P-GRAVITY-PLUS-CUSTOMER-POSITION-READ-ACCELERATION-POC-01` | Banking integration / Customer Position / Redis / Exadata / performance | READY | PARALLEL_SAFE_WITH_BOUNDARIES_AFTER_BOOTSTRAP | UNAFFECTED_WITH_CONTEXT_REFRESH | Use actual project/framework/integrations; evaluate customer-perceived performance and institutional delivery path; do not force new gateway/pattern |
+| `P-ARCHITECTURE-AI-REPOSITORY-ARCHETYPES-01` | Repository / runtime modes / artifact lifecycle | READY | SERIAL_REQUIRED | REVIEW_REQUIRED | Must inspect/reuse Glo/institutional archetypes and pipeline contracts before defining parallel archetypes |
+| `P-EVENT-PLATFORM-SAGA-01` | Event platform / sagas | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Risk/fraud async use cases may consume event capability only where policy permits; current Kafka availability remains evidence-based |
+| `P-OBSERVABILITY-AUDIT-01` | Observability / audit | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Preserve internal continuous audit/evidence vs externally released institutional artifacts |
+| `P-LOCAL-TELEMETRY-DATA-ROAD-01` | Local OTel Collector / analytical observation road | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Telemetry supports performance/risk/UX analysis and coexists with current Kibana/institutional logging |
+| `P-NOTIFICATION-PLATFORM-01` | Human attention / notification / decisions | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Preserve information classification and institutional decision routing |
+| `P-SIMULATION-EVALUATION-FOUNDATION-01` | LAB / simulation / replay / Monte Carlo | DRAFT | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Add customer-experience/layer-placement/risk async scenarios only after telemetry/evidence model reconciles |
+| `P-AGENT-RUNTIME-COMMUNICATION-PLANE-01` | Sessions / work / Devin API / MCP / A2A | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Copilot should orchestrate institutional capabilities through bounded adapters/tools instead of duplicating platform mechanics |
 | `P-DEVIN-API-ACCESS-DISCOVERY-01` | Devin API discovery / RBAC | SUPERSEDED | DISCOVERY_ONLY | SUPERSEDED | Real API evidence replaced separate discovery prompt |
 | `P-OBSERVABILITY-AUDIT-PLATFORM-01` | Earlier observability draft | SUPERSEDED | PARALLEL_SAFE_WITH_BOUNDARIES | SUPERSEDED | Replaced by `P-OBSERVABILITY-AUDIT-01` |
 
@@ -92,6 +92,8 @@ Generate only after collision/dependency review:
 - `P-DEVOPS-BANK-PLATFORM-INTEGRATION-01`
 - `P-KIBANA-LOG-EVIDENCE-INTEGRATION-01`
 - `P-GOVERNANCE-DOMAIN-MAPPING-01`
+- `P-GLO-ARCHETYPE-OPENSHIFT-INTEGRATION-DISCOVERY-01` after Issue #4 has enough evidence or as a bounded discovery session.
+- `P-REGULATORY-ARTIFACT-OBLIGATION-MAPPING-01` after/for Issue #5 evidence collection.
 - future BI-0002 protocol/channel synchronization research only after BI-0001 produces enough semantic-data evidence.
 
 ## Handoff rule
@@ -106,7 +108,8 @@ Before handing a READY prompt to Devin, Work must:
 7. identify standards/gates/evidence expectations;
 8. identify information-classification/provider-projection implications;
 9. identify analytical/read-model/Arc42 implications;
-10. identify DevOps/environment/governance dependencies where applicable;
-11. decide whether prompt remains READY, needs boundaries, must wait or is superseded.
+10. identify current institutional platform/archetype/pipeline reuse obligations;
+11. identify external/institutional artifact requirements when applicable;
+12. decide whether prompt remains READY, needs boundaries, must wait or is superseded.
 
 Do not invent timestamps, execution state or Devin session references.
