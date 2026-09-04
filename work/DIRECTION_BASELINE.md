@@ -1,27 +1,82 @@
 # Project Direction Baseline
 
 Status: ACTIVE
-Direction revision: DIRECTION-0007
-Previous direction: DIRECTION-0006
-Previous accepted baseline commit: `dfa2a9edb44b74976151cdc668a7aaec9456fd44`
+Direction revision: DIRECTION-0008
+Previous direction: DIRECTION-0007
+Previous accepted baseline commit: `af0fe8ca5f1a9b88c06fe3b6bb9ff6c403081071`
 Repository role: Happy Work staging / prompt-governance control plane
-Current operating emphasis: LAB / fastest safe construction, governed parallelism, Copilot control evolution, existing-bank integration, DevOps evidence, standards lifecycle and traceable transformation
+Current operating emphasis: LAB / fastest safe construction, governed parallelism, institutional-platform reuse, audit-artifact continuity, banking POCs, customer-experience optimization and Copilot control evolution
 
 ## Continuity rule
 
-DIRECTION-0007 incorporates DIRECTION-0006 and all earlier accepted direction unless explicitly overridden below.
+DIRECTION-0008 incorporates DIRECTION-0007 and all earlier accepted direction unless explicitly overridden below.
 
-The exact DIRECTION-0006 baseline remains recoverable from Git history at the previous accepted baseline commit. The immutable rc2 snapshot remains historical and MUST NOT be rewritten in place.
+The exact DIRECTION-0007 baseline remains recoverable from Git history. The immutable rc2 snapshot remains historical and MUST NOT be rewritten in place.
 
-DIRECTION-0007 is therefore an additive governance evolution, not a reset.
+DIRECTION-0008 is additive, not a reset.
 
-## Material DIRECTION-0007 additions
+## 1. Current institutional artifacts remain a priority
 
-### 1. Copilot as governed control entry point
+Architecture AI must continue producing the artifacts currently required by bank governance, audit and external authorities while progressively converting those artifacts into governed projections from canonical state.
 
-Architecture AI must evolve from a dashboard/chat that explains state into the governed user entry point for architecture and engineering work.
+Do not stop producing a current artifact merely because a future target operating model may make it obsolete.
 
-The maturity horizon is:
+Governed by:
+`work/REGULATORY_ARTIFACT_PRIORITY_AND_TRANSFORMATION_MODEL.md`
+
+Rules:
+- Arc42 PDF and other formal evidence packages remain supported where required;
+- exact Banxico/other authority requirements must come from official/institutional evidence, not inference;
+- every artifact should progressively gain source/provenance/version/gate/retention metadata;
+- mechanical generation should become deterministic before redesigning the human process;
+- internal platform evolution audit remains continuous and separate from externally released institutional artifacts.
+
+## 2. Reuse existing institutional platforms before rebuilding
+
+Core rule:
+
+EXISTING GOVERNED CAPABILITY
+-> DISCOVER
+-> REUSE / CONFIGURE / EXTEND / ADAPT
+-> MEASURE
+-> REPLACE ONLY WITH EVIDENCE.
+
+Architecture AI must not rebuild working bank delivery capabilities simply to own them.
+
+The user identifies an institutional platform named `Glo` that currently provides application archetypes and pipeline integration for OpenShift deployment. This is accepted as user-provided context but remains evidence-required before implementation assumptions.
+
+Governed by:
+`work/INSTITUTIONAL_PLATFORM_REUSE_AND_ARCHETYPE_INTEGRATION_MODEL.md`
+
+Expected near-term pattern for bank applications/microservices:
+
+Glo approved archetype
+-> preserve Santander Framework/institutional conventions
+-> solution-specific implementation
+-> existing pipeline/gates
+-> OpenShift deployment
+-> runtime evidence
+-> improvement backlog.
+
+Architecture AI should integrate with supported Glo APIs/tools/pipelines when discovered rather than duplicating them.
+
+## 3. “Do not reinvent the wheel” is stronger than “if it works, do not touch it”
+
+Architecture AI may improve a working component when evidence shows meaningful value, but should not replace it merely because another pattern/tool is architecturally attractive.
+
+Decision sequence:
+
+Does an institutional capability already solve the need?
+-> YES: reuse/integrate first
+-> measure limitations
+-> improve/extend when justified
+-> replacement only after migration/operational/governance evidence.
+
+This applies to Glo, API Connect, Kafka, Kibana, OpenShift, Santander Framework and future institutional platforms.
+
+## 4. Copilot remains the long-term single governed entry point
+
+The maturity horizon from DIRECTION-0007 remains:
 
 EXPLAIN
 -> GUIDE
@@ -30,285 +85,142 @@ EXPLAIN
 -> OPERATE GOVERNED CAPABILITIES
 -> GOVERNED SELF-EVOLUTION.
 
-The Copilot is never the source of truth. It acts over governed state and must preserve authorization, traceability, evidence, QA, rollback and institutional approvals.
+Long term, users should request architecture/engineering/platform changes through the Copilot. The Copilot must resolve role/authority/policy/gates and route work to existing platform capabilities rather than bypassing them.
+
+The Copilot remains an entry/control plane, not the source of truth.
+
+## 5. Risk/security/fraud is cross-cutting
+
+Risk analysis is a vertical/cross-cutting capability across business, application, data, channel, infrastructure and operations.
 
 Governed by:
+`work/RISK_ASYNC_CROSS_CUTTING_AND_CUSTOMER_EXPERIENCE_MODEL.md`
 
-`work/PLATFORM_EVOLUTION_TRACEABILITY_AND_COPILOT_CONTROL_MODEL.md`
+Every risk/fraud/security control should be classified as one of:
+- SYNCHRONOUS_BLOCKING_REQUIRED;
+- SYNCHRONOUS_FAST_PATH;
+- ASYNC_EVALUATION_ALLOWED;
+- POST_EVENT_MONITORING;
+- HUMAN/EXTERNAL_APPROVAL_REQUIRED.
 
-For material actions the platform should preserve:
+The objective is to avoid serializing customer-critical experience with work that policy/evidence permits to run asynchronously. This is never permission to bypass mandatory controls.
 
-Direction
--> Objective
--> Initiative/Epic/Feature
--> Specification/ADR/Policy/Standard
--> Plan
--> WorkPackage/Issue/ResearchRequest
--> Branch/Commit/PR
--> Build/Test/Gate evidence
--> Release/Deployment
--> Runtime observation
--> Analysis/Improvement
--> accepted direction/backlog change.
+## 6. Customer experience is an architecture objective, not only a frontend concern
 
-The Director must eventually answer not only "what exists?" but "how did we get here, why, what evidence justified it, what changed, and what can safely happen next?"
+The bank/channel vision is to make the experience fast by placing data and work at the correct governed layer.
 
-### 2. Internal transformation audit vs external institutional audit
+Evaluate across:
+- secure device/local projections;
+- channel/BFF candidate where justified;
+- API/read projections/cache;
+- event-driven invalidation/synchronization;
+- optimized source-system queries/transactions;
+- network/runtime/infrastructure placement.
 
-Keep separate:
+Use large-scale content platforms only as an architectural analogy for layered placement/caching; do not copy their technology blindly.
 
-- INTERNAL PLATFORM EVOLUTION AUDIT: Git/evidence/research/decisions/specifications/backlog/tests/telemetry/releases and improvement history.
-- EXTERNAL / INSTITUTIONAL SOLUTION AUDIT: Arc42 PDF releases and other formal artifacts retained/shared by bank areas.
+Customer Position/Gravity Plus remains the first practical performance proof.
 
-Arc42 remains a governed auditable projection; it does not become the runtime source of truth or block unrelated LAB evolution unless an institutional gate explicitly requires it.
+## 7. Banking POCs must integrate with institutional delivery
 
-### 3. No duplicate document or visual truth
+BI-0001 Customer Position and future banking POCs should not be isolated laboratory code that cannot enter the bank delivery path.
 
-Architecture AI should avoid unmanaged duplicate documents, diagrams and images.
+Where possible they should:
+- start from the actual bank/Santander Framework implementation or approved archetype;
+- preserve current contracts/integration behavior until evidence supports change;
+- use the current institutional build/deploy path;
+- generate measurable runtime evidence;
+- expose blockers when infrastructure or governance is unavailable;
+- produce backlog/Arc42/institutional artifacts when promotion requires them.
 
-Preferred model:
-- canonical governed source in Git where appropriate;
-- rendered SVG/PNG/PDF with stable IDs/version metadata;
-- Confluence, SharePoint, Arc42 and web surfaces reference/publish the same governed render where supported;
-- publication copies exist only when the target platform requires them and must preserve provenance to the canonical asset.
+## 8. DevOps/Platform Engineering remains first-class
 
-This extends the audience-aware diagram policy without changing the technical/conceptual split.
+DIRECTION-0007 DevOps integration remains active and now explicitly includes institutional archetype/pipeline discovery and reuse.
 
-### 4. DevOps / Platform Engineering is first-class
+The Environment Capability Matrix should progressively include Glo/pipeline capability in addition to persistence, Kafka, API Connect, identity, telemetry/Kibana, secrets/config, network controls and environment-specific restrictions.
 
-Architecture AI must understand how software actually moves through the bank before attempting to automate or replace that process.
+## 9. Standards-first continues across platform and institutional integration
 
-Governed by:
+Standards lifecycle from DIRECTION-0007 remains mandatory.
 
-`work/DEVOPS_AND_EXISTING_BANK_PLATFORM_INTEGRATION_MODEL.md`
+New platform integrations should map both:
+- external/industry standards/frameworks/RFCs;
+- institutional standards/archetypes/policies/platform contracts.
 
-DevOps/Platform Engineering progressively maps:
-- Git/repositories/branching/releases;
-- build/artifact promotion;
-- OpenShift environments and runtime constraints;
-- API Connect/API governance integration;
-- Kafka/event-platform capabilities;
-- current logging/Kibana path;
-- identity/config/secrets;
-- infrastructure request/approval processes;
-- rollback/recovery;
-- environment differences;
-- runtime quality/performance evidence.
+Institutional requirements may be authoritative for the bank even when they differ from generic industry preference.
 
-Core rule:
+The Director must distinguish:
+- CURRENT/VERIFIED;
+- CURRENT_BUT_NOT_VERIFIED;
+- DEPRECATED/SUPERSEDED;
+- UNKNOWN/RESEARCH_REQUIRED.
 
-INTEGRATE WITH WHAT EXISTS
--> OBSERVE
--> GOVERN
--> IMPROVE
--> AUTOMATE.
+## 10. DIRECTION-0007 and earlier principles retained
 
-Do not introduce a replacement platform merely because a pattern exists.
-
-### 5. Environment capability remains explicit
-
-DIRECTION-0006 degraded-mode/storage/identity profiles remain active.
-
-DIRECTION-0007 extends them with a broader Environment Capability Matrix covering:
-- persistence;
-- Kafka/broker/stream processing;
-- API Connect connectivity;
-- enterprise identity;
-- telemetry/Kibana/OTLP;
-- secrets/config;
-- network controls;
-- allowed security testing;
-- infrastructure/human dependencies.
-
-Missing infrastructure should degrade capabilities truthfully rather than produce product forks or hidden bypasses.
-
-### 6. Standards lifecycle and deprecation governance
-
-Standards-first is expanded into a full lifecycle governed by:
-
-`work/STANDARDS_LIFECYCLE_AND_GOVERNANCE_ALIGNMENT_MODEL.md`
-
-Lifecycle:
-
-DISCOVERED
--> SOURCE_VERIFIED
--> MAPPED
--> ADOPTION_DECIDED
--> SPECIFIED
--> IMPLEMENTED
--> VERIFIED
--> OPERATED
--> REVIEW_DUE
--> SUPERSEDED / DEPRECATED / RETIRED.
-
-A standard/policy/framework record should preserve version, source authority, applicable layers/vectors, adoption action, implementation/evidence, review cadence, support/deprecation status and successor/predecessor relationships.
-
-The Director/dashboard must support drill-down by:
-- governance domain;
-- conformance maturity;
-- risk/status;
-- evidence gaps;
-- deprecated/superseded standards;
-- affected specifications/components.
-
-Do not reduce all alignment to one opaque percentage.
-
-### 7. Existing bank governance is integrated, not duplicated
-
-Architecture AI should progressively map existing bank governance domains such as:
-- Enterprise/Solution Architecture;
-- API Governance;
-- Data Governance;
-- AI Governance;
-- Security/Compliance;
-- DevOps/Platform;
-- Operations/Observability;
-- other institutional governance discovered from evidence.
-
-For each governance domain capture:
-- responsibilities;
-- decision rights;
-- policies/standards;
-- required evidence;
-- gates/approvals;
-- governed assets/processes;
-- automation opportunities.
-
-The Copilot becomes a coordinated entry point that routes questions, decisions and work to the correct authority. Architecture AI does not silently replace institutional decision rights.
-
-### 8. Existing OpenShift/Kibana logging becomes evidence input
-
-Governed by:
-
-`work/OBSERVABILITY_KIBANA_AND_TECHNICAL_LOG_GOVERNANCE_MODEL.md`
-
-If OpenShift technical logs already flow to Kibana, Architecture AI first discovers and integrates the actual existing capability:
-- log pipeline;
-- indexes/data streams;
-- field mappings;
-- retention;
-- query/API access;
-- role restrictions;
-- correlation/trace IDs;
-- environment separation;
-- saved searches/dashboards/alerting where actually available.
-
-Do not infer licensed/commercial capabilities.
-
-Structured technical logs should progressively expose stable bounded metadata such as service, module, environment, application version, correlation/trace ID, error code, outcome and safe release references, while excluding secrets, credentials, PAN/SAD and raw sensitive payloads.
-
-Logs remain distinct from:
-- audit;
-- metrics;
-- traces;
-- event ledger;
-- saga/work state;
-- governed Kafka events.
-
-Architecture AI should prefer deterministic queries/aggregations/evidence packs over sending raw log histories to Devin.
-
-### 9. Kafka/event evolution remains evidence-driven
-
-The existing Event/Saga direction remains active.
-
-If an early POC has only a Kafka broker/topic available, use the smallest governed topology needed and perform deterministic filtering/transformation/aggregation in Spring where justified.
-
-Do not assume ksqlDB/KSQL or other stream-processing products are available.
-
-If a managed/platform stream-processing capability appears later, compare it against current Spring-based processing using governance, performance, operational cost, compatibility and migration evidence before changing the architecture.
-
-Kafka/event transport must not be conflated with technical log transport.
-
-### 10. Banking transformation initiatives remain first-class proofs
-
-BI-0001 Customer Position / Gravity Plus read acceleration and BI-0002 digital-channel incremental synchronization remain governed initiatives under this direction.
-
-They are practical evidence that Architecture AI can:
-- understand existing code/frameworks/integrations;
-- preserve current contracts;
-- identify UNKNOWN instead of inventing;
-- classify semantic data elements;
-- optimize reads/caching/invalidation;
-- integrate with DevOps/runtime evidence;
-- produce measurable improvements;
-- feed architecture, standards, backlog and documentation.
-
-## DIRECTION-0006 principles explicitly retained
-
-The following remain mandatory:
-- LAB speed/useful parallelism currently outranks AI-cost minimization, while usage is still measured;
+Still mandatory:
+- LAB speed/useful parallelism currently outranks AI-cost minimization, while usage is measured;
 - capability-first organization rather than area=agent;
-- no-invention / UNKNOWN -> ResearchRequest -> evidence -> reconciliation;
-- DETERMINISTIC -> TOOL -> SKILL -> AGENT for product/runtime maturation;
+- UNKNOWN -> ResearchRequest/Blocker -> evidence -> reconciliation;
+- DETERMINISTIC -> TOOL -> SKILL -> AGENT for mature product/runtime capabilities;
 - PLAN BEFORE EXECUTION and specification-first;
 - Git parallel-development gate and owned/shared/protected surfaces;
 - resilient local/OpenShift development profiles;
 - information classification/access/PCI governance;
 - knowledge governance and controlled Devin projection;
-- research fabric and evidence priority;
-- UX/architect experience and bounded feedback;
-- independent QA/architecture conformance/security/documentation/reconciliation;
+- research fabric;
+- UX/architect experience;
+- independent QA/reconciliation;
 - purpose-driven governance councils;
-- organization topology evaluated by measurable throughput/rework/collisions/quality;
 - Analytics/Audit/Evidence plane;
 - CQRS/read models/knowledge graph/vector projections;
-- event/saga/notification/session/agent-runtime planes;
-- OpenTelemetry/OTLP/Collector road;
-- Arc42 lifecycle;
-- C4/Mermaid/PlantUML technical and draw.io/iconographic conceptual views;
+- Event/Saga/Notification/Session/Agent Runtime planes;
+- OpenTelemetry/OTLP/Collector road plus existing Kibana/log integration;
+- Arc42 lifecycle and canonical visual/document projection;
 - portfolio/backlog/Jira-ready semantics;
 - LAB simulation/evaluation;
 - OpenShift/service readiness;
 - local-first one-product modular-monolith direction;
-- AI/self-evolution remains bounded and governed.
+- bounded governed self-evolution.
 
-## Execution priority under DIRECTION-0007
+## Immediate execution priority
 
-The immediate build order remains:
+1. Keep current required human/audit artifacts producible.
+2. Establish LAB capability/agent organization and Git coordination.
+3. Build tangible Director/Copilot local experience.
+4. Discover and integrate actual institutional platforms, especially Glo/OpenShift delivery contracts.
+5. Execute BI-0001 Customer Position against real code/data/integration evidence.
+6. Continue standards/governance/observability/knowledge/QA lanes in parallel.
+7. Use measured POCs to decide what to automate, extend, replace or absorb later.
 
-1. Git/coordination readiness.
-2. LAB capability coverage and execution organization bootstrap.
-3. Common direction/work/blocker/research/standards/information-handling context.
-4. Parallel implementation lanes.
-5. Independent integration/QA/reconciliation.
-6. Tangible local Director/Copilot delivery.
-7. OpenShift development survival/readiness.
+## Research dependencies
 
-DIRECTION-0007 adds explicit work inside those lanes for:
-- platform-evolution traceability;
-- DevOps/environment integration;
-- standards lifecycle/deprecation;
-- governance-area mapping;
-- visual/document single-source projection;
-- OpenShift/Kibana evidence integration.
+- Issue #4: Glo archetype/OpenShift delivery contracts.
+- Issue #5: institutional/regulatory architecture artifact obligations.
 
-## Material-change triggers added by DIRECTION-0007
+## Material-change triggers added by DIRECTION-0008
 
 Increment direction again if accepted policy materially changes:
-- Copilot execution authority;
-- canonical document/image authority;
-- DevOps/platform integration ownership;
-- standards lifecycle/deprecation policy;
-- institutional governance decision-rights integration;
-- Kibana/log/telemetry authority or retention model;
-- Kafka/event-platform product strategy;
-- self-evolution authority or promotion gates.
+- current institutional artifact priority/authority;
+- Glo/institutional archetype authority or integration model;
+- Copilot authority over institutional pipelines;
+- synchronous/asynchronous risk-control policy;
+- customer-experience architecture principles;
+- institutional platform replacement strategy.
 
 ## Working loop
 
-Direction
--> governance/standards/context
+Current obligations
+-> governed context/standards/platform capabilities
 -> plan/specification
--> governed parallel work
--> Git/change evidence
--> deterministic checks
--> QA/reconciliation
--> release/deployment
--> logs/metrics/traces/audit/runtime evidence
+-> reuse institutional foundations
+-> bounded parallel implementation
+-> deterministic validation/QA
+-> institutional pipeline/deployment where available
+-> runtime/risk/customer-experience evidence
 -> analytics
--> improvement candidate
--> backlog/direction decision
--> updated projections/Arc42 where required
+-> improvement/backlog
+-> updated governed state
+-> required Arc42/audit projections
 -> next cycle.
 
-The target remains an increasingly autonomous Architecture AI platform whose normal user interface is the Copilot, while the underlying transformation remains explainable, versioned, standards-aligned, compatible with existing bank platforms and institutionally governable.
+The target is a platform that preserves present-day institutional compliance and delivery reality while progressively turning the Copilot into the governed control surface for faster, measurable and increasingly automated banking-platform evolution.
