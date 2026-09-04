@@ -1,13 +1,13 @@
 # Banking Integration Evolution Roadmap
 
 Status: ACTIVE_STRATEGIC_ROADMAP
-Direction revision: DIRECTION-0006
+Direction revision: DIRECTION-0008
 
 ## Purpose
 
 Define how Architecture AI should integrate with the existing bank first, learn the real terrain from evidence, and then improve it incrementally through measurable technical objectives.
 
-This roadmap separates immediate proof, reusable banking knowledge, and longer-term digital-channel transformation.
+This roadmap separates immediate proof, reusable banking knowledge, channel-specific composition and longer-term incremental synchronization.
 
 ## Governing strategy
 
@@ -31,11 +31,13 @@ Architecture AI learns:
 - Gravity Plus contracts;
 - current service implementations;
 - Santander Framework conventions;
+- Glo/institutional delivery archetypes when evidenced;
 - Exadata schema/query patterns;
 - Redis/platform availability;
 - core/transactional connectors;
 - security/classification/governance;
 - deployment and operational constraints;
+- current web/mobile channel behavior;
 - process knowledge and human ownership.
 
 Unknowns remain explicit.
@@ -71,7 +73,44 @@ Target outcome:
 
 Avoid one custom cache design per API.
 
-## Horizon 3 — Change-aware server synchronization
+## Horizon 3 — Web BFF proof
+
+Use BI-0003 as the first concrete channel-specific implementation slice.
+
+Target:
+
+Browser / Angular
+-> Web BFF
+-> Gravity Plus APIs
+-> optimized semantic/read capabilities
+-> authoritative bank sources.
+
+Goals:
+- replicate the current web Customer Position experience;
+- model browser/BFF session state safely;
+- keep authentication authority server-side;
+- expose channel-specific OpenAPI contracts rather than mirror every Gravity Plus endpoint;
+- reduce coarse/repeated backend retrieval;
+- measure time-to-useful-content;
+- preserve the Gravity Plus compatibility layer;
+- structure Angular for safe parallel development without forcing microfrontends prematurely.
+
+BI-0003 should become a direct feeder into BI-0002 rather than waiting for the full mobile/channel horizon.
+
+## Horizon 4 — Application-edge / Spring Cloud Gateway proof
+
+Use BI-0004 to compare the existing IBM API Connect control/API-management plane with a programmable Spring Cloud Gateway/application-edge layer.
+
+Goals:
+- inspect/reuse any existing bank Spring Cloud Gateway baseline;
+- preserve PKM/security/tracing conventions;
+- determine which runtime responsibilities belong in Spring Cloud Gateway;
+- determine which lifecycle/governance responsibilities remain in API Connect;
+- avoid duplicated policy;
+- test BFF routing/canary/fallback/correlation with measured overhead;
+- retain the gateway only if its programmability/control value exceeds complexity/latency cost.
+
+## Horizon 5 — Change-aware server synchronization
 
 Improve from TTL-only behavior toward authoritative change-aware refresh where evidence allows:
 - mutation impact mappings;
@@ -82,9 +121,9 @@ Improve from TTL-only behavior toward authoritative change-aware refresh where e
 
 Do not assume writes are observable from one gateway.
 
-## Horizon 4 — Channel-specific incremental synchronization
+## Horizon 6 — Channel-specific incremental synchronization
 
-Evaluate BI-0002 for digital channels.
+Evaluate BI-0002 across web and later native/mobile channels.
 
 Goal:
 - secure device/channel projections;
@@ -93,7 +132,9 @@ Goal:
 - preserve bank source authority;
 - improve time-to-useful-content and user experience.
 
-## Horizon 5 — Protocol/channel optimization
+The Web BFF may provide an early synchronization facade for the browser before native/mobile transport decisions exist.
+
+## Horizon 7 — Protocol/channel optimization
 
 Research and POC protocol options according to actual channel and infrastructure support.
 
@@ -106,14 +147,16 @@ Candidates may include:
 
 Protocol selection is an evidence-backed decision, not a strategic objective by itself.
 
-## Horizon 6 — Data-informed experience optimization
+## Horizon 8 — Data-informed experience optimization
 
 Use governed UX/telemetry evidence to decide:
 - preload vs on-demand;
 - which customer components deserve proactive refresh;
 - which data can remain local longer;
 - what backend work is unnecessary;
-- whether new BFF/channel capabilities are justified.
+- when BFF-side state adds value;
+- whether microfrontend independence is justified;
+- which protocol or event mechanisms improve user-visible outcomes.
 
 ## Architecture AI role
 
@@ -121,12 +164,14 @@ Architecture AI must continuously maintain the relationships among:
 
 Customer objective
 <-> channel task
-<-> API/contract
+<-> web/mobile component
+<-> BFF/channel contract
+<-> Gravity Plus API/contract
 <-> semantic data element
 <-> source/integration
 <-> freshness
 <-> security/classification
-<-> cache/read projection
+<-> browser/BFF/backend cache/read projection
 <-> query/transaction
 <-> runtime metric
 <-> architecture decision
@@ -153,9 +198,11 @@ Bank integration choices should ultimately be evaluated against measurable custo
 - security/compliance;
 - implementation/rework cost.
 
+The system should progressively move work to the most appropriate layer rather than making every customer action pay the full cost of all backend concerns synchronously.
+
 ## No-invention rule
 
-Whenever Architecture AI cannot determine a source, rule, freshness requirement, security constraint or platform capability:
+Whenever Architecture AI cannot determine a source, rule, freshness requirement, security constraint, session/binding behavior or platform capability:
 
 `UNKNOWN`
 -> explain missing evidence
