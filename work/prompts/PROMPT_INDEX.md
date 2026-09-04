@@ -39,6 +39,10 @@ All future handoffs preserve DIRECTION-0007 and add:
 - Risk/fraud/security is cross-cutting; controls must explicitly classify synchronous vs asynchronous/post-event behavior based on policy/evidence.
 - Customer experience/performance is optimized across device, channel/backend, cache/read projection, event synchronization, source systems and infrastructure, not endpoint latency alone.
 - Banking POCs should be capable of entering the real institutional delivery path instead of remaining isolated LAB code.
+- Web-channel state must preserve server-side authorization/session authority; browser/tab storage is a projection and must not hold session credentials/tokens.
+- BFF is channel-specific composition/synchronization, not a replacement for Gravity Plus.
+- Microfrontends are evidence-driven; begin with modular Angular boundaries unless independent deployment/ownership justifies more complexity.
+- Spring Cloud Gateway is evaluated as a programmable runtime/application edge behind or alongside IBM API Connect, not assumed to replace the institutional API-management plane.
 
 Latest impact assessment: `work/changes/DIRECTION-0008_IMPACT.md`.
 
@@ -94,7 +98,9 @@ Generate only after collision/dependency review:
 - `P-GOVERNANCE-DOMAIN-MAPPING-01`
 - `P-GLO-ARCHETYPE-OPENSHIFT-INTEGRATION-DISCOVERY-01` after Issue #4 has enough evidence or as a bounded discovery session.
 - `P-REGULATORY-ARTIFACT-OBLIGATION-MAPPING-01` after/for Issue #5 evidence collection.
-- future BI-0002 protocol/channel synchronization research only after BI-0001 produces enough semantic-data evidence.
+- `P-WEB-BFF-CUSTOMER-POSITION-POC-01` after Issue #6 has sufficient web/session/frontend evidence and BI-0001 source semantics are available enough to avoid guessing.
+- `P-SPRING-CLOUD-GATEWAY-BANK-EDGE-POC-01` after Issue #7 provides the current gateway/API Connect baseline; may run in parallel with BI-0003 only with explicit ownership boundaries.
+- BI-0002 protocol/channel synchronization research remains downstream of sufficient BI-0001/BI-0003 semantic and channel evidence.
 
 ## Handoff rule
 
@@ -110,6 +116,8 @@ Before handing a READY prompt to Devin, Work must:
 9. identify analytical/read-model/Arc42 implications;
 10. identify current institutional platform/archetype/pipeline reuse obligations;
 11. identify external/institutional artifact requirements when applicable;
-12. decide whether prompt remains READY, needs boundaries, must wait or is superseded.
+12. for web/channel work, identify session/binding/browser-storage and channel-contract constraints;
+13. for gateway work, identify API Connect vs application-edge responsibility boundaries;
+14. decide whether prompt remains READY, needs boundaries, must wait or is superseded.
 
 Do not invent timestamps, execution state or Devin session references.
