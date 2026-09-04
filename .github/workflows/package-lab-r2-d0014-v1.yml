@@ -1,0 +1,58 @@
+name: Package Architecture AI LAB R2 D0014 V1
+
+on:
+  push:
+    branches:
+      - release/lab-r2-d0014-v1
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout frozen release branch
+        uses: actions/checkout@v4
+
+      - name: Assemble governed handoff package
+        shell: bash
+        run: |
+          set -euo pipefail
+          RELEASE_ID="Architecture_AI_LAB_R2_D0014_V1"
+          PKG="dist/${RELEASE_ID}"
+          mkdir -p "$PKG"
+
+          cp "releases/${RELEASE_ID}/START_HERE.md" "$PKG/START_HERE.md"
+          cp "releases/${RELEASE_ID}/RELEASE_MANIFEST.md" "$PKG/RELEASE_MANIFEST.md"
+          cp "releases/${RELEASE_ID}/PROMPT_RELEASE_INDEX.md" "$PKG/PROMPT_RELEASE_INDEX.md"
+          cp "releases/${RELEASE_ID}/HANDOFF_TO_DEVIN.md" "$PKG/HANDOFF_TO_DEVIN.md"
+
+          cp "releases/Architecture_AI_Seed_V1_1.0.0-rc2.zip" "$PKG/Architecture_AI_Seed_V1_1.0.0-rc2.zip"
+          cp "releases/Architecture_AI_Seed_V1_1.0.0-rc2.zip.sha256" "$PKG/Architecture_AI_Seed_V1_1.0.0-rc2.zip.sha256"
+
+          cp -a work "$PKG/work"
+
+          cat > "$PKG/RELEASE_SOURCE.txt" <<EOF
+          release_id=AAI-LAB-R2-D0014-V1
+          direction=DIRECTION-0014
+          branch=${GITHUB_REF_NAME}
+          commit=${GITHUB_SHA}
+          previous_release=AAI-LAB-R1-D0006
+          EOF
+
+          cd dist
+          zip -rq "${RELEASE_ID}.zip" "${RELEASE_ID}"
+          sha256sum "${RELEASE_ID}.zip" > "${RELEASE_ID}.zip.sha256"
+
+      - name: Upload handoff ZIP and checksum
+        uses: actions/upload-artifact@v4
+        with:
+          name: Architecture_AI_LAB_R2_D0014_V1
+          path: |
+            dist/Architecture_AI_LAB_R2_D0014_V1.zip
+            dist/Architecture_AI_LAB_R2_D0014_V1.zip.sha256
+          if-no-files-found: error
+          compression-level: 0
+          retention-days: 30
