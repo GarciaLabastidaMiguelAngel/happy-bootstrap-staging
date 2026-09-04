@@ -1,7 +1,7 @@
 # Devin Prompt Index
 
 Status: ACTIVE
-Direction revision: `DIRECTION-0008`
+Direction revision: `DIRECTION-0009`
 
 This index tracks prompts prepared by Happy Work for delegated Devin sessions.
 
@@ -26,39 +26,40 @@ Parallelism classes:
 Prompt lifecycle:
 DRAFT -> READY -> SENT -> EXECUTING -> EXECUTED -> RECONCILING -> RECONCILED, with BLOCKED / SUPERSEDED / CANCELLED where applicable.
 
-## DIRECTION-0008 cross-cutting refresh
+## DIRECTION-0009 cross-cutting refresh
 
-All future handoffs preserve DIRECTION-0007 and add:
+All future handoffs preserve DIRECTION-0008 and add:
 
-- Current institutional/regulatory artifacts remain a near-term delivery priority while their production is progressively automated from governed state.
-- Exact Banxico/other authority obligations are evidence-required; never infer them from generic banking practice.
-- Existing institutional platforms, frameworks, archetypes and pipelines are reused/integrated before replacement.
-- `Glo` is user-provided institutional context for archetypes/OpenShift pipeline and must be discovered/evidenced before implementation assumptions.
-- `do not reinvent the wheel` means REUSE -> CONFIGURE/EXTEND/ADAPT -> MEASURE -> REPLACE ONLY WITH EVIDENCE.
-- Copilot remains the long-term governed entry/control point and should invoke existing platform capabilities rather than duplicate them.
-- Risk/fraud/security is cross-cutting; controls must explicitly classify synchronous vs asynchronous/post-event behavior based on policy/evidence.
-- Customer experience/performance is optimized across device, channel/backend, cache/read projection, event synchronization, source systems and infrastructure, not endpoint latency alone.
-- Banking POCs should be capable of entering the real institutional delivery path instead of remaining isolated LAB code.
-- Web-channel state must preserve server-side authorization/session authority; browser/tab storage is a projection and must not hold session credentials/tokens.
-- BFF is channel-specific composition/synchronization, not a replacement for Gravity Plus.
-- Microfrontends are evidence-driven; begin with modular Angular boundaries unless independent deployment/ownership justifies more complexity.
-- Spring Cloud Gateway is evaluated as a programmable runtime/application edge behind or alongside IBM API Connect, not assumed to replace the institutional API-management plane.
+- Customer identity is separate from workforce/corporate identity and requires its own governed identity/access/risk capabilities.
+- LDAP, IdP, OAuth Authorization Server, credential store, risk engine, session store and binding are separate logical responsibilities.
+- Java First means reuse mature Java IAM capabilities before custom implementation: Keycloak and Spring Security Authorization Server are candidates; a separate Java LDAP such as OpenDJ is required only if evidence justifies LDAP.
+- Existing core password validation remains legacy authority until an approved credential migration path exists; plaintext passwords are never extracted or reconstructed.
+- OAuth/OIDC may be used for first-party bank clients; OIDC does not imply external identity delegation and OAuth does not imply JWT.
+- Web BFF continues to use server-authoritative session/token state; browser receives an opaque secure session cookie rather than access/refresh tokens in browser storage.
+- JWT local validation may improve gateway performance, but immediate revocation requires authoritative state/signal. Do not claim fully stateless immediate revocation.
+- Adaptive risk may be asynchronous where policy permits; ALLOW/DENY/STEP_UP_REQUIRED decisions are enforced server-side by BFF/gateway/resource servers.
+- SSE/WebSocket challenge notification is UX signaling, not the authorization boundary.
+- WebAuthn/passkeys, RFC 9470 step-up, RFC 9449 DPoP and FAPI 2.0 are standards research/adoption candidates where applicable.
+- Banking CQRS is a logical hierarchy of authoritative source -> Exadata/read model -> Redis -> BFF -> channel projections with explicit freshness, versioning, reconciliation and provenance.
+- Highly volatile data such as balances is cacheable only when an evidenced freshness/consistency mechanism makes that safe; otherwise it remains LIVE_SOURCE_REQUIRED.
+- Semantic data-element granularity does not mean one source query per field; missing elements are grouped into minimal efficient source operations.
+- Control-M modernization starts from malla inventory/classification. Spring Batch is not a scheduler. OpenShift Jobs/CronJobs, Spring Cloud Task/Data Flow and Java/open workflow schedulers are candidates only by workload evidence.
 
-Latest impact assessment: `work/changes/DIRECTION-0008_IMPACT.md`.
+Latest impact assessment: `work/changes/DIRECTION-0009_IMPACT.md`.
 
 ## Control table
 
-| Prompt ID | Domain | Status | Parallelism | DIRECTION-0008 impact | Handoff note |
+| Prompt ID | Domain | Status | Parallelism | DIRECTION-0009 impact | Handoff note |
 |---|---|---|---|---|---|
-| `P-LAB-AGENT-ORGANIZATION-BOOTSTRAP-01` | LAB capability coverage / organization / Git / parallel execution | READY | SERIAL_REQUIRED_FOR_BOOTSTRAP_THEN_PARALLEL | REVIEW_REQUIRED | Refresh capability coverage with regulatory-artifact continuity, institutional platform reuse/Glo discovery, risk/customer-experience governance |
-| `P-GRAVITY-PLUS-CUSTOMER-POSITION-READ-ACCELERATION-POC-01` | Banking integration / Customer Position / Redis / Exadata / performance | READY | PARALLEL_SAFE_WITH_BOUNDARIES_AFTER_BOOTSTRAP | UNAFFECTED_WITH_CONTEXT_REFRESH | Use actual project/framework/integrations; evaluate customer-perceived performance and institutional delivery path; do not force new gateway/pattern |
-| `P-ARCHITECTURE-AI-REPOSITORY-ARCHETYPES-01` | Repository / runtime modes / artifact lifecycle | READY | SERIAL_REQUIRED | REVIEW_REQUIRED | Must inspect/reuse Glo/institutional archetypes and pipeline contracts before defining parallel archetypes |
-| `P-EVENT-PLATFORM-SAGA-01` | Event platform / sagas | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Risk/fraud async use cases may consume event capability only where policy permits; current Kafka availability remains evidence-based |
-| `P-OBSERVABILITY-AUDIT-01` | Observability / audit | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Preserve internal continuous audit/evidence vs externally released institutional artifacts |
-| `P-LOCAL-TELEMETRY-DATA-ROAD-01` | Local OTel Collector / analytical observation road | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Telemetry supports performance/risk/UX analysis and coexists with current Kibana/institutional logging |
-| `P-NOTIFICATION-PLATFORM-01` | Human attention / notification / decisions | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Preserve information classification and institutional decision routing |
-| `P-SIMULATION-EVALUATION-FOUNDATION-01` | LAB / simulation / replay / Monte Carlo | DRAFT | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Add customer-experience/layer-placement/risk async scenarios only after telemetry/evidence model reconciles |
-| `P-AGENT-RUNTIME-COMMUNICATION-PLANE-01` | Sessions / work / Devin API / MCP / A2A | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Copilot should orchestrate institutional capabilities through bounded adapters/tools instead of duplicating platform mechanics |
+| `P-LAB-AGENT-ORGANIZATION-BOOTSTRAP-01` | LAB capability coverage / organization / Git / parallel execution | READY | SERIAL_REQUIRED_FOR_BOOTSTRAP_THEN_PARALLEL | REVIEW_REQUIRED | Add customer IAM/adaptive access, projection consistency and job-orchestration capability coverage without equating capability to agent |
+| `P-GRAVITY-PLUS-CUSTOMER-POSITION-READ-ACCELERATION-POC-01` | Banking integration / Customer Position / Redis / Exadata / performance | READY | PARALLEL_SAFE_WITH_BOUNDARIES_AFTER_BOOTSTRAP | UNAFFECTED_WITH_CONTEXT_REFRESH | Apply explicit CQRS freshness/projection/reconciliation model; use actual project/framework/integrations |
+| `P-ARCHITECTURE-AI-REPOSITORY-ARCHETYPES-01` | Repository / runtime modes / artifact lifecycle | READY | SERIAL_REQUIRED | REVIEW_REQUIRED | Reuse Glo/institutional archetypes; IAM/jobs must fit actual delivery platform rather than creating parallel foundations |
+| `P-EVENT-PLATFORM-SAGA-01` | Event platform / sagas | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Async risk decisions and projection updates are concrete use cases; payload/classification/replay rules remain governed |
+| `P-OBSERVABILITY-AUDIT-01` | Observability / audit | READY | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Add safe identity/session/risk/projection/job evidence; never log credentials/tokens/sensitive payloads |
+| `P-LOCAL-TELEMETRY-DATA-ROAD-01` | Local OTel Collector / analytical observation road | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Add auth/risk/cache/projection/job performance signals where safe; coexist with Kibana |
+| `P-NOTIFICATION-PLATFORM-01` | Human attention / notification / decisions | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Step-up UX signaling remains distinct from authorization enforcement |
+| `P-SIMULATION-EVALUATION-FOUNDATION-01` | LAB / simulation / replay / Monte Carlo | DRAFT | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Future scenarios can model token/revocation windows, risk latency, projection freshness and scheduler migration |
+| `P-AGENT-RUNTIME-COMMUNICATION-PLANE-01` | Sessions / work / Devin API / MCP / A2A | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Do not conflate Architecture AI agent sessions with customer authentication sessions |
 | `P-DEVIN-API-ACCESS-DISCOVERY-01` | Devin API discovery / RBAC | SUPERSEDED | DISCOVERY_ONLY | SUPERSEDED | Real API evidence replaced separate discovery prompt |
 | `P-OBSERVABILITY-AUDIT-PLATFORM-01` | Earlier observability draft | SUPERSEDED | PARALLEL_SAFE_WITH_BOUNDARIES | SUPERSEDED | Replaced by `P-OBSERVABILITY-AUDIT-01` |
 
@@ -100,6 +101,9 @@ Generate only after collision/dependency review:
 - `P-REGULATORY-ARTIFACT-OBLIGATION-MAPPING-01` after/for Issue #5 evidence collection.
 - `P-WEB-BFF-CUSTOMER-POSITION-POC-01` after Issue #6 has sufficient web/session/frontend evidence and BI-0001 source semantics are available enough to avoid guessing.
 - `P-SPRING-CLOUD-GATEWAY-BANK-EDGE-POC-01` after Issue #7 provides the current gateway/API Connect baseline; may run in parallel with BI-0003 only with explicit ownership boundaries.
+- `P-CUSTOMER-IAM-ADAPTIVE-ACCESS-POC-01` from BI-0005 after bootstrap ownership and Issue #8 current-auth evidence are sufficient; synthetic LAB slices may begin before real credential migration evidence.
+- `P-BANKING-CQRS-PROJECTION-CONSISTENCY-01` should normally extend BI-0001/BI-0003 rather than create duplicate infrastructure.
+- `P-CONTROLM-WORKLOAD-MODERNIZATION-01` only after Issue #9 identifies a representative low-risk malla and its real dependencies.
 - BI-0002 protocol/channel synchronization research remains downstream of sufficient BI-0001/BI-0003 semantic and channel evidence.
 
 ## Handoff rule
@@ -117,7 +121,9 @@ Before handing a READY prompt to Devin, Work must:
 10. identify current institutional platform/archetype/pipeline reuse obligations;
 11. identify external/institutional artifact requirements when applicable;
 12. for web/channel work, identify session/binding/browser-storage and channel-contract constraints;
-13. for gateway work, identify API Connect vs application-edge responsibility boundaries;
-14. decide whether prompt remains READY, needs boundaries, must wait or is superseded.
+13. for gateway/IAM work, identify API Connect vs gateway vs IdP/resource-server authority and risk/revocation semantics;
+14. for data projections, identify source authority, freshness, version/change and reconciliation semantics;
+15. for job work, identify scheduler/orchestrator vs job implementation and current Control-M dependencies;
+16. decide whether prompt remains READY, needs boundaries, must wait or is superseded.
 
 Do not invent timestamps, execution state or Devin session references.
