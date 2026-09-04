@@ -1,0 +1,106 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://happy.local/schemas/state-update-delta.schema.json",
+  "title": "Task or Question State Update Delta",
+  "$comment": "AAI-SPEC-0009/0010 v0.1.0-draft / PREPARED_NOT_DELIVERED. A proposal is not applied state, implementation or verification evidence.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "deltaId",
+    "status",
+    "targetType",
+    "targetId",
+    "expectedVersion",
+    "proposedVersion",
+    "fromState",
+    "toState",
+    "reason",
+    "changeSet",
+    "evidenceRefs",
+    "affectedEntities",
+    "nextWork",
+    "requestId",
+    "correlationId",
+    "causationId",
+    "idempotencyKey",
+    "proposedBy",
+    "proposedAt"
+  ],
+  "properties": {
+    "deltaId": {"$ref": "common.schema.json#/$defs/Identifier"},
+    "status": {"type": "string", "enum": ["PROPOSED", "VALIDATED", "APPLIED", "REJECTED", "CONFLICTED"]},
+    "targetType": {"type": "string", "enum": ["TASK", "QUESTION"]},
+    "targetId": {"$ref": "common.schema.json#/$defs/Identifier"},
+    "expectedVersion": {"type": "integer", "minimum": 1},
+    "proposedVersion": {"type": "integer", "minimum": 2},
+    "fromState": {"type": "string", "minLength": 1},
+    "toState": {"type": "string", "minLength": 1},
+    "reason": {"type": "string", "minLength": 1},
+    "changeSet": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["changeType", "entityType", "entityId", "summary"],
+        "properties": {
+          "changeType": {"type": "string", "enum": ["ADD", "UPDATE", "CLARIFY", "CONFIRM", "SUPERSEDE", "REJECT", "IMPLEMENT", "VERIFY", "BLOCK"]},
+          "entityType": {"type": "string", "minLength": 1},
+          "entityId": {"type": "string", "minLength": 1},
+          "previousState": {},
+          "proposedState": {},
+          "summary": {"type": "string", "minLength": 1}
+        }
+      }
+    },
+    "evidenceRefs": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/EvidenceRef"}},
+    "verificationRefs": {"type": "array", "items": {"type": "string"}},
+    "approvalRefs": {"type": "array", "items": {"type": "string"}},
+    "affectedEntities": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["entityType", "entityId", "impact"],
+        "properties": {
+          "entityType": {"type": "string"},
+          "entityId": {"type": "string"},
+          "impact": {"type": "string"}
+        }
+      }
+    },
+    "nextWork": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["taskId", "eligibility"],
+        "properties": {
+          "taskId": {"type": "string", "minLength": 1},
+          "eligibility": {"type": "string", "enum": ["ELIGIBLE", "BLOCKED", "CONDITIONAL"]},
+          "blockerRefs": {"type": "array", "items": {"type": "string"}},
+          "requiredCapabilityRefs": {"type": "array", "items": {"type": "string"}}
+        }
+      }
+    },
+    "newQuestionRefs": {"type": "array", "items": {"type": "string"}},
+    "requestId": {"$ref": "common.schema.json#/$defs/Identifier"},
+    "correlationId": {"$ref": "common.schema.json#/$defs/Identifier"},
+    "causationId": {"$ref": "common.schema.json#/$defs/Identifier"},
+    "idempotencyKey": {"$ref": "common.schema.json#/$defs/Identifier"},
+    "canonicalBaseline": {"type": "string"},
+    "proposedBy": {"$ref": "domain-event-envelope.schema.json#/$defs/SubjectRef"},
+    "agentRef": {"$ref": "domain-event-envelope.schema.json#/$defs/SubjectRef"},
+    "delegationId": {"type": "string"},
+    "policyDecisionRefs": {"type": "array", "items": {"type": "string"}},
+    "proposedAt": {"$ref": "common.schema.json#/$defs/Timestamp"},
+    "appliedAt": {"$ref": "common.schema.json#/$defs/Timestamp"},
+    "deltaDigest": {"$ref": "common.schema.json#/$defs/Digest"}
+  },
+  "allOf": [
+    {
+      "if": {"properties": {"status": {"const": "APPLIED"}}},
+      "then": {"required": ["appliedAt", "deltaDigest"]}
+    }
+  ]
+}

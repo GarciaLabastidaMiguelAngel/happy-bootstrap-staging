@@ -1,0 +1,64 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://happy.local/schemas/work-lifecycle-event.schema.json",
+  "title": "Work Lifecycle Event",
+  "$comment": "AAI-SPEC-0009 contract correlated with provisional AAI-SPEC-0036 envelope. DRAFT / PREPARED_NOT_DELIVERED; no transport or topic is asserted.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["envelope", "data"],
+  "properties": {
+    "envelope": {
+      "allOf": [
+        {"$ref": "domain-event-envelope.schema.json#/$defs/DomainEventEnvelope"},
+        {
+          "type": "object",
+          "properties": {
+            "eventType": {
+              "enum": [
+                "TASK_CREATED",
+                "TASK_CONTEXT_READY",
+                "WORK_PLANNED",
+                "WORK_STARTED",
+                "WORK_RESULT_SUBMITTED",
+                "WORK_VERIFICATION_RECORDED",
+                "HUMAN_REVIEW_REQUESTED",
+                "WORK_APPROVED",
+                "WORK_PUBLISHED",
+                "WORK_CLOSED",
+                "WORK_BLOCKED",
+                "WORK_DEGRADED",
+                "WORK_REJECTED",
+                "WORK_CANCELLED",
+                "WORK_DELEGATED"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["taskId", "taskVersion", "fromState", "toState", "reason"],
+      "properties": {
+        "taskId": {"$ref": "common.schema.json#/$defs/Identifier"},
+        "parentTaskId": {"type": "string"},
+        "taskVersion": {"type": "integer", "minimum": 1},
+        "fromState": {"enum": [null, "NEW", "CONTEXT_READY", "PLANNED", "IN_PROGRESS", "VERIFYING", "HUMAN_REVIEW", "APPROVED", "PUBLISHED", "CLOSED", "BLOCKED", "DEGRADED", "REJECTED", "CANCELLED"]},
+        "toState": {"enum": ["NEW", "CONTEXT_READY", "PLANNED", "IN_PROGRESS", "VERIFYING", "HUMAN_REVIEW", "APPROVED", "PUBLISHED", "CLOSED", "BLOCKED", "DEGRADED", "REJECTED", "CANCELLED"]},
+        "reason": {"type": "string", "minLength": 1},
+        "workPackageRef": {"type": "string"},
+        "resultRef": {"type": "string"},
+        "verificationRef": {"type": "string"},
+        "approvalRef": {"type": "string"},
+        "publicationRef": {"type": "string"},
+        "delegationId": {"type": "string"},
+        "blockerId": {"type": "string"},
+        "blockerType": {"type": "string"},
+        "stateDeltaId": {"type": "string"},
+        "nextWorkRefs": {"type": "array", "items": {"type": "string"}},
+        "warnings": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

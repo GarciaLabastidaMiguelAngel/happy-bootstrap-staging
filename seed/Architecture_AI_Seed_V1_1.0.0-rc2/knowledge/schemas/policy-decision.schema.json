@@ -1,0 +1,37 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://happy.local/schemas/policy-decision.schema.json",
+  "title": "Tool Policy Decision",
+  "$comment": "AAI-SPEC-0006 v0.1.0-draft / PREPARED_NOT_DELIVERED",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["policyDecisionId", "requestId", "taskId", "actorId", "agentId", "toolId", "toolVersion", "actionFingerprint", "sideEffectClass", "decision", "policyVersion", "evaluatedAt", "obligations"],
+  "properties": {
+    "policyDecisionId": {"type": "string", "minLength": 1},
+    "requestId": {"type": "string", "minLength": 1},
+    "taskId": {"type": "string", "minLength": 1},
+    "actorId": {"type": "string", "minLength": 1},
+    "agentId": {"type": "string", "minLength": 1},
+    "delegationId": {"type": "string"},
+    "toolId": {"type": "string", "minLength": 1},
+    "toolVersion": {"type": "string", "minLength": 1},
+    "schemaVersion": {"type": "string"},
+    "implementationHash": {"type": "string"},
+    "parametersDigest": {"type": "string"},
+    "actionFingerprint": {"type": "string", "minLength": 16},
+    "target": {"type": "string"},
+    "destination": {"type": "string"},
+    "sideEffectClass": {"type": "string", "enum": ["T0", "T1", "T2", "T3", "T4", "T5"]},
+    "decision": {"type": "string", "enum": ["ALLOW", "DENY", "REQUIRE_APPROVAL", "REQUIRE_MORE_CONTEXT"]},
+    "reasonCodes": {"type": "array", "items": {"type": "string"}},
+    "policyVersion": {"type": "string", "minLength": 1},
+    "attributesDigest": {"type": "string"},
+    "approvalId": {"type": "string"},
+    "evaluatedAt": {"type": "string", "format": "date-time"},
+    "expiresAt": {"type": "string", "format": "date-time"},
+    "obligations": {
+      "type": "array",
+      "items": {"type": "string", "enum": ["REDACTION", "DRY_RUN", "EFFECT_PREVIEW", "DIFF_REQUIRED", "REAUTHENTICATION", "DUAL_CONTROL", "RATE_LIMIT", "SANDBOX", "RESTRICT_DESTINATION", "OUTPUT_VALIDATION", "POST_EXECUTION_RECEIPT"]}
+    }
+  }
+}

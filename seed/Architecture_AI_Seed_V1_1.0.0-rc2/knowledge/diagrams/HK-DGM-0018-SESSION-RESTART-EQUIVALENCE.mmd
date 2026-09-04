@@ -1,0 +1,7 @@
+flowchart TD
+    A["Session A bootstrap"] --> B["Operational state X"]
+    B --> C["Next work Y"]
+    D["Session B bootstrap"] --> E["Equivalent state X"]
+    E --> F["Equivalent next work Y"]
+    B -. "operational equivalence" .-> E
+    C -. "decision equivalence" .-> F

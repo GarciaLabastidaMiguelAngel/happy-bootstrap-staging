@@ -1,0 +1,21 @@
+stateDiagram-v2
+  [*] --> OPEN
+  OPEN --> CLASSIFIED: type + scope + rationale
+  CLASSIFIED --> RESOLVING: deterministic / knowledge path
+  CLASSIFIED --> ASSIGNED: owner or expert route
+  RESOLVING --> ANSWER_CANDIDATE: answer + assurance + evidence
+  RESOLVING --> WAITING_FOR_EVIDENCE: source missing
+  RESOLVING --> ASSIGNED: human knowledge needed
+  ANSWER_CANDIDATE --> RESOLVED: supported outcome
+  ANSWER_CANDIDATE --> WAITING_FOR_EVIDENCE: insufficient or conflicted
+  ASSIGNED --> RESOLVING: response received
+  ASSIGNED --> WAITING_FOR_EVIDENCE: evidence requested
+  WAITING_FOR_EVIDENCE --> RESOLVING: evidence received
+  WAITING_FOR_EVIDENCE --> ESCALATED: authority or impact
+  ESCALATED --> ASSIGNED: responder selected
+  CLASSIFIED --> DEFERRED: trigger recorded
+  WAITING_FOR_EVIDENCE --> DEFERRED: trigger recorded
+  DEFERRED --> OPEN: trigger satisfied
+  RESOLVED --> OBSOLETE: superseded or no longer applicable
+  OPEN --> OBSOLETE: duplicate or superseded
+

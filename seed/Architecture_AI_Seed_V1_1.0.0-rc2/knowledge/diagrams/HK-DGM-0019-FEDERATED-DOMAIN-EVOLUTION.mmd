@@ -1,0 +1,9 @@
+flowchart TD
+    D["Existing domain + authority"] --> O["Permission-aware observation"]
+    O --> M["Model + reconcile"]
+    M --> C{"Classification"}
+    C -->|"aligned / local variant"| K["Keep local or federate"]
+    C -->|"candidate"| S["Shadow / assist + Harness"]
+    C -->|"material conflict"| H["Decision Package"]
+    S --> E["Evidence + authorized promotion"]
+    H --> E

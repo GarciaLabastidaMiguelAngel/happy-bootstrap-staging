@@ -1,0 +1,29 @@
+flowchart LR
+    subgraph S["Fuentes observables"]
+        C["Chats y correcciones"]
+        D["Docs, specs y diagramas"]
+        I["Código, tests y Devin results"]
+        B["Contexto bancario y evidencia"]
+    end
+    subgraph K["Master Knowledge Compiler"]
+        E["Extraer y preservar detalle"]
+        N["Normalizar y deduplicar"]
+        R["Correlacionar y reconciliar"]
+        T["Trazar, versionar y detectar gaps"]
+        E --> N --> R --> T
+    end
+    subgraph O["Salidas gobernadas"]
+        S1["Canonical snapshot"]
+        S2["Specs y relationship map"]
+        S3["Status, gaps y delta"]
+        S4["Devin Context Pack"]
+    end
+    C --> E
+    D --> E
+    I --> E
+    B --> E
+    T --> S1
+    T --> S2
+    T --> S3
+    T --> S4
+

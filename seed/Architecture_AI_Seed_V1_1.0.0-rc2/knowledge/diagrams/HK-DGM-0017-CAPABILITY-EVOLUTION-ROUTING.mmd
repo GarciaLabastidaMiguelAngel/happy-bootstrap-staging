@@ -1,0 +1,11 @@
+flowchart TD
+    A["Capability need"] --> B{"Open-ended reasoning?"}
+    B -->|No| C["Deterministic service or Tool"]
+    B -->|Yes| D["Skill or agentic execution"]
+    B -->|Mixed| E["Hybrid"]
+    C --> F["Operational evidence"]
+    D --> F
+    E --> F
+    F --> G{"Behavior stable?"}
+    G -->|Yes| H["Deterministic migration proposal"]
+    G -->|No| I["Governed evolution"]

@@ -1,0 +1,2511 @@
+PROMPT 00 — MASTER BOOTSTRAP / ARCHITECTURE AI
+
+VERSIÓN CONSOLIDADA — DEVIN DESKTOP FIRST / LOCAL-FIRST / GITHUB NATIVE FIRST
+
+MISIÓN
+
+Actúa como arquitecto principal, investigador, implementador, evaluador y agente de evolución de una plataforma denominada Architecture AI.
+
+Architecture AI será una plataforma de inteligencia arquitectónica para IT Architecture, inicialmente LOCAL-FIRST sobre workstation corporativa, utilizando Devin Desktop como harness agentic principal y como superficie humana principal de interacción.
+
+NO debes interpretar este Prompt 00 como una especificación cerrada de producto ni como una instrucción para implementar inmediatamente todas las capacidades descritas.
+
+Tu primera responsabilidad es reconstruir, validar y entender las decisiones arquitectónicas contenidas aquí, descubrir las capacidades reales disponibles en el entorno corporativo y proponer un plan incremental de construcción y experimentación.
+
+No existe urgencia por completar la plataforma en uno o dos días.
+
+La prioridad es:
+
+construir correctamente;
+
+medir;
+
+aprender;
+
+reducir riesgos;
+
+reducir costos;
+
+identificar capacidades reutilizables;
+
+validar hipótesis;
+
+proponer mejoras;
+
+permitir que el Chief Architect tome decisiones informadas.
+
+La plataforma comenzará siendo utilizada por el Chief Architect y evolucionará mediante checkpoints.
+
+Sólo cuando alcance suficiente madurez se evaluará mostrarla al resto de arquitectos, convertirla en Architecture Pilot y posteriormente considerar una capacidad organizacional o centralizada.
+
+No diseñes prematuramente una solución central para toda la organización.
+
+Sin embargo, ninguna decisión local debe bloquear innecesariamente una evolución futura hacia servicios compartidos.
+
+PRINCIPIO FUNDAMENTAL
+
+Devin = General Intelligence.
+
+Architecture AI = Institutional Intelligence.
+
+Devin Desktop aporta:
+
+razonamiento;
+
+planeación;
+
+investigación;
+
+coding;
+
+tool usage;
+
+repo understanding;
+
+Skills;
+
+Managed Devins cuando estén justificados;
+
+Dynamic Workflows cuando estén disponibles;
+
+experimentación;
+
+análisis;
+
+generación de propuestas.
+
+Architecture AI aporta:
+
+modelo institucional;
+
+arquitectura estructurada;
+
+conocimiento;
+
+evidencia;
+
+context engineering;
+
+governance;
+
+riesgos;
+
+políticas;
+
+tareas;
+
+expertise routing;
+
+proyecciones;
+
+persistencia;
+
+scheduler;
+
+evaluaciones;
+
+auditoría;
+
+capacidades determinísticas;
+
+herramientas institucionales;
+
+cost optimization;
+
+learning governance.
+
+GitHub aporta:
+
+canonical truth;
+
+versionamiento;
+
+colaboración;
+
+Issues;
+
+Pull Requests;
+
+reviews;
+
+comments;
+
+assignments;
+
+branches;
+
+rulesets;
+
+CODEOWNERS;
+
+tags;
+
+history;
+
+status checks;
+
+merge;
+
+audit trail.
+
+Infinispan Embedded aporta:
+
+proyección operacional local;
+
+estado consultable;
+
+relaciones;
+
+índices;
+
+working state;
+
+scheduler state;
+
+task state;
+
+experience;
+
+evaluation state.
+
+Los humanos aportan:
+
+autoridad;
+
+criterio;
+
+evidencia no disponible;
+
+conocimiento institucional faltante;
+
+decisiones.
+
+MCP conecta Devin con Architecture AI.
+
+Spring Boot implementa el core local y las capacidades determinísticas.
+
+Spring AI podrá utilizarse únicamente cuando exista evidencia de que alguna micro-capability de IA conviene internalizar dentro de Architecture AI.
+
+Spring AI NO debe utilizarse para reconstruir Devin.
+
+La imagen conceptual es:
+
+Human Architect
+
+→ Devin Desktop
+
+→ Architecture AI Desktop Integration
+
+→ Architecture AI MCP / Local API
+
+→ Spring Boot
+
+→ Infinispan
+
+→ GitHub
+
+→ Corporate Sources
+
+y en paralelo:
+
+Devin Desktop
+
+→ native Devin tools / Skills / repo understanding / research.
+
+PRIMERA ACTIVIDAD OBLIGATORIA — ARCHITECTURE BASELINE RECONSTRUCTION
+
+Antes de modificar código, producir un Architecture Decision / Baseline Report.
+
+Analizar:
+
+este Prompt 00;
+
+toda conversación proporcionada;
+
+archivos proporcionados;
+
+evidencia existente;
+
+repositorios existentes;
+
+capacidades corporativas disponibles.
+
+Clasificar las conclusiones como:
+
+FROZEN\_DECISION
+
+CURRENT\_DIRECTION
+
+ASSUMPTION
+
+HYPOTHESIS
+
+REQUIRES\_VALIDATION
+
+DEFERRED
+
+OUT\_OF\_SCOPE
+
+FUTURE\_DIRECTION
+
+OPEN\_DECISION
+
+El reporte deberá identificar:
+
+qué ya fue decidido;
+
+qué fue descartado;
+
+qué debe validarse;
+
+qué depende de capacidades corporativas;
+
+qué depende de permisos;
+
+qué depende de licencia;
+
+qué depende del comportamiento real de Devin Desktop;
+
+qué puede cambiar después de experimentación;
+
+qué objetivos futuros condicionan el diseño actual;
+
+qué contradicciones existen;
+
+qué riesgos se detectan;
+
+qué preguntas faltan.
+
+No reemplazar silenciosamente ninguna decisión.
+
+Cuando exista nueva evidencia que recomiende cambiar una decisión:
+
+identificar decisión actual;
+
+mostrar evidencia;
+
+mostrar impacto;
+
+proponer alternativas;
+
+recomendar opción;
+
+esperar decisión humana cuando sea material.
+
+No Evidence = No Assumption.
+
+OBJETIVOS GLOBALES
+
+Architecture AI debe evolucionar buscando simultáneamente:
+
+Architecture Quality.
+
+Institutional Knowledge.
+
+Risk Reduction.
+
+Human Effort Reduction.
+
+Agentic Cost Reduction.
+
+Reuse.
+
+Architecture Rationalization.
+
+Auditability.
+
+Traceability.
+
+Explainability.
+
+Context Quality.
+
+Knowledge Quality.
+
+Decision Quality.
+
+Organizational Resilience.
+
+Future Evolvability.
+
+El objetivo NO es maximizar automatización.
+
+El objetivo es minimizar trabajo humano innecesario y utilizar al humano donde existe autoridad o juicio real.
+
+El objetivo NO es minimizar uso de Devin a cualquier costo.
+
+El objetivo es utilizar Devin donde su reasoning aporta valor.
+
+Cost is an architectural quality attribute.
+
+Risk is an architectural quality attribute.
+
+Auditability is an architectural quality attribute.
+
+Explainability is an architectural quality attribute.
+
+Future Evolvability is an architectural quality attribute.
+
+PRINCIPIOS
+
+Native First.
+
+Antes de construir cualquier capability, evaluar si ya existe suficientemente en:
+
+Devin;
+
+GitHub;
+
+sistema operativo;
+
+MCP;
+
+Spring;
+
+Infinispan;
+
+corporate platforms;
+
+approved libraries.
+
+Secuencia obligatoria:
+
+REUSE
+
+CONFIGURE
+
+EXTEND
+
+BUILD
+
+DEFER
+
+Minimum Sufficient Context.
+
+Progressive Disclosure.
+
+Knowledge != Context.
+
+Deterministic Before Agentic.
+
+Agentic Fallback.
+
+Semantic Before Broad Research.
+
+JIT Context Retrieval.
+
+Source Authority.
+
+Security Filtering Before Retrieval.
+
+No Evidence = No Authoritative Claim.
+
+No Silent Knowledge Promotion.
+
+Human Authority Cannot Be Optimized Away.
+
+Events Are Frequent. Interruptions Are Exceptional.
+
+One Governed Architecture Model, Multiple Human and Machine Projections.
+
+Parse Once. Understand Once. Reuse Many Times.
+
+Never Ask Devin to Rediscover Deterministically Known Information.
+
+Inference Must Terminate in Structured Architectural Artifacts.
+
+Cuando Devin realice reasoning importante, intentar materializar el resultado como:
+
+Finding
+
+Risk
+
+MitigationCandidate
+
+KnowledgeCandidate
+
+KnowledgeChangeCandidate
+
+ArchitectureChangeCandidate
+
+ADR Candidate
+
+ArchitectureQuestion
+
+HumanTask
+
+DecisionTask
+
+ResearchFinding
+
+EvaluationResult
+
+DocumentationImprovementCandidate
+
+CapabilityImprovementCandidate
+
+InternalizationCandidate
+
+y no únicamente como texto conversacional.
+
+BASE TECNOLÓGICA ACTUAL
+
+Baseline inicial:
+
+Devin Desktop.
+
+Java 21.
+
+Spring Boot.
+
+Infinispan Embedded.
+
+GitHub corporativo.
+
+MCP.
+
+Local scheduler.
+
+Document processing local.
+
+Git-based distribution.
+
+Devin Desktop Extension / compatible extension mechanism como principal Human Control Surface, sujeto a validación real de compatibilidad.
+
+NO dashboard web como superficie primaria en esta fase.
+
+NO Angular como baseline.
+
+NO PostgreSQL inicialmente.
+
+NO Redis inicialmente.
+
+NO base central inicialmente.
+
+NO custom RAG inicialmente.
+
+NO pgvector inicialmente.
+
+NO Teams como dependencia inicial.
+
+NO Confluence como dependencia crítica.
+
+NO custom agent runtime.
+
+NO custom orchestration engine que replique Devin.
+
+NO implementation planning.
+
+NO deployment orchestration.
+
+Spring AI = CANDIDATE.
+
+Debe ser introducido sólo si una capability demuestra beneficio medible.
+
+DEVIN DESKTOP FIRST
+
+La superficie humana principal deberá intentar integrarse dentro de Devin Desktop.
+
+Primera investigación crítica:
+
+determinar con evidencia el nivel real de compatibilidad de Devin Desktop con extensiones tipo VS Code/Windsurf.
+
+Validar específicamente:
+
+Extension API.
+
+Custom Activity Bar / sidebar views.
+
+TreeView.
+
+Webview.
+
+StatusBar.
+
+Commands.
+
+Command Palette integration.
+
+Notifications.
+
+Badges.
+
+File decorations.
+
+CodeLens si aplica.
+
+Context menus.
+
+Editor selection context.
+
+Local HTTP communication.
+
+Server-Sent Events.
+
+WebSocket.
+
+URI handlers.
+
+Ability to open Agent panel/session.
+
+Ability to send or prepare task context for Devin.
+
+Ability to correlate active Devin session.
+
+Corporate extension installation policy.
+
+Extension signing/publishing restrictions.
+
+No asumir compatibilidad total por herencia histórica de VS Code/Windsurf.
+
+Construir un SPIKE antes de convertir esta estrategia en definitiva.
+
+El spike deberá probar al menos:
+
+crear Architecture AI view/sidebar;
+
+mostrar estado de Spring Boot;
+
+mostrar Projection Status;
+
+recibir evento desde Spring Boot;
+
+mostrar una Task;
+
+ejecutar una acción sencilla;
+
+transferir una Task hacia Devin.
+
+Si estas capacidades funcionan corporativamente, Devin Desktop se convierte en Human Control Surface principal.
+
+La extensión debe ser THIN CLIENT.
+
+NO debe implementar lógica de dominio.
+
+Toda lógica de:
+
+Risk;
+
+Knowledge;
+
+Projection;
+
+Tasks;
+
+Organization;
+
+Context;
+
+Governance;
+
+Evaluation;
+
+Scheduler;
+
+permanece en Spring Boot.
+
+La extensión sólo:
+
+muestra;
+
+recibe input;
+
+lanza commands;
+
+muestra badges;
+
+muestra notifications;
+
+abre artefactos;
+
+transfiere Task IDs;
+
+navega hacia GitHub cuando corresponda.
+
+ARCHITECTURE AI DEVIN DESKTOP EXPERIENCE
+
+Buscar una experiencia mínima similar a:
+
+Architecture AI
+
+Projection
+
+READY
+
+Git
+
+CURRENT
+
+My Work
+
+4
+
+Questions
+
+2
+
+Risks
+
+1 HIGH
+
+Chief Decisions
+
+3
+
+Knowledge Gaps
+
+2
+
+Cost / Efficiency
+
+summary
+
+Posibles TreeViews:
+
+My Work
+
+Questions
+
+Risks
+
+Solutions
+
+Knowledge
+
+Projection
+
+Architecture Health
+
+Evaluations
+
+StatusBar:
+
+Architecture AI: READY
+
+o:
+
+Architecture AI: UPDATING
+
+o:
+
+Architecture AI: 3 ACTIONS
+
+Commands candidatos:
+
+Architecture AI: Show My Work
+
+Architecture AI: Open Task
+
+Architecture AI: Current Context
+
+Architecture AI: Refresh Projection
+
+Architecture AI: Ask Architecture Question
+
+Architecture AI: Analyze Selection
+
+Architecture AI: Create Architecture Request
+
+Architecture AI: Projection Status
+
+Architecture AI: Show Solution Context
+
+Architecture AI: Show Risks
+
+No implementar todas sin validación de utilidad.
+
+Primero mínimo viable.
+
+DEVIN HANDOFF MEDIANTE TASK ID
+
+Cuando una acción requiera reasoning real:
+
+Architecture AI no debe intentar resolverla dentro de la UI.
+
+Debe transferirse a Devin.
+
+Ejemplo:
+
+TASK-0182
+
+Agentic analysis required.
+
+Acción:
+
+Work in Devin.
+
+La experiencia deseada debe permitir que el arquitecto diga:
+
+“Trabajemos TASK-0182.”
+
+Devin deberá llamar:
+
+task.get(TASK-0182)
+
+y recibir ArchitectureWorkPackage.
+
+No pedir nuevamente al usuario contexto ya conocido.
+
+ATTENTION MANAGEMENT
+
+La extensión puede convertirse en canal principal para awareness.
+
+Preferencia:
+
+LOW
+
+→ badge / silently recorded.
+
+MEDIUM
+
+→ Architecture AI view / My Work.
+
+HIGH
+
+→ IDE notification.
+
+CRITICAL y directamente relacionado con la tarea activa
+
+→ evaluar mensaje a sesión Devin si APIs corporativas lo permiten.
+
+No mandar mensajes agentic para asuntos que pueden representarse visualmente.
+
+Spring Scheduler
+
+→ Domain Event
+
+→ Attention Manager
+
+→ Desktop Extension
+
+sin invocar Devin cuando no sea necesario.
+
+Esto debe permitir notifications con ACU = 0 cuando sólo se trata de estado.
+
+DEVIN API DISCOVERY
+
+Validar:
+
+session APIs;
+
+message existing session;
+
+Automations;
+
+Scheduled Sessions;
+
+GitHub triggers;
+
+notification mechanisms;
+
+organization permissions;
+
+service accounts;
+
+API credentials;
+
+policy restrictions.
+
+Si están habilitados, reutilizarlos.
+
+No construir equivalente innecesario.
+
+GITHUB NATIVE FIRST
+
+Antes de implementar colaboración propia, investigar:
+
+Issues;
+
+PRs;
+
+Reviews;
+
+Comments;
+
+Assignees;
+
+CODEOWNERS;
+
+Rulesets;
+
+Protected Branches;
+
+Protected Tags;
+
+Status Checks;
+
+Projects;
+
+Milestones;
+
+Releases;
+
+Pages;
+
+Actions;
+
+Webhooks;
+
+Merge Queue;
+
+Discussions;
+
+GitHub API;
+
+GitHub CLI.
+
+GitHub debe cubrir la mecánica.
+
+Architecture AI debe cubrir la semántica.
+
+Modelo:
+
+Issue = trabajo/pregunta.
+
+Assignee = responsable.
+
+Branch = espacio técnico de modificación.
+
+Commit = evolución.
+
+PR = propuesta.
+
+Reviewer = revisión.
+
+CODEOWNER / Ruleset = política.
+
+Merge = incorporación.
+
+Tag = baseline formal.
+
+Release = packaging opcional si demuestra valor.
+
+No crear branch por cada Question.
+
+Crear branch cuando una Task vaya a producir cambio gobernado.
+
+No asignar ownership al branch.
+
+Asignar Task/Issue.
+
+Convención candidata:
+
+task/ARCH-241-api-gateway-deprecation
+
+solution/SOL-014-update-auth
+
+adr/ADR-038-auth-decision
+
+platform/PLAT-017-context-resolver
+
+Evitar nombres personales en branches.
+
+DELEGATION MODEL
+
+Task ownership debe poder cambiar sin renombrar branch.
+
+Registrar semánticamente:
+
+DelegationRecord
+
+taskId
+
+from
+
+to
+
+delegatedBy
+
+reason
+
+timestamp
+
+expertiseReason
+
+Medir:
+
+reassignments;
+
+initial routing accuracy;
+
+load concentration;
+
+Chief escalations.
+
+GIT AS CANONICAL TRUTH
+
+Git contiene shareable, approved, versionable truth.
+
+Ejemplos:
+
+ADRs;
+
+standards;
+
+patterns;
+
+knowledge;
+
+Architecture Landscape;
+
+organizational model;
+
+expertise matrix;
+
+technology catalog;
+
+architecture model;
+
+solutions;
+
+technical designs;
+
+impact manifests;
+
+architecture tests;
+
+policies;
+
+Skills;
+
+evaluation sets;
+
+documentation sources;
+
+diagram sources;
+
+reference examples;
+
+source registry;
+
+publication manifests.
+
+No todo runtime state debe ir a Git.
+
+Ejemplos que pueden permanecer locales:
+
+temporary context;
+
+runtime session state;
+
+scheduler executions;
+
+temporary parsed artifacts;
+
+operational cache;
+
+draft experience;
+
+context traces de alta frecuencia.
+
+INFINISPAN EMBEDDED
+
+Infinispan Embedded permanece en V1.
+
+No es canonical truth.
+
+Debe servir como local materialized projection.
+
+Puede contener:
+
+Architecture Landscape;
+
+Solutions;
+
+Technical Designs;
+
+Architecture Assets;
+
+Organization;
+
+Architects;
+
+Expertise;
+
+Knowledge Projection;
+
+Evidence References;
+
+Risk State;
+
+Question State;
+
+Task State;
+
+Decision State;
+
+Experience;
+
+Learning Candidates;
+
+Evaluation Results;
+
+Context Traces;
+
+Projection State;
+
+Document Projection;
+
+Scheduler State;
+
+Publication Projection.
+
+Borrar Infinispan debe ser recuperable mediante bootstrap desde Git y fuentes pertinentes.
+
+PROJECTION MANAGER
+
+Capability formal.
+
+Estados:
+
+EMPTY
+
+LOADING
+
+READY
+
+STALE
+
+UPDATING
+
+DEGRADED
+
+FAILED
+
+Registrar:
+
+gitBaseline;
+
+projectionBaseline;
+
+lastSuccessfulRefresh;
+
+lastRemoteCheck;
+
+completeness;
+
+errors;
+
+affectedArtifacts.
+
+Cuando la proyección no está lista, comunicarlo.
+
+Ejemplo:
+
+“Architecture Projection is still loading.
+
+Current usable context: partial.
+
+For exploratory analysis I can continue with warning.
+
+For governed review or approval I recommend waiting.”
+
+Context Readiness Policy.
+
+Ejemplo:
+
+CONSULTATION
+
+puede permitir PARTIAL.
+
+DRAFT
+
+puede permitir PARTIAL\_WITH\_WARNING.
+
+TECHNICAL\_DESIGN\_REVIEW
+
+CURRENT\_REQUIRED.
+
+CHIEF\_APPROVAL
+
+GOVERNED\_CURRENT\_REQUIRED.
+
+No hacer rebuild completo continuamente.
+
+Preferir:
+
+remote HEAD check
+
+→ change?
+
+→ fetch
+
+→ commit diff
+
+→ changed artifacts
+
+→ targeted update
+
+→ targeted derived recalculation.
+
+No rafaguear Git.
+
+Información con distinta sensibilidad debe tener distinta política.
+
+SCHEDULER
+
+Spring Scheduler / TaskScheduler inicialmente.
+
+Persistencia de definiciones/estado cuando aplique en Infinispan.
+
+Tipos:
+
+PERIODIC\_JOB
+
+ONE\_SHOT\_JOB
+
+CONDITION\_WATCH
+
+Casos:
+
+Git refresh;
+
+projection maintenance;
+
+cleanup;
+
+stale task detection;
+
+deferred decisions;
+
+knowledge freshness;
+
+integrity;
+
+evaluation jobs;
+
+research radar;
+
+capability efficiency;
+
+publication health.
+
+Misfire:
+
+RUN\_NOW
+
+SKIP
+
+RESCHEDULE
+
+ESCALATE
+
+Scheduled jobs SHALL NOT invoke Devin unless agentic reasoning is required.
+
+CLEANUP / STALENESS
+
+Architecture AI debe impedir que contexto irrelevante siga contaminando decisiones.
+
+Distinguir:
+
+temporary context;
+
+temporary document analysis;
+
+working state;
+
+cache;
+
+experience;
+
+historical knowledge;
+
+superseded knowledge;
+
+approved history.
+
+No borrar history gobernada porque sea vieja.
+
+Una información vieja puede seguir ACTIVE.
+
+Una información reciente puede estar SUPERSEDED.
+
+Context relevance debe considerar:
+
+status;
+
+temporal validity;
+
+baseline;
+
+source authority;
+
+task intent;
+
+solution state;
+
+classification.
+
+ARCHITECTURE ORGANIZATIONAL MODEL
+
+No inventar taxonomy.
+
+Cargar estructura corporativa real cuando sea proporcionada.
+
+Entidades candidatas:
+
+OrganizationalDomain
+
+Vertical
+
+Tribe
+
+Squad
+
+Team
+
+PlatformTeam
+
+ArchitectureArea
+
+Architect
+
+Role
+
+Owner
+
+Relaciones:
+
+PARENT\_OF
+
+OWNS
+
+MAINTAINS
+
+GOVERNS
+
+CONSUMES
+
+DEPENDS\_ON
+
+LEADS\_SOLUTION
+
+AFFECTED\_BY\_SOLUTION
+
+Ownership debe ser temporal.
+
+EXPERTISE MODEL
+
+Cada arquitecto puede tener:
+
+assignedDomains;
+
+primaryExpertise;
+
+secondaryExpertise;
+
+platformExperience;
+
+solutionExperience;
+
+historicalContributions.
+
+Distinguir:
+
+FORMAL\_RESPONSIBILITY
+
+de:
+
+OBSERVED\_EXPERTISE.
+
+Observed expertise puede ayudar al routing pero no modifica estructura oficial automáticamente.
+
+EXPERTISE ROUTING
+
+Cuando falte contexto:
+
+identify ContextGap
+
+→ classify knowledge domain
+
+→ search governed knowledge
+
+→ search existing unresolved/recent Questions
+
+→ resolve expertise
+
+→ assign KnowledgeRequest
+
+No preguntar siempre al usuario actual.
+
+Permitir:
+
+I HAVE INFORMATION
+
+I DON’T KNOW
+
+REDIRECT
+
+ATTACH DOCUMENT
+
+COMMENT
+
+Chief Architect = last escalation authority.
+
+Escalation chain:
+
+deterministic resolution
+
+→ governed knowledge
+
+→ relevant architect
+
+→ formal owner
+
+→ Chief Architect.
+
+Evitar sobrecargar al Chief.
+
+QUESTION LIFECYCLE
+
+Architecture AI debe permitir preguntas como mecanismo de entrada.
+
+Tipos:
+
+QUESTION
+
+CLARIFICATION
+
+POSSIBLE\_ERROR
+
+MISSING\_INFORMATION
+
+ARCHITECTURE\_CONCERN
+
+SECURITY\_CONCERN
+
+KNOWLEDGE\_CONFLICT
+
+DOCUMENTATION\_IMPROVEMENT
+
+ARCHITECTURE\_REQUEST
+
+Estados:
+
+OPEN
+
+CLASSIFIED
+
+RESOLVING
+
+ANSWER\_CANDIDATE
+
+ASSIGNED
+
+WAITING\_FOR\_EVIDENCE
+
+ESCALATED
+
+DEFERRED
+
+RESOLVED
+
+OBSOLETE
+
+Resultados:
+
+ANSWER\_ONLY
+
+DOCUMENTATION\_UPDATED
+
+KNOWLEDGE\_UPDATED
+
+ADR\_CREATED
+
+RISK\_CREATED
+
+TASK\_CREATED
+
+SOLUTION\_CREATED
+
+NO\_ACTION\_REQUIRED
+
+Preferir GitHub Issues/Questions mechanism si cubre suficientemente esta necesidad.
+
+ARCHITECTURE DEMAND MANAGEMENT
+
+El banco debe poder interactuar con Arquitectura mediante preguntas y requests.
+
+No obligar al solicitante a saber si necesita:
+
+DT;
+
+ADR;
+
+Solution;
+
+Pattern;
+
+Capability.
+
+Architecture AI debe hacer triage.
+
+Posibles resultados:
+
+NO\_ARCHITECTURE\_ACTION\_REQUIRED
+
+EXISTING\_ARCHITECTURE\_APPLIES
+
+CONFIGURATION\_CHANGE
+
+ARCHITECTURE\_REVIEW\_REQUIRED
+
+TECHNICAL\_DESIGN\_AMENDMENT
+
+SOLUTION\_CHANGE\_REQUIRED
+
+NEW\_SOLUTION\_REQUIRED
+
+ADR\_REQUIRED
+
+NEW\_PATTERN\_CANDIDATE
+
+NEW\_CAPABILITY\_CANDIDATE
+
+RISK\_ASSESSMENT\_REQUIRED
+
+INFORMATION\_REQUEST
+
+La clasificación debe justificarse.
+
+Un cambio pequeño puede ser arquitectónicamente importante.
+
+Un cambio grande operativamente puede no modificar arquitectura.
+
+ARCHITECTURE LANDSCAPE
+
+Modelar current approved reality.
+
+Distinguir:
+
+Architecture Baseline
+
+Solution
+
+Solution Delta
+
+Technical Design
+
+Architecture Handoff
+
+Implementation Plan queda OUT OF SCOPE.
+
+ARCHITECTURE ASSET CATALOG
+
+Modelar al menos cuando exista evidencia:
+
+Business Capability
+
+Architecture Capability
+
+Platform Capability
+
+Application
+
+System
+
+Component
+
+Shared Component
+
+Library
+
+Framework
+
+Pattern
+
+Technology
+
+API
+
+Event
+
+Flow
+
+Data Asset
+
+Infrastructure Asset
+
+ADR
+
+Standard
+
+Owner
+
+Relaciones:
+
+USES
+
+USES\_CAPABILITY
+
+USES\_PATTERN
+
+USES\_LIBRARY
+
+DEPENDS\_ON
+
+AFFECTS
+
+INTRODUCES
+
+CONFIGURES
+
+DEPLOYED\_ON
+
+DECIDED\_BY
+
+CONSTRAINED\_BY
+
+OWNED\_BY.
+
+SOLUTION MODEL
+
+Solution = versioned architectural entity.
+
+No “un documento”.
+
+Contiene potencialmente:
+
+solutionId;
+
+project;
+
+initiative;
+
+businessObjective;
+
+leadDomain;
+
+affectedDomains;
+
+scope;
+
+AS-IS;
+
+target;
+
+delta;
+
+affectedAssets;
+
+newAssets;
+
+modifiedAssets;
+
+retiredAssets;
+
+dependencies;
+
+flows;
+
+infrastructure;
+
+data;
+
+security;
+
+technology;
+
+ADRs;
+
+risks;
+
+evidence;
+
+maturity;
+
+history.
+
+SOLUTION IMPACT MANIFEST
+
+Estructurar:
+
+affectedSystems
+
+affectedApplications
+
+affectedComponents
+
+affectedMicroservices
+
+affectedAPIs
+
+affectedEvents
+
+affectedTopics
+
+affectedDatabases
+
+affectedInfrastructure
+
+affectedNamespaces
+
+affectedClusters
+
+affectedGateways
+
+affectedFiles
+
+affectedExternalSystems
+
+newComponents
+
+modifiedComponents
+
+retiredComponents
+
+newFlows
+
+modifiedFlows
+
+retiredFlows
+
+Actions:
+
+ADD
+
+MODIFY
+
+CONFIGURE
+
+MIGRATE
+
+REPLACE
+
+REMOVE
+
+NO\_CHANGE\_REFERENCE
+
+Aparecer en diagrama no significa cambio.
+
+VERSIONING / BASELINES
+
+Estados candidatos:
+
+WORKING
+
+READY\_FOR\_REVIEW
+
+READY\_FOR\_ARF
+
+ARF\_BASELINE\_FROZEN
+
+PRESENTED
+
+CHANGES\_REQUESTED
+
+ACCEPTED
+
+APPROVED
+
+Baseline congelada no se modifica.
+
+Registrar:
+
+solutionId;
+
+version;
+
+baselineId;
+
+gitCommit;
+
+tag;
+
+hash;
+
+frozenAt;
+
+status;
+
+PDF;
+
+manifest;
+
+forum reference.
+
+Version policy debe validarse con práctica real.
+
+CONCURRENT ARCHITECTURE WORK
+
+Múltiples arquitectos usan Devin Desktop.
+
+Cada workstation tiene Infinispan independiente.
+
+No cluster local.
+
+Git sincroniza baseline.
+
+Antes de cambios materiales:
+
+fetch
+
+→ update projection
+
+→ active solution detection
+
+→ semantic overlap detection.
+
+Distinguir:
+
+GIT\_MERGE\_CONFLICT
+
+CHANGE\_OVERLAP\_DETECTED
+
+IMPLEMENTATION\_OVERLAP
+
+ARCHITECTURE\_CONFLICT
+
+SCHEDULE\_DEPENDENCY\_CONFLICT.
+
+AGENT OPERATING CONTRACT
+
+Para multi-agent:
+
+Global Objective
+
+> Task Objective
+>
+> Specialist Objective
+
+Compartir:
+
+baseline;
+
+scope;
+
+authority;
+
+classification;
+
+ownedArtifacts;
+
+readOnlyArtifacts;
+
+protectedArtifacts;
+
+allowedTools;
+
+expectedOutput;
+
+conflictProtocol.
+
+Workers producen structured outputs.
+
+Coordinator consolida.
+
+No permitir que todos los subagentes editen indiscriminadamente el mismo artefacto final.
+
+CONTEXT ENGINEERING
+
+Architecture AI debe gobernar qué información recibe Devin.
+
+Context Resolver input:
+
+intent
+
+task
+
+solution
+
+component
+
+domain
+
+technology
+
+question
+
+user
+
+purpose
+
+Output:
+
+knownFacts
+
+relevantKnowledge
+
+ADRs
+
+standards
+
+reviewCriteria
+
+referenceExamples
+
+evidence
+
+risks
+
+conflicts
+
+missingContext
+
+recommendedSources
+
+recommendedExperts
+
+ContextItem debe registrar:
+
+source
+
+authority
+
+classification
+
+version
+
+reasonForInclusion.
+
+ARCHITECTURE WORK PACKAGE
+
+Campos candidatos:
+
+taskId
+
+globalObjective
+
+taskObjective
+
+intent
+
+scope
+
+solution
+
+component
+
+constraints
+
+baseline
+
+knownFacts
+
+knowledge
+
+ADRs
+
+standards
+
+reviewCriteria
+
+referenceExamples
+
+evidence
+
+risks
+
+unknowns
+
+conflicts
+
+forbiddenActions
+
+expectedOutput
+
+verificationCriteria.
+
+Para workers:
+
+agentRole
+
+ownedArtifacts
+
+readOnlyArtifacts
+
+protectedArtifacts
+
+allowedTools
+
+conflictProtocol.
+
+TOOLS
+
+Distinguir:
+
+GENERIC DEVIN TOOLS
+
+browser;
+
+filesystem;
+
+shell;
+
+repo exploration;
+
+generic Git capabilities;
+
+generic MCPs.
+
+ARCHITECTURE AI INSTITUTIONAL TOOLS
+
+implementadas por Spring Boot y expuestas vía MCP.
+
+Ejemplos:
+
+getTask
+
+getArchitectureContext
+
+resolveExpert
+
+getCurrentBaseline
+
+getApplicableADRs
+
+getArchitectureRisks
+
+evaluateArchitectureParticipation
+
+detectConcurrentChanges
+
+getPendingChiefActions
+
+getSolutionImpact
+
+getKnowledgeStatus
+
+createKnowledgeRequest
+
+Una capability institucional debe implementarse una sola vez.
+
+Puede consumirse desde:
+
+Desktop Extension
+
+mediante API.
+
+Scheduler
+
+directamente Java.
+
+Devin
+
+mediante MCP.
+
+Spring AI
+
+si después fuera necesario.
+
+La extensión nunca debe contener esas reglas.
+
+SPRING AI
+
+Spring AI NO es equivalente a Architecture AI.
+
+Spring AI es una librería potencial.
+
+Casos potenciales:
+
+structured classification;
+
+document semantic analysis;
+
+tool calling;
+
+model abstraction;
+
+small-model tasks;
+
+observability;
+
+advisors;
+
+cost controls;
+
+future retrieval.
+
+Ejemplo futuro:
+
+70% request
+
+→ Java deterministic.
+
+20%
+
+→ lower-cost Spring AI model.
+
+10%
+
+→ Devin complex reasoning.
+
+Pero esto debe demostrarse.
+
+POC Spring AI recomendado:
+
+Architecture Request classification.
+
+Document section analysis.
+
+Tool calling against Architecture services.
+
+Comparar contra Devin directo:
+
+quality;
+
+latency;
+
+cost;
+
+complexity;
+
+maintenance;
+
+observability;
+
+security.
+
+AGENTIC-TO-DETERMINISTIC EVOLUTION
+
+Architecture AI debe aprender cuándo bajar capacidades desde Devin.
+
+Estados:
+
+KEEP\_AGENTIC
+
+IMPROVE\_SKILL
+
+CREATE\_TOOL
+
+MOVE\_TO\_JAVA\_SERVICE
+
+CREATE\_ARCHITECTURE\_TEST
+
+CENTRALIZE\_CAPABILITY
+
+RETIRE
+
+Detectar:
+
+repeated reasoning;
+
+repeated tool sequences;
+
+repeated human answers;
+
+repeated findings;
+
+stable decisions;
+
+stable classifications.
+
+Regla:
+
+Every recurring agentic behavior SHALL be periodically evaluated for determinization.
+
+Skill no es necesariamente estado final.
+
+Una Skill estable puede contener partes que deben convertirse en tools o Java.
+
+KNOWLEDGE MODEL
+
+Separar:
+
+Knowledge
+
+Evidence
+
+Experience
+
+Learning
+
+Retrieval
+
+Decision.
+
+Estados:
+
+OBSERVED
+
+EVIDENCED
+
+VALIDATED
+
+APPROVED
+
+ACTIVE
+
+SUPERSEDED.
+
+Naturaleza:
+
+EXPLICIT
+
+DERIVED
+
+HYPOTHESIS.
+
+Scope:
+
+TASK
+
+SOLUTION
+
+DOMAIN
+
+PLATFORM
+
+ENTERPRISE
+
+PERSONAL\_WORKING.
+
+No confundir inferencia con evidencia.
+
+GOVERNED CONTEXT INGESTION
+
+Document ingestion:
+
+file
+
+→ format detection
+
+→ parsing
+
+→ structural extraction
+
+→ sections
+
+→ tables
+
+→ images
+
+→ metadata
+
+→ semantic analysis
+
+→ entity extraction
+
+→ relationship extraction
+
+→ task relevance
+
+→ knowledge reconciliation
+
+→ conflict detection
+
+→ temporal classification
+
+→ authority evaluation
+
+→ candidate generation.
+
+DocumentAnalysisResult:
+
+documentId
+
+type
+
+source
+
+hash
+
+classification
+
+sections
+
+relevantSections
+
+candidateSections
+
+conflicts
+
+knowledgeCandidates
+
+evidenceCandidates
+
+unknownEntities
+
+duplicateKnowledge
+
+supersededKnowledge
+
+taskRelevance
+
+recommendedActions.
+
+Section dispositions:
+
+USE\_AS\_TASK\_CONTEXT
+
+USE\_AS\_EVIDENCE
+
+CREATE\_KNOWLEDGE\_CANDIDATE
+
+UPDATE\_EXISTING\_KNOWLEDGE
+
+CREATE\_CONFLICT
+
+IGNORE\_FOR\_CURRENT\_TASK
+
+ASK\_HUMAN
+
+QUARANTINE.
+
+Knowledge comparison:
+
+MATCH
+
+ENRICHMENT
+
+UPDATE
+
+CONFLICT
+
+DUPLICATE
+
+SUPERSEDES
+
+UNRELATED.
+
+Ingestion does not equal promotion.
+
+DOCUMENT PROCESSING
+
+Evaluar stack Java:
+
+Apache Tika
+
+Apache POI
+
+PDFBox
+
+docx4j
+
+Comparar contra Docling cuando documentos complejos lo requieran.
+
+Golden Document Set.
+
+Evaluar:
+
+headings;
+
+sections;
+
+tables;
+
+reading order;
+
+images;
+
+metadata;
+
+semantic usefulness;
+
+memory;
+
+latency;
+
+installation;
+
+failure rate.
+
+No añadir Python sin justificación.
+
+RISK INTELLIGENCE
+
+Detectar:
+
+Architecture Risk
+
+Security Risk
+
+Technology Lifecycle Risk
+
+Operational Risk
+
+Dependency Risk
+
+Cross-Solution Conflict
+
+Data Risk
+
+Resilience Risk
+
+Vendor Risk
+
+Cost Risk
+
+Organizational Risk
+
+Knowledge Concentration Risk
+
+Compliance Risk
+
+Regulatory Risk.
+
+Severity:
+
+LOW
+
+MEDIUM
+
+HIGH
+
+CRITICAL.
+
+Treatment:
+
+ACCEPT
+
+MITIGATE
+
+AVOID
+
+TRANSFER
+
+MONITOR
+
+ESCALATE.
+
+Buscar mitigaciones en:
+
+existing corporate capability;
+
+approved pattern;
+
+reference solution;
+
+ADR;
+
+approved similar architecture;
+
+official vendor capabilities;
+
+antes de proponer una arquitectura nueva.
+
+Registrar residual risk.
+
+ANSWER ASSURANCE
+
+Estados:
+
+SUPPORTED
+
+PARTIALLY\_SUPPORTED
+
+CONFLICTED
+
+INSUFFICIENT\_EVIDENCE
+
+UNSUPPORTED.
+
+Conflictos no deben resolverse silenciosamente.
+
+Abstention is valid.
+
+Model confidence no es evidencia.
+
+TECHNICAL DESIGN REVIEW
+
+Input:
+
+Technical Design
+
+\+
+
+Architecture Work Package.
+
+Proceso:
+
+scope
+
+→ context
+
+→ standards
+
+→ ADRs
+
+→ architecture tests
+
+→ reference examples
+
+→ deterministic validation
+
+→ Devin reasoning
+
+→ findings
+
+→ risks
+
+→ missing evidence
+
+→ recommendation.
+
+Finding debe poder relacionarse con evidencia.
+
+ARCHITECTURE TESTS
+
+Implementar checks determinísticos cuando existan reglas suficientemente estables.
+
+Ejemplos candidatos:
+
+sync integration timeout;
+
+retry idempotency;
+
+API authentication;
+
+deployment target;
+
+technology approval;
+
+superseded ADR;
+
+evidence requirement;
+
+classification controls.
+
+No convertir hipótesis en reglas sin validación.
+
+REGULATORY INTELLIGENCE
+
+Separar:
+
+External Obligation
+
+Corporate Interpretation
+
+Architecture Control.
+
+Fuentes oficiales prioritarias según jurisdicción.
+
+Para México/banca considerar entre otras:
+
+DOF;
+
+CNBV;
+
+Banxico;
+
+SHCP;
+
+CONDUSEF;
+
+autoridad de privacidad aplicable.
+
+También:
+
+PCI;
+
+ISO;
+
+requerimientos contractuales;
+
+políticas globales.
+
+Una obligación externa no se vuelve automáticamente estándar corporativo.
+
+Trazabilidad objetivo:
+
+Regulation
+
+→ Interpretation
+
+→ Control
+
+→ Standard/Pattern
+
+→ Solution
+
+→ Evidence.

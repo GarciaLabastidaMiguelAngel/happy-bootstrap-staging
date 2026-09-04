@@ -1,0 +1,19 @@
+flowchart TD
+  S["Select current Task version"] --> D{"Dependencies and entry criteria satisfied?"}
+  D -->|No| B["BLOCKED + typed reason"]
+  D -->|Yes| C{"Context current and sufficient?"}
+  C -->|No| Q["Open or link Architecture Question"]
+  C -->|Yes| K{"Frozen decisions and Specs loaded?"}
+  K -->|No| B
+  K -->|Yes| P{"Required capability available and policy allows?"}
+  P -->|No| Q
+  P -->|Yes| E["Execute within Work Package"]
+  E --> V["Verify result and evidence"]
+  V --> H{"Human authority required?"}
+  H -->|Yes| R["HUMAN_REVIEW / escalation"]
+  H -->|No| U["Propose StateUpdateDelta"]
+  R --> U
+  U --> A{"Version, evidence and policy still valid?"}
+  A -->|No| B
+  A -->|Yes| N["Apply receipt + identify next Work"]
+

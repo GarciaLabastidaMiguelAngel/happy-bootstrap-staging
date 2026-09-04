@@ -1,0 +1,123 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://happy.local/schemas/architecture-question.schema.json",
+  "title": "Architecture Question and Knowledge Request",
+  "$comment": "AAI-SPEC-0010 v0.1.0-draft / PREPARED_NOT_DELIVERED. Owners, SLA, GitHub mechanism, persistence and endpoint mapping remain BLOCKED_BY_SOURCE.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "questionId",
+    "version",
+    "questionType",
+    "state",
+    "question",
+    "scope",
+    "requester",
+    "evidenceRefs",
+    "relatedQuestionRefs",
+    "createdAt",
+    "updatedAt",
+    "sourceRefs"
+  ],
+  "properties": {
+    "questionId": {"$ref": "common.schema.json#/$defs/Identifier"},
+    "version": {"type": "integer", "minimum": 1},
+    "taskId": {"type": "string"},
+    "parentQuestionId": {"type": "string"},
+    "questionType": {
+      "type": "string",
+      "enum": ["QUESTION", "CLARIFICATION", "POSSIBLE_ERROR", "MISSING_INFORMATION", "ARCHITECTURE_CONCERN", "SECURITY_CONCERN", "KNOWLEDGE_CONFLICT", "DOCUMENTATION_IMPROVEMENT", "ARCHITECTURE_REQUEST"]
+    },
+    "state": {
+      "type": "string",
+      "enum": ["OPEN", "CLASSIFIED", "RESOLVING", "ANSWER_CANDIDATE", "ASSIGNED", "WAITING_FOR_EVIDENCE", "ESCALATED", "DEFERRED", "RESOLVED", "OBSOLETE"]
+    },
+    "question": {"type": "string", "minLength": 1},
+    "classificationRationale": {"type": "string"},
+    "scope": {"$ref": "common.schema.json#/$defs/Scope"},
+    "urgency": {"type": "string"},
+    "requester": {"$ref": "#/$defs/SubjectRef"},
+    "assignee": {"$ref": "#/$defs/SubjectRef"},
+    "formalOwnerRef": {"type": "string"},
+    "observedExpertiseRefs": {"type": "array", "items": {"type": "string"}},
+    "contextGap": {"type": "string"},
+    "recommendedSourceRefs": {"type": "array", "items": {"type": "string"}},
+    "evidenceRefs": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/EvidenceRef"}},
+    "relatedQuestionRefs": {"type": "array", "items": {"type": "string"}},
+    "answerCandidate": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["answerCandidateId", "answer", "assurance", "evidenceRefs"],
+      "properties": {
+        "answerCandidateId": {"$ref": "common.schema.json#/$defs/Identifier"},
+        "answer": {"type": "string", "minLength": 1},
+        "assurance": {"$ref": "#/$defs/Assurance"},
+        "warnings": {"type": "array", "items": {"type": "string"}},
+        "conflictRefs": {"type": "array", "items": {"type": "string"}},
+        "evidenceRefs": {"type": "array", "minItems": 1, "items": {"$ref": "common.schema.json#/$defs/EvidenceRef"}},
+        "producedBy": {"$ref": "#/$defs/SubjectRef"},
+        "producedAt": {"$ref": "common.schema.json#/$defs/Timestamp"}
+      }
+    },
+    "resolution": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["outcomes", "rationale", "resolvedAt"],
+      "properties": {
+        "outcomes": {
+          "type": "array",
+          "minItems": 1,
+          "uniqueItems": true,
+          "items": {"$ref": "#/$defs/Outcome"}
+        },
+        "rationale": {"type": "string", "minLength": 1},
+        "artifactRefs": {"type": "array", "items": {"type": "string"}},
+        "resolvedBy": {"$ref": "#/$defs/SubjectRef"},
+        "resolvedAt": {"$ref": "common.schema.json#/$defs/Timestamp"}
+      }
+    },
+    "escalation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["condition", "impact", "requestedAuthority", "escalatedAt"],
+      "properties": {
+        "condition": {"$ref": "#/$defs/EscalationCondition"},
+        "impact": {"type": "string", "minLength": 1},
+        "options": {"type": "array", "items": {"type": "string"}},
+        "requestedAuthority": {"type": "string", "minLength": 1},
+        "escalatedAt": {"$ref": "common.schema.json#/$defs/Timestamp"}
+      }
+    },
+    "deferTrigger": {"type": "string"},
+    "reviewAfter": {"$ref": "common.schema.json#/$defs/Timestamp"},
+    "originRefs": {"type": "array", "items": {"type": "string"}},
+    "createdAt": {"$ref": "common.schema.json#/$defs/Timestamp"},
+    "updatedAt": {"$ref": "common.schema.json#/$defs/Timestamp"},
+    "sourceRefs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "stateDigest": {"$ref": "common.schema.json#/$defs/Digest"}
+  },
+  "$defs": {
+    "SubjectRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subjectType", "subjectId"],
+      "properties": {
+        "subjectType": {"type": "string", "enum": ["HUMAN", "AGENT", "WORKLOAD", "TEAM", "UNKNOWN"]},
+        "subjectId": {"type": "string", "minLength": 1},
+        "responsibilityType": {"type": "string", "enum": ["FORMAL_RESPONSIBILITY", "OBSERVED_EXPERTISE", "REQUESTER", "RESPONDER", "UNKNOWN"]}
+      }
+    },
+    "Assurance": {
+      "type": "string",
+      "enum": ["SUPPORTED", "PARTIALLY_SUPPORTED", "CONFLICTED", "INSUFFICIENT_EVIDENCE", "UNSUPPORTED"]
+    },
+    "Outcome": {
+      "type": "string",
+      "enum": ["ANSWER_ONLY", "DOCUMENTATION_UPDATED", "KNOWLEDGE_UPDATED", "ADR_CREATED", "RISK_CREATED", "TASK_CREATED", "SOLUTION_CREATED", "NO_ACTION_REQUIRED"]
+    },
+    "EscalationCondition": {
+      "type": "string",
+      "enum": ["HUMAN_DECISION_REQUIRED", "ARCHITECTURE_CONFLICT", "SECURITY_POLICY_CONFLICT", "MISSING_EXTERNAL_ACCESS", "UNRESOLVED_REQUIREMENT"]
+    }
+  }
+}

@@ -1,0 +1,15 @@
+flowchart TD
+  CS["Current canonical + operational state"] --> WI["Eligible Work Item"]
+  WI --> WP["Versioned Architecture Work Package"]
+  WP --> EX["Deterministic service or Devin execution"]
+  EX --> VR["VerificationReceipt + Evidence"]
+  VR --> HG{"Material human gate?"}
+  HG -->|Required| HR["Human review decision"]
+  HG -->|Not required| SD["StateUpdateDelta proposed"]
+  HR --> SD
+  SD --> EV["Lifecycle event envelope"]
+  EV --> AS["Apply versioned state change"]
+  AS --> NW["Next eligible Work or explicit no-next-work"]
+  WI -->|Unresolved condition| Q["Architecture Question"]
+  Q -->|Evidence or decision| WI
+

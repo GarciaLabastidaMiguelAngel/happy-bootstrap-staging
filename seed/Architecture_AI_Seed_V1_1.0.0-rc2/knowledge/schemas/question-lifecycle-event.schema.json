@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://happy.local/schemas/question-lifecycle-event.schema.json",
+  "title": "Question Lifecycle Event",
+  "$comment": "AAI-SPEC-0010 contract correlated with provisional AAI-SPEC-0036 envelope. DRAFT / PREPARED_NOT_DELIVERED; no transport or topic is asserted.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["envelope", "data"],
+  "properties": {
+    "envelope": {
+      "allOf": [
+        {"$ref": "domain-event-envelope.schema.json#/$defs/DomainEventEnvelope"},
+        {
+          "type": "object",
+          "properties": {
+            "eventType": {
+              "enum": ["QUESTION_OPENED", "QUESTION_CLASSIFIED", "QUESTION_RESOLUTION_STARTED", "ANSWER_CANDIDATE_PRODUCED", "QUESTION_ASSIGNED", "QUESTION_EVIDENCE_REQUESTED", "QUESTION_ESCALATED", "QUESTION_DEFERRED", "QUESTION_RESOLVED", "QUESTION_OBSOLETED"]
+            }
+          }
+        }
+      ]
+    },
+    "data": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["questionId", "questionVersion", "fromState", "toState", "reason"],
+      "properties": {
+        "questionId": {"$ref": "common.schema.json#/$defs/Identifier"},
+        "questionVersion": {"type": "integer", "minimum": 1},
+        "taskId": {"type": "string"},
+        "fromState": {"enum": [null, "OPEN", "CLASSIFIED", "RESOLVING", "ANSWER_CANDIDATE", "ASSIGNED", "WAITING_FOR_EVIDENCE", "ESCALATED", "DEFERRED", "RESOLVED", "OBSOLETE"]},
+        "toState": {"enum": ["OPEN", "CLASSIFIED", "RESOLVING", "ANSWER_CANDIDATE", "ASSIGNED", "WAITING_FOR_EVIDENCE", "ESCALATED", "DEFERRED", "RESOLVED", "OBSOLETE"]},
+        "reason": {"type": "string", "minLength": 1},
+        "assurance": {"type": "string", "enum": ["SUPPORTED", "PARTIALLY_SUPPORTED", "CONFLICTED", "INSUFFICIENT_EVIDENCE", "UNSUPPORTED"]},
+        "outcomes": {"type": "array", "items": {"type": "string"}},
+        "answerCandidateId": {"type": "string"},
+        "assigneeRef": {"type": "string"},
+        "escalationCondition": {"type": "string"},
+        "createdArtifactRefs": {"type": "array", "items": {"type": "string"}},
+        "stateDeltaId": {"type": "string"},
+        "warnings": {"type": "array", "items": {"type": "string"}}
+      }
+    }
+  }
+}

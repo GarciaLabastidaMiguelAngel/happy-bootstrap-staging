@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://happy.local/schemas/projection-status.schema.json",
+  "title": "Projection Status",
+  "$comment": "AAI-SPEC-0008 v0.1.0-draft / PREPARED_NOT_DELIVERED",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["projectionId", "projectionType", "schemaVersion", "state", "gitBaseline", "projectionBaseline", "completeness", "readiness", "lastRemoteCheck", "affectedArtifacts", "errors"],
+  "properties": {
+    "projectionId": {"type": "string", "minLength": 1},
+    "projectionType": {"type": "string", "minLength": 1},
+    "schemaVersion": {"type": "string", "minLength": 1},
+    "state": {"type": "string", "enum": ["EMPTY", "LOADING", "READY", "STALE", "UPDATING", "DEGRADED", "FAILED"]},
+    "gitBaseline": {"type": "string", "minLength": 1},
+    "projectionBaseline": {"type": "string", "minLength": 1},
+    "pendingBaseline": {"type": "string"},
+    "lastSuccessfulRefresh": {"type": "string", "format": "date-time"},
+    "lastRemoteCheck": {"type": "string", "format": "date-time"},
+    "updateStartedAt": {"type": "string", "format": "date-time"},
+    "updateFinishedAt": {"type": "string", "format": "date-time"},
+    "completeness": {"type": "number", "minimum": 0, "maximum": 1},
+    "checkpoint": {"type": "string"},
+    "readiness": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["CONSULTATION", "DRAFT", "TECHNICAL_DESIGN_REVIEW", "CHIEF_APPROVAL"],
+      "properties": {
+        "CONSULTATION": {"type": "string", "enum": ["ALLOW", "ALLOW_WITH_WARNING", "BLOCK"]},
+        "DRAFT": {"type": "string", "enum": ["ALLOW", "ALLOW_WITH_WARNING", "BLOCK"]},
+        "TECHNICAL_DESIGN_REVIEW": {"type": "string", "enum": ["ALLOW", "BLOCK"]},
+        "CHIEF_APPROVAL": {"type": "string", "enum": ["ALLOW", "BLOCK"]}
+      }
+    },
+    "affectedArtifacts": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "errors": {"type": "array", "items": {"type": "string"}},
+    "integrityDigest": {"type": "string"},
+    "recoveryRecommendation": {"type": "string"}
+  }
+}

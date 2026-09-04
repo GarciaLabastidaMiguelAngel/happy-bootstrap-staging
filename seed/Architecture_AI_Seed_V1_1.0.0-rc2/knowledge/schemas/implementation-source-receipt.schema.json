@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://happy.local/schemas/implementation-source-receipt.schema.json",
+  "title": "ImplementationSourceReceipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["receiptId", "repositoryIdentity", "repositoryRoot", "branch", "commitSha", "workingTreeState", "modules", "sourceLayout", "buildSystem", "configurationAssets", "deploymentAssets", "testAssets", "observedAt", "evidenceReferences"],
+  "properties": {
+    "receiptId": {"type": "string"}, "repositoryIdentity": {"type": "string"}, "repositoryRoot": {"type": "string"}, "branch": {"type": "string"},
+    "commitSha": {"type": "string", "minLength": 7}, "workingTreeState": {"enum": ["CLEAN", "DIRTY", "UNKNOWN"]},
+    "sanitizedRemotes": {"type": "array", "items": {"type": "string"}}, "worktrees": {"type": "array", "items": {"type": "string"}},
+    "modules": {"type": "array", "items": {"type": "string"}}, "sourceLayout": {"type": "array", "items": {"type": "string"}}, "buildSystem": {"type": "string"},
+    "configurationAssets": {"type": "array", "items": {"type": "string"}}, "deploymentAssets": {"type": "array", "items": {"type": "string"}}, "testAssets": {"type": "array", "items": {"type": "string"}},
+    "observedAt": {"type": "string", "format": "date-time"}, "evidenceReferences": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  }
+}

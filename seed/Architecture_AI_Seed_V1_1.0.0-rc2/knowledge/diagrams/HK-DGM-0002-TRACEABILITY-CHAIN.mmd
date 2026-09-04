@@ -1,0 +1,11 @@
+flowchart TD
+    R["Requirement"] --> D["Decision / ADR"]
+    D --> S["Specification"]
+    S --> C["Component / Interface"]
+    C --> I["Implementation"]
+    I --> T["Test"]
+    T --> E["Evidence"]
+    E --> V{"Verified?"}
+    V -->|"Sí"| OK["Status VERIFIED"]
+    V -->|"No"| G["Explicit GAP"]
+

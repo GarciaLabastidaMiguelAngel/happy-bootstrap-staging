@@ -1,0 +1,36 @@
+{
+  "snapshot": "SEED-SNAPSHOT-RC2-001",
+  "version": "1.0.0-rc2",
+  "scope": "static documentary/package preparation; no runtime or acceptance fixture execution",
+  "schemaValidation": {
+    "status": "PASS_SYNTAX_LOCAL_REFS_AND_RC1_BYTE_EQUIVALENCE",
+    "count": 18,
+    "metaSchemaValidation": "NOT_EXECUTED; validator dependency unavailable; schemas unchanged"
+  },
+  "securityScan": {
+    "status": "PASS_LOCAL",
+    "findings": [],
+    "reviewedPatternLiterals": [],
+    "limits": "Pattern and content review; not a guarantee of institutional classification completeness."
+  },
+  "rc1Preserved": true,
+  "controlWorkbookPreserved": true,
+  "harnessFixtures": "DESIGNED_NOT_EXECUTED",
+  "gitPublication": "EXTERNAL_RECEIPT_REQUIRED",
+  "validator": "tools/validate_seed_rc2.mjs",
+  "staticValidation": {
+    "errors": 0,
+    "warnings": 0,
+    "counts": {
+      "files": 197,
+      "markdown": 139,
+      "jsonFiles": 21,
+      "schemaFiles": 18,
+      "mermaid": 26,
+      "formalSpecFiles": 10,
+      "duplicateBasenames": 6,
+      "errors": 0,
+      "warnings": 0
+    }
+  }
+}

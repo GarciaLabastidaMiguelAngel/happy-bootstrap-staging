@@ -1,0 +1,47 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://happy.local/schemas/common.schema.json",
+  "title": "Happy Common Contract Definitions",
+  "$comment": "DRAFT / PREPARED_NOT_DELIVERED",
+  "$defs": {
+    "NonEmptyString": {"type": "string", "minLength": 1},
+    "Identifier": {"type": "string", "minLength": 1, "maxLength": 200, "pattern": "^[A-Za-z0-9][A-Za-z0-9._:/-]*$"},
+    "Digest": {"type": "string", "minLength": 16, "maxLength": 256},
+    "Timestamp": {"type": "string", "format": "date-time"},
+    "Classification": {
+      "type": "string",
+      "enum": ["PUBLIC", "INTERNAL", "CONFIDENTIAL", "RESTRICTED", "UNCLASSIFIED"]
+    },
+    "AuthorityType": {
+      "type": "string",
+      "enum": ["INTERNAL_APPROVED", "INTERNAL_OBSERVED", "USER_DIRECTIVE", "OFFICIAL_EXTERNAL", "INTERNAL_EXAMPLE", "RESEARCH_SECONDARY", "MODEL_INFERENCE", "UNKNOWN"]
+    },
+    "EvidenceRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["evidenceId", "sourceId"],
+      "properties": {
+        "evidenceId": {"$ref": "#/$defs/Identifier"},
+        "sourceId": {"$ref": "#/$defs/Identifier"},
+        "sourceVersion": {"type": "string"},
+        "sectionRef": {"type": "string"},
+        "contentHash": {"$ref": "#/$defs/Digest"},
+        "supports": {"type": "string", "enum": ["SUPPORTS", "CONTRADICTS", "CONTEXT"]}
+      }
+    },
+    "Scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["country", "classification"],
+      "properties": {
+        "country": {"type": "string", "minLength": 2, "maxLength": 16},
+        "businessDomain": {"type": "string"},
+        "platformId": {"type": "string"},
+        "solutionId": {"type": "string"},
+        "systemId": {"type": "string"},
+        "environment": {"type": "string"},
+        "classification": {"$ref": "#/$defs/Classification"}
+      }
+    }
+  }
+}

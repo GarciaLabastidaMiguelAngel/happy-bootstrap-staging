@@ -1,0 +1,14 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://happy.local/schemas/baseline-reconciliation-receipt.schema.json",
+  "title": "BaselineReconciliationReceipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["receiptId", "baselineStatus", "currentImplementationCommit", "findings", "historicalEvidencePreserved", "observedAt", "evidenceReferences"],
+  "properties": {
+    "receiptId": {"type": "string"}, "baselineStatus": {"enum": ["FOUND", "NOT_FOUND", "INACCESSIBLE", "CONFLICTED"]},
+    "baselineIdentity": {"type": "string"}, "baselineDate": {"type": "string"}, "baselineCommit": {"type": "string"}, "currentImplementationCommit": {"type": "string"},
+    "findings": {"type": "array", "items": {"type": "object", "required": ["subject", "outcome"], "properties": {"subject": {"type": "string"}, "outcome": {"enum": ["MATCH", "PARTIAL", "MISSING", "IMPLEMENTED_NOT_DOCUMENTED", "DOCUMENTED_NOT_IMPLEMENTED", "VERSION_DRIFT", "CONFIGURATION_DRIFT", "ARCHITECTURE_DRIFT", "UNKNOWN", "BLOCKED_BY_EVIDENCE"]}}, "additionalProperties": true}},
+    "historicalEvidencePreserved": {"type": "boolean"}, "observedAt": {"type": "string", "format": "date-time"}, "evidenceReferences": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  }
+}

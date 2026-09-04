@@ -1,0 +1,16 @@
+stateDiagram-v2
+  [*] --> Received
+  Received --> Hashed
+  Hashed --> SafetyChecked
+  SafetyChecked --> Parsed
+  Parsed --> Classified
+  Classified --> Extracted
+  Extracted --> Reconciled
+  Reconciled --> Dispositioned
+  Dispositioned --> Completed
+  Hashed --> Duplicate: same content
+  SafetyChecked --> Quarantined: unsafe or suspicious
+  Parsed --> Partial: parser warning
+  Partial --> Reconciled: controlled extraction
+  Reconciled --> Quarantined: policy or conflict risk
+

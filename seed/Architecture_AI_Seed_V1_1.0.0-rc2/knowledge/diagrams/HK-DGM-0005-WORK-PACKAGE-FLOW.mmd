@@ -1,0 +1,10 @@
+flowchart TD
+  I["Intent + task + actor"] --> A["Authorize + resolve scope"]
+  A --> R["Retrieve + filter"]
+  R --> C["Reconcile + rank"]
+  C --> V["Assemble + validate"]
+  V --> W["Immutable Work Package"]
+  A -->|missing identity or scope| M["Require more context"]
+  R -->|restricted| D["Deny without leakage"]
+  C -->|material conflict| X["Conflicted package"]
+

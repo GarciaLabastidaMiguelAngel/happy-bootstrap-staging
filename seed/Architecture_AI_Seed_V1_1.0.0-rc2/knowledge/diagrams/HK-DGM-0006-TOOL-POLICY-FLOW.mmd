@@ -1,0 +1,10 @@
+flowchart TD
+  Q["Tool / resource request"] --> PEP["Policy enforcement point"]
+  PEP --> PIP["Trusted attributes"]
+  PIP --> PDP["Versioned policy decision"]
+  PDP -->|ALLOW + obligations| E["Execute + validate output"]
+  PDP -->|REQUIRE_APPROVAL| H["Human effect review"]
+  H -->|fingerprint valid| E
+  PDP -->|DENY| D["Block + audit"]
+  PDP -->|REQUIRE_MORE_CONTEXT| M["Resolve attributes"]
+

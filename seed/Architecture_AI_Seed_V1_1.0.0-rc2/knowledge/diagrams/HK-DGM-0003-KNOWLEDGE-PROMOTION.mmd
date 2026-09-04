@@ -1,0 +1,11 @@
+flowchart TD
+    S["Source + Artifact"] --> E["Evidence + Claim"]
+    E --> C["Knowledge Candidate"]
+    C --> R{"Reconciliation"}
+    R -->|"Match / update"| P["Governed proposal"]
+    R -->|"Conflict / ambiguous"| G["Gap or human decision"]
+    P --> H["Human review + policy"]
+    H -->|"Approved"| Git["Git canonical commit"]
+    H -->|"Rejected / deferred"| X["History preserved"]
+    Git --> V["Graph / index / cache projections"]
+

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://happy.local/schemas/promotion-request.schema.json",
+  "title": "Canonical Knowledge Promotion Request",
+  "$comment": "AAI-SPEC-0004 v0.1.0-draft / PREPARED_NOT_DELIVERED",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["promotionRequestId", "candidateId", "candidateVersion", "taskId", "requestId", "actorId", "agentId", "scope", "reconciliationResult", "evidenceRefs", "canonicalBaseline", "actionFingerprint"],
+  "properties": {
+    "promotionRequestId": {"type": "string", "minLength": 1},
+    "candidateId": {"type": "string", "minLength": 1},
+    "candidateVersion": {"type": "string", "minLength": 1},
+    "taskId": {"type": "string", "minLength": 1},
+    "requestId": {"type": "string", "minLength": 1},
+    "actorId": {"type": "string", "minLength": 1},
+    "agentId": {"type": "string", "minLength": 1},
+    "delegationId": {"type": "string"},
+    "scope": {"$ref": "common.schema.json#/$defs/Scope"},
+    "reconciliationResult": {"type": "string", "enum": ["MATCH", "ENRICHMENT", "UPDATE", "CONFLICT", "DUPLICATE", "SUPERSEDES", "UNRELATED", "AMBIGUOUS"]},
+    "evidenceRefs": {"type": "array", "minItems": 1, "items": {"$ref": "common.schema.json#/$defs/EvidenceRef"}},
+    "canonicalBaseline": {"type": "string", "minLength": 1},
+    "proposedDiffDigest": {"type": "string"},
+    "actionFingerprint": {"type": "string", "minLength": 16},
+    "ownerId": {"type": "string"},
+    "reviewerIds": {"type": "array", "items": {"type": "string"}},
+    "policyDecisionId": {"type": "string"},
+    "approvalId": {"type": "string"}
+  }
+}

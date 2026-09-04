@@ -1,0 +1,15 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://happy.local/schemas/build-runtime-receipt.schema.json",
+  "title": "BuildRuntimeReceipt",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["receiptId", "repositoryIdentity", "commitSha", "sameCommitInvariant", "javaDetected", "javaRequired", "dependencyResolution", "compileResult", "testResult", "architectureCheckResult", "integrationCheckResult", "runtimeResult", "configurationResult", "startedAt", "endedAt", "evidenceReferences"],
+  "properties": {
+    "receiptId": {"type": "string"}, "repositoryIdentity": {"type": "string"}, "commitSha": {"type": "string", "minLength": 7}, "sameCommitInvariant": {"const": true},
+    "javaDetected": {"type": "string"}, "javaRequired": {"type": "string"},
+    "dependencyResolution": {"$ref": "#/$defs/result"}, "compileResult": {"$ref": "#/$defs/result"}, "testResult": {"$ref": "#/$defs/result"}, "architectureCheckResult": {"$ref": "#/$defs/result"}, "integrationCheckResult": {"$ref": "#/$defs/result"}, "runtimeResult": {"$ref": "#/$defs/result"}, "configurationResult": {"$ref": "#/$defs/result"},
+    "failures": {"type": "array", "items": {"type": "object", "additionalProperties": true}}, "startedAt": {"type": "string", "format": "date-time"}, "endedAt": {"type": "string", "format": "date-time"}, "evidenceReferences": {"type": "array", "items": {"type": "string"}, "minItems": 1}
+  },
+  "$defs": {"result": {"enum": ["PASS", "FAIL", "PARTIAL", "BLOCKED", "NOT_EXECUTED", "NOT_APPLICABLE"]}}
+}

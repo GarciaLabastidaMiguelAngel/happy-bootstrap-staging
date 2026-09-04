@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs><marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#2E74B5"/></marker><filter id="s"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0B2545" flood-opacity="0.18"/></filter></defs>
+  <rect width="1600" height="900" fill="#F7F9FC"/>
+  <text x="800" y="68" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" fill="#0B2545">Cadena de trazabilidad verificable</text>
+  <text x="800" y="108" text-anchor="middle" font-family="Arial" font-size="18" fill="#506784">Cada transición exige una relación explícita; si falta, se registra GAP</text>
+  <g font-family="Arial" text-anchor="middle">
+    <rect x="150" y="180" width="370" height="100" rx="16" fill="#0B2545"/><text x="335" y="240" fill="#FFF" font-size="23" font-weight="700">Requirement</text>
+    <rect x="615" y="180" width="370" height="100" rx="16" fill="#1F4D78"/><text x="800" y="240" fill="#FFF" font-size="23" font-weight="700">Decision / ADR</text>
+    <rect x="1080" y="180" width="370" height="100" rx="16" fill="#2E74B5"/><text x="1265" y="240" fill="#FFF" font-size="23" font-weight="700">Specification</text>
+    <rect x="1080" y="400" width="370" height="100" rx="16" fill="#2A8C82"/><text x="1265" y="460" fill="#FFF" font-size="23" font-weight="700">Component / Interface</text>
+    <rect x="615" y="400" width="370" height="100" rx="16" fill="#506784"/><text x="800" y="460" fill="#FFF" font-size="23" font-weight="700">Implementation</text>
+    <rect x="150" y="400" width="370" height="100" rx="16" fill="#6B7280"/><text x="335" y="460" fill="#FFF" font-size="23" font-weight="700">Test</text>
+    <rect x="395" y="635" width="370" height="100" rx="16" fill="#2A8C82"/><text x="580" y="695" fill="#FFF" font-size="23" font-weight="700">Evidence</text>
+    <rect x="835" y="635" width="370" height="100" rx="16" fill="#FFFFFF" stroke="#D97706" stroke-width="4"/><text x="1020" y="678" fill="#0B2545" font-size="22" font-weight="700">Status gate</text><text x="1020" y="708" fill="#D97706" font-size="18">VERIFIED o explicit GAP</text>
+  </g>
+  <g stroke="#2E74B5" stroke-width="5" fill="none" marker-end="url(#a)">
+    <path d="M520 230 H600"/><path d="M985 230 H1065"/><path d="M1265 280 V385"/><path d="M1080 450 H1000"/><path d="M615 450 H535"/><path d="M335 500 V570 Q335 685 380 685"/><path d="M765 685 H820"/>
+  </g>
+  <text x="800" y="820" text-anchor="middle" font-family="Arial" font-size="20" fill="#506784">Reporte o documentación pueden ocupar un eslabón, pero no sustituyen evidencia de los siguientes.</text>
+</svg>

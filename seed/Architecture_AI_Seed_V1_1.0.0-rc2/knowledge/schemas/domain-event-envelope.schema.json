@@ -1,0 +1,78 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://happy.local/schemas/domain-event-envelope.schema.json",
+  "title": "Happy Provisional Domain Event Envelope",
+  "$comment": "AAI-SPEC-0036 provisional contract used by AAI-SPEC-0009/0010. DRAFT / PREPARED_NOT_DELIVERED. Transport, topics, ordering, retries, delivery guarantees and physical outbox are BLOCKED_BY_SOURCE(SER-002).",
+  "$defs": {
+    "SubjectRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subjectType", "subjectId"],
+      "properties": {
+        "subjectType": {
+          "type": "string",
+          "enum": ["HUMAN", "AGENT", "WORKLOAD", "SERVICE", "TEAM", "UNKNOWN"]
+        },
+        "subjectId": {"type": "string", "minLength": 1},
+        "subjectVersion": {"type": "string"}
+      }
+    },
+    "DomainEventEnvelope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "eventId",
+        "eventType",
+        "eventVersion",
+        "schemaVersion",
+        "occurredAt",
+        "producer",
+        "requestId",
+        "correlationId",
+        "causationId",
+        "idempotencyKey",
+        "aggregateType",
+        "aggregateId",
+        "aggregateVersion",
+        "classification"
+      ],
+      "properties": {
+        "eventId": {"$ref": "common.schema.json#/$defs/Identifier"},
+        "eventType": {"type": "string", "minLength": 1},
+        "eventVersion": {"type": "string", "minLength": 1},
+        "schemaVersion": {"type": "string", "minLength": 1},
+        "occurredAt": {"$ref": "common.schema.json#/$defs/Timestamp"},
+        "producer": {"$ref": "#/$defs/SubjectRef"},
+        "humanActor": {"$ref": "#/$defs/SubjectRef"},
+        "agentActor": {"$ref": "#/$defs/SubjectRef"},
+        "workloadActor": {"$ref": "#/$defs/SubjectRef"},
+        "delegationId": {"type": "string"},
+        "requestId": {"$ref": "common.schema.json#/$defs/Identifier"},
+        "taskId": {"type": "string"},
+        "questionId": {"type": "string"},
+        "correlationId": {"$ref": "common.schema.json#/$defs/Identifier"},
+        "causationId": {"$ref": "common.schema.json#/$defs/Identifier"},
+        "idempotencyKey": {"$ref": "common.schema.json#/$defs/Identifier"},
+        "aggregateType": {"type": "string", "minLength": 1},
+        "aggregateId": {"$ref": "common.schema.json#/$defs/Identifier"},
+        "aggregateVersion": {"type": "integer", "minimum": 1},
+        "canonicalBaseline": {"type": "string"},
+        "projectionBaseline": {"type": "string"},
+        "classification": {"$ref": "common.schema.json#/$defs/Classification"},
+        "evidenceRefs": {
+          "type": "array",
+          "items": {"$ref": "common.schema.json#/$defs/EvidenceRef"}
+        },
+        "contentDigest": {"$ref": "common.schema.json#/$defs/Digest"},
+        "traceContext": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "traceId": {"type": "string"},
+            "spanId": {"type": "string"}
+          }
+        }
+      }
+    }
+  }
+}

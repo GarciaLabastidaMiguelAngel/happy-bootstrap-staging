@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="850" viewBox="0 0 1400 850">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><path d="M0,0 L0,6 L9,3 z" fill="#2E74B5"/></marker></defs>
+  <rect width="1400" height="850" fill="#F7F9FC"/>
+  <text x="70" y="70" font-family="Arial" font-size="34" font-weight="bold" fill="#0B2545">Análisis arquitectónico por vectores interrelacionados</text>
+  <circle cx="700" cy="420" r="125" fill="#0B2545"/>
+  <text x="640" y="405" font-family="Arial" font-size="25" font-weight="bold" fill="#FFFFFF">Cambio</text>
+  <text x="610" y="440" font-family="Arial" font-size="25" font-weight="bold" fill="#FFFFFF">arquitectónico</text>
+  <g font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle">
+    <rect x="90" y="160" width="300" height="90" rx="18" fill="#FDECEC" stroke="#A32929" stroke-width="3"/><text x="240" y="215" fill="#7D1E1E">Seguridad · Fraude · PCI</text>
+    <rect x="550" y="120" width="300" height="90" rx="18" fill="#E8EEF5" stroke="#2E74B5" stroke-width="3"/><text x="700" y="175" fill="#0B2545">Negocio · Aplicación</text>
+    <rect x="1010" y="160" width="300" height="90" rx="18" fill="#E6F4EA" stroke="#287D3C" stroke-width="3"/><text x="1160" y="215" fill="#174D25">Datos · Integración</text>
+    <rect x="80" y="585" width="330" height="90" rx="18" fill="#FFF3D6" stroke="#A66B00" stroke-width="3"/><text x="245" y="640" fill="#755000">Riesgo · Cumplimiento · Costo</text>
+    <rect x="535" y="650" width="330" height="90" rx="18" fill="#EDE7F6" stroke="#6042A6" stroke-width="3"/><text x="700" y="705" fill="#432C7A">Conocimiento · Evidencia</text>
+    <rect x="990" y="585" width="330" height="90" rx="18" fill="#E6F0FA" stroke="#356C9A" stroke-width="3"/><text x="1155" y="625" fill="#244C70">Infraestructura · Operación</text><text x="1155" y="655" fill="#244C70">Resiliencia · Entrega</text>
+  </g>
+  <g stroke="#2E74B5" stroke-width="4" marker-end="url(#a)">
+    <line x1="610" y1="335" x2="370" y2="240"/><line x1="700" y1="295" x2="700" y2="210"/><line x1="790" y1="335" x2="1030" y2="240"/>
+    <line x1="600" y1="500" x2="380" y2="590"/><line x1="700" y1="545" x2="700" y2="650"/><line x1="800" y1="500" x2="1020" y2="590"/>
+  </g>
+  <text x="70" y="810" font-family="Arial" font-size="20" fill="#486581">Salida: relaciones causales · impactos · controles · owner · evidencia · riesgo residual</text>
+</svg>
+

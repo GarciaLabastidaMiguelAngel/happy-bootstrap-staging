@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://happy.local/schemas/ingestion-receipt.schema.json",
+  "title": "Governed Ingestion Receipt",
+  "$comment": "AAI-SPEC-0007 v0.1.0-draft / PREPARED_NOT_DELIVERED",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["receiptId", "sourceId", "sourceVersion", "artifactId", "contentHash", "state", "receivedAt", "classification", "dispositions", "parserVersion"],
+  "properties": {
+    "receiptId": {"type": "string", "minLength": 1},
+    "sourceId": {"type": "string", "minLength": 1},
+    "sourceVersion": {"type": "string", "minLength": 1},
+    "artifactId": {"type": "string", "minLength": 1},
+    "contentHash": {"type": "string", "minLength": 16},
+    "mimeType": {"type": "string"},
+    "byteSize": {"type": "integer", "minimum": 0},
+    "state": {"type": "string", "enum": ["RECEIVED", "HASHED", "SAFETY_CHECKED", "PARSED", "CLASSIFIED", "EXTRACTED", "RECONCILED", "DISPOSITIONED", "COMPLETED", "DUPLICATE", "QUARANTINED", "PARTIAL", "FAILED", "CANCELLED"]},
+    "receivedAt": {"type": "string", "format": "date-time"},
+    "completedAt": {"type": "string", "format": "date-time"},
+    "classification": {"$ref": "common.schema.json#/$defs/Classification"},
+    "parserVersion": {"type": "string", "minLength": 1},
+    "policyDecisionIds": {"type": "array", "items": {"type": "string"}},
+    "warnings": {"type": "array", "items": {"type": "string"}},
+    "errorCodes": {"type": "array", "items": {"type": "string"}},
+    "dispositions": {
+      "type": "array",
+      "items": {"type": "string", "enum": ["USE_AS_TASK_CONTEXT", "USE_AS_EVIDENCE", "CREATE_KNOWLEDGE_CANDIDATE", "UPDATE_EXISTING_KNOWLEDGE", "CREATE_CONFLICT", "IGNORE_FOR_CURRENT_TASK", "ASK_HUMAN", "QUARANTINE"]}
+    },
+    "candidateIds": {"type": "array", "items": {"type": "string"}},
+    "evidenceIds": {"type": "array", "items": {"type": "string"}},
+    "conflictIds": {"type": "array", "items": {"type": "string"}}
+  }
+}

@@ -1,0 +1,23 @@
+stateDiagram-v2
+  [*] --> NEW
+  NEW --> CONTEXT_READY: scope + owner + context
+  CONTEXT_READY --> PLANNED: dependencies + entry/exit
+  PLANNED --> IN_PROGRESS: eligible + assigned + policy
+  IN_PROGRESS --> VERIFYING: structured result
+  VERIFYING --> HUMAN_REVIEW: checks + evidence
+  HUMAN_REVIEW --> APPROVED: authorized receipt
+  APPROVED --> PUBLISHED: governed publication
+  PUBLISHED --> CLOSED: reconciliation + state delta
+
+  NEW --> BLOCKED: missing requirement
+  CONTEXT_READY --> BLOCKED: dependency or access
+  PLANNED --> BLOCKED: gate not satisfied
+  IN_PROGRESS --> DEGRADED: partial capability
+  VERIFYING --> REJECTED: verification or review failed
+  HUMAN_REVIEW --> REJECTED: rejected with rationale
+  BLOCKED --> CONTEXT_READY: blocker resolved
+  DEGRADED --> IN_PROGRESS: capability restored
+  REJECTED --> IN_PROGRESS: authorized rework
+  NEW --> CANCELLED: authorized cancellation
+  IN_PROGRESS --> CANCELLED: authorized cancellation
+

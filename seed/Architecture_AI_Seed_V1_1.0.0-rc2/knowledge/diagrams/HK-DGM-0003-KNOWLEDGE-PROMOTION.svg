@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs><marker id="p" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0 0 L12 6 L0 12 Z" fill="#2E74B5"/></marker><filter id="sh"><feDropShadow dx="0" dy="3" stdDeviation="4" flood-color="#0B2545" flood-opacity="0.16"/></filter></defs>
+  <rect width="1600" height="900" fill="#F7F9FC"/>
+  <text x="800" y="65" text-anchor="middle" font-family="Arial" font-size="34" font-weight="700" fill="#0B2545">Del descubrimiento al conocimiento canónico</text>
+  <text x="800" y="104" text-anchor="middle" font-family="Arial" font-size="18" fill="#506784">Ingesta no equivale a promoción; Git precede a cualquier proyección</text>
+  <g font-family="Arial" text-anchor="middle">
+    <rect x="105" y="180" width="310" height="105" rx="16" fill="#E8EEF5" stroke="#2E74B5" stroke-width="3"/><text x="260" y="225" fill="#0B2545" font-size="22" font-weight="700">Source + Artifact</text><text x="260" y="255" fill="#506784" font-size="17">hash, scope, classification</text>
+    <rect x="495" y="180" width="310" height="105" rx="16" fill="#DDEBF7" stroke="#2E74B5" stroke-width="3"/><text x="650" y="225" fill="#0B2545" font-size="22" font-weight="700">Evidence + Claim</text><text x="650" y="255" fill="#506784" font-size="17">authority y temporalidad</text>
+    <rect x="885" y="180" width="310" height="105" rx="16" fill="#FFF4D6" stroke="#D97706" stroke-width="3"/><text x="1040" y="225" fill="#0B2545" font-size="22" font-weight="700">Knowledge Candidate</text><text x="1040" y="255" fill="#506784" font-size="17">todavía no autoritativo</text>
+    <polygon points="1350,170 1490,232 1350,294 1210,232" fill="#FFFFFF" stroke="#D97706" stroke-width="4"/><text x="1350" y="225" fill="#0B2545" font-size="20" font-weight="700">Reconcile</text><text x="1350" y="250" fill="#506784" font-size="15">match/update/conflict</text>
+    <rect x="1015" y="420" width="360" height="110" rx="16" fill="#EAF5F3" stroke="#2A8C82" stroke-width="3"/><text x="1195" y="466" fill="#0B2545" font-size="22" font-weight="700">Governed Proposal</text><text x="1195" y="497" fill="#506784" font-size="17">diff + evidence + owner</text>
+    <rect x="565" y="420" width="360" height="110" rx="16" fill="#FFFFFF" stroke="#2A8C82" stroke-width="3"/><text x="745" y="463" fill="#0B2545" font-size="22" font-weight="700">Human Review + Policy</text><text x="745" y="493" fill="#506784" font-size="17">approval bound to exact effect</text>
+    <rect x="115" y="420" width="360" height="110" rx="16" fill="#0B2545"/><text x="295" y="466" fill="#FFFFFF" font-size="22" font-weight="700">Git Canonical Commit</text><text x="295" y="497" fill="#DDEBF7" font-size="17">approved, versioned truth</text>
+    <rect x="115" y="675" width="360" height="110" rx="16" fill="#2E74B5"/><text x="295" y="721" fill="#FFFFFF" font-size="22" font-weight="700">Derived Projections</text><text x="295" y="752" fill="#DDEBF7" font-size="17">graph, index, cache, read model</text>
+    <rect x="1015" y="675" width="360" height="110" rx="16" fill="#FFF4D6" stroke="#D97706" stroke-width="3"/><text x="1195" y="720" fill="#0B2545" font-size="22" font-weight="700">Conflict / Gap</text><text x="1195" y="751" fill="#506784" font-size="17">history preserved; human task</text>
+  </g>
+  <g stroke="#2E74B5" stroke-width="5" fill="none" marker-end="url(#p)"><path d="M415 232 H480"/><path d="M805 232 H870"/><path d="M1195 232 H1200"/><path d="M1350 294 V365 Q1350 390 1325 390 H1195 V405"/><path d="M1015 475 H940"/><path d="M565 475 H490"/><path d="M295 530 V660"/></g>
+  <path d="M1490 232 H1530 V730 H1390" stroke="#D97706" stroke-width="5" fill="none" marker-end="url(#p)"/>
+  <text x="1210" y="365" font-family="Arial" font-size="16" fill="#2A8C82">match / update</text>
+  <text x="1390" y="645" font-family="Arial" font-size="16" fill="#D97706">conflict / ambiguous</text>
+  <text x="800" y="852" text-anchor="middle" font-family="Arial" font-size="18" fill="#506784">Devin puede proponer. No puede aprobar ni convertir su inferencia en verdad institucional.</text>
+</svg>

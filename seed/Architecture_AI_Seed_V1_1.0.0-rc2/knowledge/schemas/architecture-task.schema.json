@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://happy.local/schemas/architecture-task.schema.json",
+  "title": "Architecture Task",
+  "$comment": "AAI-SPEC-0009 v0.1.0-draft / PREPARED_NOT_DELIVERED. Persistence/API mapping is BLOCKED_BY_SOURCE(SER-002); Sprint semantics are outside this contract and BLOCKED_BY_SOURCE(SER-010).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "taskId",
+    "version",
+    "objective",
+    "intent",
+    "scope",
+    "owner",
+    "state",
+    "dependencies",
+    "entryCriteria",
+    "exitCriteria",
+    "expectedOutputs",
+    "verificationCriteria",
+    "evidenceRequirements",
+    "specRefs",
+    "decisionRefs",
+    "requiredCapabilityRefs",
+    "createdAt",
+    "updatedAt",
+    "sourceRefs"
+  ],
+  "properties": {
+    "taskId": {"$ref": "common.schema.json#/$defs/Identifier"},
+    "version": {"type": "integer", "minimum": 1},
+    "parentTaskId": {"type": "string"},
+    "originQuestionId": {"type": "string"},
+    "objective": {"type": "string", "minLength": 1},
+    "globalObjective": {"type": "string"},
+    "intent": {"type": "string", "minLength": 1},
+    "scope": {"$ref": "common.schema.json#/$defs/Scope"},
+    "priority": {"type": "string"},
+    "owner": {"$ref": "#/$defs/SubjectRef"},
+    "assignee": {"$ref": "#/$defs/SubjectRef"},
+    "activeDelegationId": {"type": "string"},
+    "state": {"$ref": "#/$defs/WorkState"},
+    "resumeState": {"$ref": "#/$defs/WorkState"},
+    "dependencies": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {"$ref": "common.schema.json#/$defs/Identifier"}
+    },
+    "entryCriteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "exitCriteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "expectedOutputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "verificationCriteria": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "evidenceRequirements": {
+      "type": "array",
+      "minItems": 1,
+      "items": {"type": "string", "minLength": 1}
+    },
+    "workPackageRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["packageId", "packageVersion", "readiness"],
+      "properties": {
+        "packageId": {"$ref": "common.schema.json#/$defs/Identifier"},
+        "packageVersion": {"type": "string", "minLength": 1},
+        "readiness": {
+          "type": "string",
+          "enum": ["SUFFICIENT_CURRENT", "PARTIAL_WITH_WARNING", "INSUFFICIENT", "CONFLICTED", "DENIED"]
+        },
+        "contentDigest": {"$ref": "common.schema.json#/$defs/Digest"}
+      }
+    },
+    "specRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "decisionRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "riskRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "requiredCapabilityRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "toolPolicyRef": {"type": "string"},
+    "requiredApprovalRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "blockers": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/Blocker"}
+    },
+    "resultRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "verificationRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "publicationRefs": {"type": "array", "uniqueItems": true, "items": {"type": "string"}},
+    "latestTransitionId": {"type": "string"},
+    "canonicalBaseline": {"type": "string"},
+    "projectionBaseline": {"type": "string"},
+    "createdAt": {"$ref": "common.schema.json#/$defs/Timestamp"},
+    "updatedAt": {"$ref": "common.schema.json#/$defs/Timestamp"},
+    "sourceRefs": {"type": "array", "minItems": 1, "items": {"type": "string"}},
+    "stateDigest": {"$ref": "common.schema.json#/$defs/Digest"}
+  },
+  "$defs": {
+    "WorkState": {
+      "type": "string",
+      "enum": [
+        "NEW",
+        "CONTEXT_READY",
+        "PLANNED",
+        "IN_PROGRESS",
+        "VERIFYING",
+        "HUMAN_REVIEW",
+        "APPROVED",
+        "PUBLISHED",
+        "CLOSED",
+        "BLOCKED",
+        "DEGRADED",
+        "REJECTED",
+        "CANCELLED"
+      ]
+    },
+    "SubjectRef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["subjectType", "subjectId", "responsibilityType"],
+      "properties": {
+        "subjectType": {"type": "string", "enum": ["HUMAN", "AGENT", "WORKLOAD", "TEAM", "UNKNOWN"]},
+        "subjectId": {"type": "string", "minLength": 1},
+        "responsibilityType": {"type": "string", "enum": ["FORMAL_RESPONSIBILITY", "EXECUTION_ASSIGNMENT", "OBSERVED_EXPERTISE", "UNKNOWN"]}
+      }
+    },
+    "Blocker": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["blockerId", "blockerType", "description", "status", "openedAt"],
+      "properties": {
+        "blockerId": {"$ref": "common.schema.json#/$defs/Identifier"},
+        "blockerType": {
+          "type": "string",
+          "enum": [
+            "HUMAN_DECISION_REQUIRED",
+            "ARCHITECTURE_CONFLICT",
+            "SECURITY_POLICY_CONFLICT",
+            "MISSING_EXTERNAL_ACCESS",
+            "UNRESOLVED_REQUIREMENT",
+            "DEPENDENCY_UNSATISFIED",
+            "CONTEXT_NOT_READY",
+            "VERIFICATION_FAILED",
+            "POLICY_DENIED"
+          ]
+        },
+        "description": {"type": "string", "minLength": 1},
+        "status": {"type": "string", "enum": ["OPEN", "RESOLVED", "SUPERSEDED"]},
+        "ownerRef": {"type": "string"},
+        "questionId": {"type": "string"},
+        "resolutionTrigger": {"type": "string"},
+        "openedAt": {"$ref": "common.schema.json#/$defs/Timestamp"},
+        "resolvedAt": {"$ref": "common.schema.json#/$defs/Timestamp"},
+        "evidenceRefs": {"type": "array", "items": {"$ref": "common.schema.json#/$defs/EvidenceRef"}}
+      }
+    }
+  }
+}

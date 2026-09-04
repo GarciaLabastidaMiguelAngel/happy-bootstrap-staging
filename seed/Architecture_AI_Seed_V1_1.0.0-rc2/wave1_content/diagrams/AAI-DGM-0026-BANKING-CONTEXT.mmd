@@ -1,0 +1,10 @@
+flowchart TD
+  C[Channels: OneApp Space Backoffice] --> API[IBM API Connect]
+  API --> GP[Gravity Plus APIs]
+  API --> SB[Solution APIs]
+  SB --> OS[OpenShift Services]
+  OS --> K[Kafka and IBM MQ]
+  OS --> DB[Oracle and Exadata]
+  OS --> SEC[Token Opaco Anonymizer Cipher Card Security]
+  SEC --> PKM[PKM and OpenShift Secrets]
+

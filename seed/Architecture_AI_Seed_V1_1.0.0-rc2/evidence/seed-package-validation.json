@@ -1,0 +1,67 @@
+{
+  "root": "/workspace/scratch/aef7185b5c0d/Architecture_AI_Seed_V1_0.9.1-acceptance-prep.1",
+  "generatedAt": "2026-09-03T14:38:02.270Z",
+  "counts": {
+    "files": 186,
+    "markdown": 135,
+    "jsonFiles": 16,
+    "schemaFiles": 15,
+    "mermaid": 26,
+    "formalSpecFiles": 10,
+    "duplicateBasenames": 6,
+    "errors": 0,
+    "warnings": 0
+  },
+  "duplicateBasenames": [
+    {
+      "name": "ACCEPTANCE.md",
+      "locations": [
+        "ACCEPTANCE.md",
+        "knowledge/bootstrap/ACCEPTANCE.md"
+      ]
+    },
+    {
+      "name": "AGENTS.md",
+      "locations": [
+        "AGENTS.md",
+        "knowledge/bootstrap/AGENTS.md"
+      ]
+    },
+    {
+      "name": "BOOTSTRAP.md",
+      "locations": [
+        "BOOTSTRAP.md",
+        "knowledge/bootstrap/BOOTSTRAP.md"
+      ]
+    },
+    {
+      "name": "CONTEXT_PACK.md",
+      "locations": [
+        "CONTEXT_PACK.md",
+        "knowledge/bootstrap/CONTEXT_PACK.md"
+      ]
+    },
+    {
+      "name": "README.md",
+      "locations": [
+        "README.md",
+        "architecture_ai_package/README.md",
+        "fixtures/README.md",
+        "knowledge/README.md",
+        "wave0_governance/README.md",
+        "wave1_content/README.md",
+        "wave2_content/README.md"
+      ]
+    },
+    {
+      "name": "REPOSITORY_MAP.md",
+      "locations": [
+        "REPOSITORY_MAP.md",
+        "knowledge/bootstrap/REPOSITORY_MAP.md"
+      ]
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "packageIntegrityCandidate": true
+}

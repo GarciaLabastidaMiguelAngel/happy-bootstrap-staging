@@ -1,0 +1,14 @@
+stateDiagram-v2
+  [*] --> Empty
+  Empty --> Loading: bootstrap
+  Loading --> Ready: baseline verified
+  Ready --> Stale: canonical change
+  Stale --> Updating: targeted delta
+  Updating --> Ready: checkpoint committed
+  Loading --> Degraded: partial source
+  Updating --> Degraded: recoverable failure
+  Loading --> Failed: unusable
+  Updating --> Failed: integrity failure
+  Degraded --> Updating: retry
+  Failed --> Loading: controlled rebuild
+

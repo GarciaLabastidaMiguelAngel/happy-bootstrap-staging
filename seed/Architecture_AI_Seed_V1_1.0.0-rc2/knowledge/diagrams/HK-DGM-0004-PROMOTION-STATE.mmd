@@ -1,0 +1,15 @@
+stateDiagram-v2
+  [*] --> Received
+  Received --> Validated: schema + scope + evidence
+  Validated --> Proposed: diff against baseline
+  Proposed --> InReview: owner + policy
+  InReview --> Approved: action-bound approval
+  InReview --> Rejected: decision + rationale
+  InReview --> Deferred: trigger recorded
+  Approved --> Committed: governed Git write
+  Committed --> ProjectRequested: durable event
+  ProjectRequested --> Completed: receipt
+  Validated --> Conflicted: material conflict
+  Approved --> Proposed: baseline or diff changed
+  Committed --> CompletedWithDegradedProjection: refresh failed
+
