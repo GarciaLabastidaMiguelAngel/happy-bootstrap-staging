@@ -1,7 +1,7 @@
 # Devin Prompt Index
 
 Status: ACTIVE
-Direction revision: `DIRECTION-0005`
+Direction revision: `DIRECTION-0006`
 
 This index tracks prompts prepared by Happy Work for delegated Devin sessions.
 
@@ -10,7 +10,7 @@ This index tracks prompts prepared by Happy Work for delegated Devin sessions.
 - Each prompt has a stable ID.
 - One prompt normally maps to one bounded Devin session/workstream.
 - File existence does not imply `SENT` or `EXECUTED`.
-- Parallelism must be classified before handoff.
+- Parallelism is classified before handoff.
 - Material direction changes may invalidate or pause active prompts.
 - Long-running sessions receive Context Refresh deltas when the baseline changes materially.
 - Missing context produces discovery/reconciliation work, not guessing.
@@ -25,6 +25,7 @@ This index tracks prompts prepared by Happy Work for delegated Devin sessions.
 - `SERIAL_REQUIRED`
 - `DISCOVERY_ONLY`
 - `BLOCKED_BY_DEPENDENCY`
+- `SERIAL_REQUIRED_FOR_BOOTSTRAP_THEN_PARALLEL`
 
 ## Prompt lifecycle
 
@@ -39,74 +40,62 @@ This index tracks prompts prepared by Happy Work for delegated Devin sessions.
 - `SUPERSEDED`
 - `CANCELLED`
 
-## Current cross-cutting direction refresh
+## DIRECTION-0006 cross-cutting refresh
 
 All future handoffs must consume these principles where relevant:
 
 - Architecture AI acts as Director/Copilot over governed platform state.
-- First visible local target remains Director Chat + governed status/work/blocker/gate/read-model visibility.
-- Construction order is `DETERMINISTIC -> TOOL -> SKILL -> AGENT`.
+- In the current LAB construction phase, fastest safe delivery/useful parallelism takes precedence over minimizing Devin ACU/tokens; usage is still measured for later optimization.
+- Logical AREAS define capability/responsibility groupings; they are not automatically permanent Agents.
+- Topology sequence is `OBJECTIVE -> CAPABILITY -> RESPONSIBILITY/POLICY -> DETERMINISTIC -> TOOL -> SKILL -> WORKSTREAM -> AGENT/SESSION IF JUSTIFIED`.
+- Construction order remains `DETERMINISTIC -> TOOL -> SKILL -> AGENT` for the final platform.
 - Material work is `PLAN BEFORE EXECUTION` and specification-first.
 - OpenAPI/Swagger governs material HTTP contracts where appropriate.
-- Research unknowns are blocking, safe-default, parallel-research or deferred.
-- Engineering delegates open-ended standards/product research rather than absorbing it silently.
+- Aggressive implementation parallelism requires `GIT_PARALLEL_DEVELOPMENT_READY`.
+- Each parallel session has owned/shared/protected surfaces and a bounded context pack.
+- Research unknowns are blocking, safe-default, parallel-research or deferred; missing evidence is never invented.
+- Research is a parallel evidence fabric using official/institutional sources first.
+- Development must survive missing central DB/enterprise identity through explicit degraded profiles; Git is not a transactional database substitute.
+- Knowledge is governed by authority/provenance/lifecycle and may be projected selectively to Devin; provider knowledge is not canonical.
+- Information classification/access is cross-cutting across storage, knowledge, provider context, telemetry, UI, Arc42 and exports.
+- Classification, authentication, MFA/step-up and authorization are separate concerns.
+- PCI scope is determined from actual data/CDE impact, not from the fact that the product is used by a bank.
+- Sensitive data is not copied to Devin/logs/traces/vectors/graph/documents by default; deterministic handling policy decides projection/masking/redaction.
 - Capability delivery and continuous quality/refactor are synchronized loops.
-- Issues/findings become durable governed work/evidence.
-- Parallel development follows bounded ownership of modules/contracts/shared surfaces.
-- Gates should be deterministic/machine-verifiable where practical.
-- Documentation/evidence is part of governed completion.
-- AI usage/cost minimization through deterministic migration is explicit.
-- Knowledge autonomy is a target; repeated manual package handoff is transitional.
-- MCP is agent-facing capability protocol; backend direct APIs may sit behind MCP tools when justified.
-- Architecture planning is top-down from organizational/enterprise objectives.
-- Canonical document term is `Arc42`.
-- Released Arc42 PDFs are versioned/auditable projections and never overwritten.
+- Independent QA/reconciliation verifies implementation against specifications, standards/gates and documentation.
+- Cross-area virtual meetings are purpose/trigger-driven governance councils with durable outputs, not generic status chats.
+- No responsibility disappears when a workstream/session/agent is merged or retired; a successor and state/work transfer are required.
+- UX is measured against architect tasks; chat is one interaction mode, deterministic UI another.
+- Canonical document term is `Arc42`; released PDFs are versioned/auditable projections and never overwritten.
 - Diagramming is audience-aware: C4/Mermaid/PlantUML technical; draw.io/iconographic conceptual/executive.
-- Analytics is downstream from evidence and must distinguish audit/logs/traces/metrics/work/event/saga/Git/Arc42 evidence.
 - Standards are a living governed registry with version/source/adoption/conformance/evidence/review cadence.
-- Standards conformance is decomposable by layer/vector; `ADOPTED` does not imply `VERIFIED`.
-- Knowledge graph/read models/CQRS projections should reduce repeated raw-data/LLM processing while preserving provenance.
-- Local CQRS may use the same physical infrastructure; no database/repository multiplication for pattern purity.
-- Vectors are retrieval/drift signals, not architecture authority.
-- Backlog hierarchy and prioritization are provider-neutral and evidence-based; future Jira is an adapter/integration target.
+- Analytics is downstream from evidence and distinguishes audit/logs/traces/metrics/work/event/saga/Git/Arc42 state.
+- Knowledge graph/read models/CQRS projections reduce repeated raw-data/LLM processing while preserving provenance.
+- Backlog/prioritization is provider-neutral and future Jira is an adapter target.
 - Self-evolution means governed optimization/proposal, not unrestricted self-modification.
-- Vulnerability discovery does not imply authorization to exploit; LAB POCs require explicit authorization.
-- Scale-out/OpenShift is evidence-driven; measure local bottlenecks, parallelizable backlog and coordination cost first.
+- Vulnerability discovery does not imply authorization to exploit; LAB POCs require explicit authorization/policy.
+- Scale-out/OpenShift is evidence-driven.
 
-Latest impact assessment: `work/changes/DIRECTION-0005_IMPACT.md`.
-Post-rc2 evolution overlay: `work/seed-evolution/POST_RC2_DIRECTION_0005_ANALYTICS_STANDARDS_AUTONOMY.md`.
+Latest impact assessment: `work/changes/DIRECTION-0006_IMPACT.md`.
 
 ## Control table
 
-| Prompt ID | Domain | Status | Parallelism | DIRECTION-0005 impact | Handoff note |
+| Prompt ID | Domain | Status | Parallelism | DIRECTION-0006 impact | Handoff note |
 |---|---|---|---|---|---|
-| `P-ARCHITECTURE-AI-REPOSITORY-ARCHETYPES-01` | Repository / runtime modes / artifact lifecycle | READY | SERIAL_REQUIRED | REVIEW_REQUIRED | Add read-model/CQRS authority, standards registry, analytical storage and scale-out rules |
-| `P-EVENT-PLATFORM-SAGA-01` | Event platform / sagas | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Events provide correlated evidence but do not become analytics storage |
-| `P-OBSERVABILITY-AUDIT-01` | Observability / audit | READY | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Align with Analytics/Audit/Evidence plane and standards-conformance measurement |
-| `P-LOCAL-TELEMETRY-DATA-ROAD-01` | Local OTel Collector / analytical observation road | READY | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Add lineage/read-model/analysis outputs and OpenShift Collector readiness criteria |
-| `P-NOTIFICATION-PLATFORM-01` | Human attention / notification / decisions | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Standards/security/scale blockers use shared Attention model |
-| `P-SIMULATION-EVALUATION-FOUNDATION-01` | LAB / simulation / replay / Monte Carlo | DRAFT | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Add backlog/capacity/parallelism/AI-cost/OpenShift scale scenarios |
-| `P-AGENT-RUNTIME-COMMUNICATION-PLANE-01` | Sessions / work / Devin API / MCP / A2A | READY | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Add portfolio/backlog, analysis observations, standards context and multi-workstation readiness |
-| `P-DEVIN-API-ACCESS-DISCOVERY-01` | Devin API discovery / RBAC | SUPERSEDED | DISCOVERY_ONLY | SUPERSEDED | Real API evidence replaced the need for this discovery prompt |
+| `P-LAB-AGENT-ORGANIZATION-BOOTSTRAP-01` | LAB capability coverage / organization / Git / parallel execution | READY | SERIAL_REQUIRED_FOR_BOOTSTRAP_THEN_PARALLEL | NEW / PRIMARY NEXT | Must be refreshed to include capability-first topology, information governance/Data Council and sensitive-data handling before handoff |
+| `P-ARCHITECTURE-AI-REPOSITORY-ARCHETYPES-01` | Repository / runtime modes / artifact lifecycle | READY | SERIAL_REQUIRED | REVIEW_REQUIRED | Refresh storage/degraded profiles, classification/authority and Git parallel-development rules |
+| `P-EVENT-PLATFORM-SAGA-01` | Event platform / sagas | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Reuse shared Work model; sensitive payloads obey handling policy |
+| `P-OBSERVABILITY-AUDIT-01` | Observability / audit | READY | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Add classification/redaction and organization/UX/deployment evidence correlations |
+| `P-LOCAL-TELEMETRY-DATA-ROAD-01` | Local OTel Collector / analytical observation road | READY | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Preserve Collector road; protect sensitive data and support degraded env profile |
+| `P-NOTIFICATION-PLATFORM-01` | Human attention / notification / decisions | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Notifications obey information-display classification and shared Attention model |
+| `P-SIMULATION-EVALUATION-FOUNDATION-01` | LAB / simulation / replay / Monte Carlo | DRAFT | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Add organization/parallelism scenarios; simulation datasets preserve classification/provenance |
+| `P-AGENT-RUNTIME-COMMUNICATION-PLANE-01` | Sessions / work / Devin API / MCP / A2A | READY | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Refresh for multi-session LAB organization, provider knowledge and sensitive-context policy |
+| `P-DEVIN-API-ACCESS-DISCOVERY-01` | Devin API discovery / RBAC | SUPERSEDED | DISCOVERY_ONLY | SUPERSEDED | Real API evidence replaced separate discovery prompt |
 | `P-OBSERVABILITY-AUDIT-PLATFORM-01` | Earlier observability draft | SUPERSEDED | PARALLEL_SAFE_WITH_BOUNDARIES | SUPERSEDED | Replaced by `P-OBSERVABILITY-AUDIT-01` |
 
-## New candidate prompts created by DIRECTION-0005
+## Active/ready files
 
-Not yet generated. Work must collision-check before creating/handoff:
-
-- `P-DIRECTOR-CHAT-WORK-READMODEL-01`
-- `P-STANDARDS-INTELLIGENCE-CONFORMANCE-01`
-- `P-ANALYTICS-EVIDENCE-READMODELS-01`
-- `P-KNOWLEDGE-GRAPH-CQRS-PROJECTION-01`
-- `P-PORTFOLIO-BACKLOG-ENGINEERING-FLOW-01`
-- `P-OPENSHIFT-SERVICE-READINESS-DISCOVERY-01`
-
-Do not launch all of them simultaneously. Shared surfaces include persistence, Work model, OpenAPI, dashboard DTOs, telemetry, graph schemas and configuration.
-
-## Captured file locations
-
-### Active / ready
-
+- `active/P-LAB-AGENT-ORGANIZATION-BOOTSTRAP-01.md`
 - `active/P-ARCHITECTURE-AI-REPOSITORY-ARCHETYPES-01.md`
 - `active/P-EVENT-PLATFORM-SAGA-01.md`
 - `active/P-OBSERVABILITY-AUDIT-01.md`
@@ -114,40 +103,26 @@ Do not launch all of them simultaneously. Shared surfaces include persistence, W
 - `active/P-NOTIFICATION-PLATFORM-01.md`
 - `active/P-AGENT-RUNTIME-COMMUNICATION-PLANE-01.md`
 
-### Draft
+## Draft
 
 - `draft/P-SIMULATION-EVALUATION-FOUNDATION-01.md`
 
-### Superseded
+## Superseded
 
 - `superseded/P-DEVIN-API-ACCESS-DISCOVERY-01.md`
 - `superseded/P-OBSERVABILITY-AUDIT-PLATFORM-01.md`
 
-## Required metadata for new prompt files
+## Candidate follow-up prompts
 
-```yaml
-prompt_id: P-...
-title: ...
-domain: ...
-status: READY
-parallelism_decision: PARALLEL_SAFE_WITH_BOUNDARIES
-direction_revision: DIRECTION-0005
-repository_baseline: <commit/ref>
-depends_on: []
-conflicts_with: []
-shared_surfaces: []
-allowed_change_scope: []
-forbidden_change_scope: []
-expected_deliverables: []
-validation_required: []
-created_at: null
-sent_at: null
-executed_at: null
-devin_session_reference: null
-result_reference: null
-```
+Do not generate/launch all simultaneously. Collision-check after LAB bootstrap:
 
-Do not invent timestamps, execution state or Devin session references.
+- `P-DIRECTOR-CHAT-WORK-READMODEL-01`
+- `P-STANDARDS-INTELLIGENCE-CONFORMANCE-01`
+- `P-ANALYTICS-EVIDENCE-READMODELS-01`
+- `P-KNOWLEDGE-GRAPH-CQRS-PROJECTION-01`
+- `P-INFORMATION-CLASSIFICATION-DATA-GOVERNANCE-01`
+- `P-PORTFOLIO-BACKLOG-ENGINEERING-FLOW-01`
+- `P-OPENSHIFT-SERVICE-READINESS-DISCOVERY-01`
 
 ## Handoff rule
 
@@ -160,6 +135,9 @@ Before handing a `READY` prompt to Devin, Work must:
 5. refresh Session Context Pack;
 6. classify blocker/research state;
 7. identify standards/gates/evidence expectations;
-8. identify analytical/read-model/Arc42 implications where applicable;
-9. decide whether prompt remains READY, needs boundaries, must wait or is superseded;
-10. add Context Refresh for long-running sessions after material change.
+8. identify information classification/provider-projection implications;
+9. identify analytical/read-model/Arc42 implications where applicable;
+10. decide whether prompt remains READY, needs boundaries, must wait or is superseded;
+11. add Context Refresh for long-running sessions after material change.
+
+Do not invent timestamps, execution state or Devin session references.
