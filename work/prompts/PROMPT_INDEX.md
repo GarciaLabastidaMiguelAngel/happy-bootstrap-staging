@@ -82,7 +82,8 @@ Latest impact assessment: `work/changes/DIRECTION-0006_IMPACT.md`.
 
 | Prompt ID | Domain | Status | Parallelism | DIRECTION-0006 impact | Handoff note |
 |---|---|---|---|---|---|
-| `P-LAB-AGENT-ORGANIZATION-BOOTSTRAP-01` | LAB capability coverage / organization / Git / parallel execution | READY | SERIAL_REQUIRED_FOR_BOOTSTRAP_THEN_PARALLEL | NEW / PRIMARY NEXT | Must be refreshed to include capability-first topology, information governance/Data Council and sensitive-data handling before handoff |
+| `P-LAB-AGENT-ORGANIZATION-BOOTSTRAP-01` | LAB capability coverage / organization / Git / parallel execution | READY | SERIAL_REQUIRED_FOR_BOOTSTRAP_THEN_PARALLEL | NEW / PRIMARY NEXT | Bootstrap remains the primary organization handoff |
+| `P-GRAVITY-PLUS-CUSTOMER-POSITION-READ-ACCELERATION-POC-01` | Banking integration / Customer Position / Redis / Exadata / performance | READY | PARALLEL_SAFE_WITH_BOUNDARIES_AFTER_BOOTSTRAP | NEW BANKING POC | Execute only after bounded ownership/context is established; must inspect current implementation and all integrations before final design |
 | `P-ARCHITECTURE-AI-REPOSITORY-ARCHETYPES-01` | Repository / runtime modes / artifact lifecycle | READY | SERIAL_REQUIRED | REVIEW_REQUIRED | Refresh storage/degraded profiles, classification/authority and Git parallel-development rules |
 | `P-EVENT-PLATFORM-SAGA-01` | Event platform / sagas | READY | PARALLEL_SAFE_WITH_BOUNDARIES | UNAFFECTED_WITH_CONTEXT_REFRESH | Reuse shared Work model; sensitive payloads obey handling policy |
 | `P-OBSERVABILITY-AUDIT-01` | Observability / audit | READY | PARALLEL_SAFE_WITH_BOUNDARIES | REVIEW_REQUIRED | Add classification/redaction and organization/UX/deployment evidence correlations |
@@ -96,6 +97,7 @@ Latest impact assessment: `work/changes/DIRECTION-0006_IMPACT.md`.
 ## Active/ready files
 
 - `active/P-LAB-AGENT-ORGANIZATION-BOOTSTRAP-01.md`
+- `active/P-GRAVITY-PLUS-CUSTOMER-POSITION-READ-ACCELERATION-POC-01.md`
 - `active/P-ARCHITECTURE-AI-REPOSITORY-ARCHETYPES-01.md`
 - `active/P-EVENT-PLATFORM-SAGA-01.md`
 - `active/P-OBSERVABILITY-AUDIT-01.md`
@@ -123,6 +125,7 @@ Do not generate/launch all simultaneously. Collision-check after LAB bootstrap:
 - `P-INFORMATION-CLASSIFICATION-DATA-GOVERNANCE-01`
 - `P-PORTFOLIO-BACKLOG-ENGINEERING-FLOW-01`
 - `P-OPENSHIFT-SERVICE-READINESS-DISCOVERY-01`
+- future BI-0002 protocol/channel synchronization research only after BI-0001 produces enough semantic-data evidence.
 
 ## Handoff rule
 
