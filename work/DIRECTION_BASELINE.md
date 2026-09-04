@@ -1,226 +1,316 @@
 # Project Direction Baseline
 
 Status: ACTIVE
-Direction revision: DIRECTION-0008
-Previous direction: DIRECTION-0007
-Previous accepted baseline commit: `af0fe8ca5f1a9b88c06fe3b6bb9ff6c403081071`
+Direction revision: DIRECTION-0009
+Previous direction: DIRECTION-0008
+Previous accepted baseline commit: `fe4c80b01c1e60e56b841badf2c84bd164130cec`
 Repository role: Happy Work staging / prompt-governance control plane
-Current operating emphasis: LAB / fastest safe construction, governed parallelism, institutional-platform reuse, audit-artifact continuity, banking POCs, customer-experience optimization and Copilot control evolution
+Current operating emphasis: LAB / fastest safe construction, institutional-platform reuse, auditable transformation, banking POCs, customer IAM/adaptive access, CQRS projection consistency and governed job-orchestration evolution
 
 ## Continuity rule
 
-DIRECTION-0008 incorporates DIRECTION-0007 and all earlier accepted direction unless explicitly overridden below.
+DIRECTION-0009 incorporates DIRECTION-0008 and all earlier accepted direction unless explicitly overridden below.
 
-The exact DIRECTION-0007 baseline remains recoverable from Git history. The immutable rc2 snapshot remains historical and MUST NOT be rewritten in place.
+The exact DIRECTION-0008 baseline remains recoverable from Git history. The immutable rc2 snapshot remains historical and MUST NOT be rewritten in place.
 
-DIRECTION-0008 is additive, not a reset.
+DIRECTION-0009 is additive, not a reset.
 
-## 1. Current institutional artifacts remain a priority
+## 1. Customer identity is a dedicated banking capability
 
-Architecture AI must continue producing the artifacts currently required by bank governance, audit and external authorities while progressively converting those artifacts into governed projections from canonical state.
+Architecture AI now distinguishes customer identity from workforce/corporate identity.
 
-Do not stop producing a current artifact merely because a future target operating model may make it obsolete.
+Corporate/workforce identity may continue to use the approved Microsoft 365 / enterprise identity mechanisms.
 
-Governed by:
-`work/REGULATORY_ARTIFACT_PRIORITY_AND_TRANSFORMATION_MODEL.md`
-
-Rules:
-- Arc42 PDF and other formal evidence packages remain supported where required;
-- exact Banxico/other authority requirements must come from official/institutional evidence, not inference;
-- every artifact should progressively gain source/provenance/version/gate/retention metadata;
-- mechanical generation should become deterministic before redesigning the human process;
-- internal platform evolution audit remains continuous and separate from externally released institutional artifacts.
-
-## 2. Reuse existing institutional platforms before rebuilding
-
-Core rule:
-
-EXISTING GOVERNED CAPABILITY
--> DISCOVER
--> REUSE / CONFIGURE / EXTEND / ADAPT
--> MEASURE
--> REPLACE ONLY WITH EVIDENCE.
-
-Architecture AI must not rebuild working bank delivery capabilities simply to own them.
-
-The user identifies an institutional platform named `Glo` that currently provides application archetypes and pipeline integration for OpenShift deployment. This is accepted as user-provided context but remains evidence-required before implementation assumptions.
+Customer identity requires a governed capability set for:
+- identity/account directory;
+- credentials/authenticators;
+- authentication orchestration;
+- OAuth/OIDC authorization server;
+- sessions/tokens/keys;
+- API scopes/authorization;
+- browser/device binding;
+- MFA/step-up;
+- adaptive risk;
+- onboarding/recovery;
+- revocation/risk state;
+- audit/evidence.
 
 Governed by:
-`work/INSTITUTIONAL_PLATFORM_REUSE_AND_ARCHETYPE_INTEGRATION_MODEL.md`
+`work/CUSTOMER_IDENTITY_ACCESS_RISK_AND_SESSION_ARCHITECTURE.md`
 
-Expected near-term pattern for bank applications/microservices:
+LDAP, IdP, authorization server, risk engine, session store and binding are separate logical responsibilities. Do not collapse them into one concept.
 
-Glo approved archetype
--> preserve Santander Framework/institutional conventions
--> solution-specific implementation
--> existing pipeline/gates
--> OpenShift deployment
--> runtime evidence
--> improvement backlog.
+## 2. Java-first IAM follows reuse before build
 
-Architecture AI should integrate with supported Glo APIs/tools/pipelines when discovered rather than duplicating them.
+Java First remains a technology preference, not permission to implement an IAM product from scratch.
 
-## 3. “Do not reinvent the wheel” is stronger than “if it works, do not touch it”
+Initial LAB candidates:
+- Keycloak as a full open-source Java/OpenJDK IAM/IdP candidate;
+- Spring Security Authorization Server where deeper bank-specific customization justifies additional ownership;
+- a production-capable Java LDAP such as OpenDJ only if a separate LDAP customer directory is actually required.
 
-Architecture AI may improve a working component when evidence shows meaningful value, but should not replace it merely because another pattern/tool is architecturally attractive.
+ApacheDS may be useful for development/testing but is not a production candidate while its own project declares production-readiness concerns.
 
-Decision sequence:
+LDAP is optional. If a mature IdP's production database provides the safer/simpler customer credential authority, do not add LDAP for pattern purity.
 
-Does an institutional capability already solve the need?
--> YES: reuse/integrate first
--> measure limitations
--> improve/extend when justified
--> replacement only after migration/operational/governance evidence.
+## 3. Remove avoidable password-validation load from the core progressively
 
-This applies to Glo, API Connect, Kafka, Kibana, OpenShift, Santander Framework and future institutional platforms.
+Current core password validation remains the legacy baseline until an approved migration exists.
 
-## 4. Copilot remains the long-term single governed entry point
+Target:
 
-The maturity horizon from DIRECTION-0007 remains:
+LEGACY CORE VALIDATION
+-> customer IdP facade
+-> validated migration path
+-> new credential authority
+-> normal login no longer requires a core transaction.
 
-EXPLAIN
--> GUIDE
--> PREPARE
--> EXECUTE BOUNDED CHANGES
--> OPERATE GOVERNED CAPABILITIES
--> GOVERNED SELF-EVOLUTION.
+Never extract/reconstruct plaintext passwords.
 
-Long term, users should request architecture/engineering/platform changes through the Copilot. The Copilot must resolve role/authority/policy/gates and route work to existing platform capabilities rather than bypassing them.
+Migration may use opportunistic re-hash on successful legacy validation, compatible approved hash import, or customer re-enrollment/reset, depending real legacy/security/FIPS evidence.
 
-The Copilot remains an entry/control plane, not the source of truth.
+UNKNOWN remains UNKNOWN until the actual credential mechanism is known.
 
-## 5. Risk/security/fraud is cross-cutting
+## 4. OAuth/OIDC is first-party compatible; token format is separate
 
-Risk analysis is a vertical/cross-cutting capability across business, application, data, channel, infrastructure and operations.
+OAuth/OIDC may be used for first-party bank channels and APIs; federated/social delegation is not required.
+
+Do not conflate:
+- OIDC with third-party identity delegation;
+- OAuth with JWT;
+- JWT with session management.
+
+Token options remain evidence-driven:
+- opaque/reference tokens;
+- signed self-contained JWTs;
+- sender-constrained tokens where justified.
+
+For BI-0003 web BFF, retain the preferred model:
+
+Browser
+-> opaque Secure/HttpOnly/SameSite session cookie
+-> BFF server-side OAuth/OIDC context
+-> gateway/resource APIs.
+
+Do not place access/refresh tokens in browser storage for convenience.
+
+## 5. JWT performance and revocation are explicitly reconciled
+
+Self-contained JWT can reduce introspection latency because gateway/resource servers validate signature/claims locally.
+
+However, purely stateless JWT does not provide immediate revocation by itself.
+
+Candidate governed pattern:
+
+short-lived signed JWT
++ session/token identifiers (`sid`/`jti` or equivalent)
++ central session/risk state (Redis only if approved)
++ event-driven invalidation/update to gateway-local state
++ controlled refresh/session lifecycle
+-> fast validation with bounded immediate-risk enforcement.
+
+If policy requires immediate revocation, some authoritative state/signal is required. Do not claim otherwise.
+
+## 6. Adaptive risk is asynchronous where policy allows, enforcement remains deterministic
+
+Risk/security/fraud remains cross-cutting from DIRECTION-0008.
+
+Candidate decisions:
+- ALLOW;
+- DENY;
+- STEP_UP_REQUIRED;
+- SESSION_RESTRICTED / scope-reduced where policy defines it.
+
+Candidate flow:
+
+minimum synchronous login/binding gate
+-> session established
+-> asynchronous risk enrichment
+-> RiskDecision event
+-> authoritative session/risk state update
+-> gateway/BFF enforcement on protected requests.
+
+SSE/WebSocket may notify the UX of a new challenge state but is not the authorization-control boundary.
+
+Use standards-based step-up semantics where applicable; RFC 9470 is an explicit research/adoption candidate.
+
+## 7. Binding evolves toward cryptographic authentication, not trusted cookies alone
+
+A remembered-device cookie is a risk signal, not proof of device possession.
+
+For web, evaluate WebAuthn/passkeys and approved cryptographic authenticators for stronger authentication/step-up.
+
+For OAuth sender constraint, evaluate DPoP (RFC 9449) or mTLS where channel/runtime support and bank policy justify it.
+
+Web and native/mobile binding must remain separate designs because secure-storage/trust characteristics differ.
+
+## 8. BI-0005 becomes the customer IAM proof
+
+`work/banking/BI-0005_CUSTOMER_IAM_ADAPTIVE_ACCESS_POC.md` is the first governed customer-IAM/adaptive-access POC.
+
+It uses synthetic users first and must prove:
+- Java-first IdP operation;
+- Web BFF server-side session authority;
+- OAuth resource access;
+- measured JWT/reference-token behavior;
+- async ALLOW/DENY/STEP_UP transitions;
+- deterministic gateway enforcement;
+- step-up capability;
+- no real password migration until legacy evidence is available.
+
+## 9. Banking CQRS now has explicit projection-consistency semantics
 
 Governed by:
-`work/RISK_ASYNC_CROSS_CUTTING_AND_CUSTOMER_EXPERIENCE_MODEL.md`
+`work/BANKING_CQRS_PROJECTION_CONSISTENCY_MODEL.md`
 
-Every risk/fraud/security control should be classified as one of:
-- SYNCHRONOUS_BLOCKING_REQUIRED;
-- SYNCHRONOUS_FAST_PATH;
-- ASYNC_EVALUATION_ALLOWED;
-- POST_EVENT_MONITORING;
-- HUMAN/EXTERNAL_APPROVAL_REQUIRED.
+Logical target:
 
-The objective is to avoid serializing customer-critical experience with work that policy/evidence permits to run asynchronously. This is never permission to bypass mandatory controls.
+core authoritative transaction
+-> Exadata/read model where evidence confirms
+-> Redis semantic hot projection
+-> BFF/session projection
+-> browser/native projection.
 
-## 6. Customer experience is an architecture objective, not only a frontend concern
+CQRS does not require separate infrastructure for every projection.
 
-The bank/channel vision is to make the experience fast by placing data and work at the correct governed layer.
+For each semantic element preserve authority, classification, volatility, freshness, version/change marker, projection locations, invalidation/reconciliation rule and consumer views.
 
-Evaluate across:
-- secure device/local projections;
-- channel/BFF candidate where justified;
-- API/read projections/cache;
-- event-driven invalidation/synchronization;
-- optimized source-system queries/transactions;
-- network/runtime/infrastructure placement.
+Highly volatile values such as balances are cacheable only when an evidenced freshness contract and propagation/reconciliation mechanism makes that safe.
 
-Use large-scale content platforms only as an architectural analogy for layered placement/caching; do not copy their technology blindly.
+Preferred update evidence order:
+1. authoritative event/CDC;
+2. source version/change log;
+3. deterministic refresh/reconciliation;
+4. TTL as explicitly weaker fallback.
 
-Customer Position/Gravity Plus remains the first practical performance proof.
+If none meets required freshness, the element remains LIVE_SOURCE_REQUIRED.
 
-## 7. Banking POCs must integrate with institutional delivery
+Semantic data granularity does not imply one SQL request per field; missing fields are grouped into minimal efficient source operations/query plans.
 
-BI-0001 Customer Position and future banking POCs should not be isolated laboratory code that cannot enter the bank delivery path.
+## 10. Frontend/channel consistency becomes a projection problem
 
-Where possible they should:
-- start from the actual bank/Santander Framework implementation or approved archetype;
-- preserve current contracts/integration behavior until evidence supports change;
-- use the current institutional build/deploy path;
-- generate measurable runtime evidence;
-- expose blockers when infrastructure or governance is unavailable;
-- produce backlog/Arc42/institutional artifacts when promotion requires them.
+Views declare required semantic elements and freshness classes.
 
-## 8. DevOps/Platform Engineering remains first-class
+Frontend components should expose deterministic state such as READY, REFRESHING, STALE_ALLOWED, STALE_BLOCKED, UNAVAILABLE and STEP_UP_REQUIRED.
 
-DIRECTION-0007 DevOps integration remains active and now explicitly includes institutional archetype/pipeline discovery and reuse.
+Online clients may consume approved delta notifications, but reconnect/recovery must support version/checkpoint-based resynchronization rather than trusting uninterrupted event delivery.
 
-The Environment Capability Matrix should progressively include Glo/pipeline capability in addition to persistence, Kafka, API Connect, identity, telemetry/Kibana, secrets/config, network controls and environment-specific restrictions.
+## 11. Control-M modernization is classification-driven
 
-## 9. Standards-first continues across platform and institutional integration
+Governed by:
+`work/JOB_ORCHESTRATION_AND_CONTROLM_EVOLUTION_MODEL.md`
 
-Standards lifecycle from DIRECTION-0007 remains mandatory.
+Do not either freeze Control-M forever or replace it by ideology.
 
-New platform integrations should map both:
-- external/industry standards/frameworks/RFCs;
-- institutional standards/archetypes/policies/platform contracts.
+Each existing malla/workload must be understood and classified, for example:
+- KEEP_CONTROL_M;
+- OPENSHIFT_JOB_OR_CRONJOB;
+- SPRING_BATCH_JOB with separate scheduler;
+- SPRING_CLOUD_TASK/DATA_FLOW candidate;
+- EVENT_DRIVEN_REPLACEMENT;
+- WORKFLOW_SCHEDULER_POC.
 
-Institutional requirements may be authoritative for the bank even when they differ from generic industry preference.
+Spring Batch is a batch framework, not a scheduler.
 
-The Director must distinguish:
-- CURRENT/VERIFIED;
-- CURRENT_BUT_NOT_VERIFIED;
-- DEPRECATED/SUPERSEDED;
-- UNKNOWN/RESEARCH_REQUIRED.
+Java-first/open candidates such as Spring Cloud Task/Data Flow or Apache DolphinScheduler may be evaluated only against real Control-M dependency, recovery, SLA, ownership and operational requirements.
 
-## 10. DIRECTION-0007 and earlier principles retained
+Simple OpenShift Jobs/CronJobs should be preferred where the workload genuinely needs no enterprise DAG capability.
+
+## 12. Existing institutional reuse remains mandatory
+
+All DIRECTION-0008 rules continue:
+- current institutional/regulatory artifacts remain a near-term priority while generation becomes increasingly deterministic;
+- exact Banxico/authority obligations require official/institutional evidence;
+- Glo/archetypes/OpenShift pipelines are discovered/reused before replacement;
+- REUSE -> CONFIGURE/EXTEND/ADAPT -> MEASURE -> REPLACE ONLY WITH EVIDENCE;
+- API Connect, Kafka, Kibana, OpenShift, Santander Framework and other existing platforms are integrated before duplicating them;
+- Copilot remains the long-term governed entry/control point;
+- risk/customer experience is optimized across layers;
+- banking POCs should be deployable through real institutional delivery paths where evidence/access permits.
+
+## 13. Earlier cross-cutting principles retained
 
 Still mandatory:
 - LAB speed/useful parallelism currently outranks AI-cost minimization, while usage is measured;
 - capability-first organization rather than area=agent;
 - UNKNOWN -> ResearchRequest/Blocker -> evidence -> reconciliation;
-- DETERMINISTIC -> TOOL -> SKILL -> AGENT for mature product/runtime capabilities;
+- DETERMINISTIC -> TOOL -> SKILL -> AGENT for mature capabilities;
 - PLAN BEFORE EXECUTION and specification-first;
 - Git parallel-development gate and owned/shared/protected surfaces;
-- resilient local/OpenShift development profiles;
+- resilient local/OpenShift profiles;
 - information classification/access/PCI governance;
 - knowledge governance and controlled Devin projection;
-- research fabric;
-- UX/architect experience;
+- standards/research fabric;
 - independent QA/reconciliation;
 - purpose-driven governance councils;
 - Analytics/Audit/Evidence plane;
-- CQRS/read models/knowledge graph/vector projections;
+- knowledge graph/read models;
 - Event/Saga/Notification/Session/Agent Runtime planes;
-- OpenTelemetry/OTLP/Collector road plus existing Kibana/log integration;
-- Arc42 lifecycle and canonical visual/document projection;
+- OpenTelemetry/OTLP/Collector plus existing Kibana/log integration;
+- Arc42 lifecycle and canonical visual/document projections;
 - portfolio/backlog/Jira-ready semantics;
 - LAB simulation/evaluation;
-- OpenShift/service readiness;
-- local-first one-product modular-monolith direction;
 - bounded governed self-evolution.
+
+## Standards research baseline added by DIRECTION-0009
+
+Explicit candidates:
+- RFC 9700 OAuth 2.0 Security Best Current Practice;
+- OpenID Connect Core;
+- FAPI 2.0 Security Profile for high-security API ecosystems;
+- RFC 9449 DPoP;
+- RFC 9470 OAuth Step Up Authentication Challenge Protocol;
+- WebAuthn;
+- OWASP password-storage guidance;
+- institutional IAM, fraud, cryptography, FIPS/privacy requirements.
+
+Do not claim compliance before implementation/conformance evidence.
 
 ## Immediate execution priority
 
-1. Keep current required human/audit artifacts producible.
-2. Establish LAB capability/agent organization and Git coordination.
-3. Build tangible Director/Copilot local experience.
-4. Discover and integrate actual institutional platforms, especially Glo/OpenShift delivery contracts.
-5. Execute BI-0001 Customer Position against real code/data/integration evidence.
-6. Continue standards/governance/observability/knowledge/QA lanes in parallel.
-7. Use measured POCs to decide what to automate, extend, replace or absorb later.
+1. Preserve required audit/institutional artifacts.
+2. Complete LAB capability/Git coordination bootstrap.
+3. Continue BI-0001 Customer Position semantics/source/freshness discovery.
+4. Continue BI-0003 Web BFF and BI-0004 Gateway discovery against actual bank evidence.
+5. Start BI-0005 customer IAM/adaptive-access as a synthetic LAB POC once bounded ownership is established.
+6. Build CQRS projection/reconciliation semantics alongside BI-0001/BI-0003 rather than as a separate infrastructure empire.
+7. Inventory Control-M mallas before any scheduler replacement decision.
+8. Continue Glo/OpenShift, standards, observability, knowledge and QA lanes in parallel.
 
 ## Research dependencies
 
 - Issue #4: Glo archetype/OpenShift delivery contracts.
 - Issue #5: institutional/regulatory architecture artifact obligations.
+- Issue #6: web Customer Position/binding/frontend evidence.
+- Issue #7: current Spring Cloud Gateway vs API Connect responsibilities.
+- new customer IAM/core-auth evidence issue;
+- new Control-M malla inventory issue.
 
-## Material-change triggers added by DIRECTION-0008
+## Material-change triggers added by DIRECTION-0009
 
 Increment direction again if accepted policy materially changes:
-- current institutional artifact priority/authority;
-- Glo/institutional archetype authority or integration model;
-- Copilot authority over institutional pipelines;
-- synchronous/asynchronous risk-control policy;
-- customer-experience architecture principles;
-- institutional platform replacement strategy.
+- customer identity/credential authority;
+- selected IdP/directory product authority;
+- password migration strategy;
+- token format/revocation enforcement strategy;
+- adaptive-risk/step-up authority;
+- CQRS authoritative source/freshness model;
+- Control-M replacement/migration platform strategy.
 
 ## Working loop
 
 Current obligations
--> governed context/standards/platform capabilities
--> plan/specification
--> reuse institutional foundations
--> bounded parallel implementation
+-> governed context/standards
+-> institutional platform reuse
+-> identity/data/workload discovery
+-> specification/plan
+-> bounded parallel POCs
 -> deterministic validation/QA
--> institutional pipeline/deployment where available
--> runtime/risk/customer-experience evidence
+-> deployment/runtime evidence
+-> risk/security/customer-experience evidence
 -> analytics
 -> improvement/backlog
--> updated governed state
 -> required Arc42/audit projections
 -> next cycle.
 
-The target is a platform that preserves present-day institutional compliance and delivery reality while progressively turning the Copilot into the governed control surface for faster, measurable and increasingly automated banking-platform evolution.
+The target is a bank-integrated platform where customer identity, read projections, API authorization, risk decisions and operational jobs progressively move away from avoidable core dependency while preserving security, traceability, standards and institutional control.
